@@ -25,7 +25,7 @@ DEVELOPER - ALLAN WYLKER <br/>
 DEVELOPER - PATRICIA SOUZA
 
 ##  Dúvidas e Sugestões pelo EMAIL
-[![ Selo do Gmail ](https://img.shields.io/badge/-SACcoderize@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:SACcoderize@gmail.com)](mailto: SACcoderize@gmail.com)
+[ Selo do Gmail ](https://img.shields.io/badge/-SACcoderize@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:SACcoderize@gmail.com)(SACcoderize@gmail.com)
 
 ##  Licença
 [ Licença MIT ](https://choosealicense.com/licenses/mit/)
