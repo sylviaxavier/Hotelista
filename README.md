@@ -9,7 +9,7 @@ Em construção... (30/09/2022)
 
 ##  Detalhes do projeto:
 
-Todos os detalhes do HOTELISTA se encontram neste projeto: <a href="https://trello.com/b/w8M1B80d/scrum" target="_blank"/>[LINK DO TRELLO HOTELISTA]</a> < br>
+Todos os detalhes do HOTELISTA se encontram neste projeto: <a href="https://trello.com/b/w8M1B80d/scrum" target="_blank"/>[LINK DO TRELLO HOTELISTA]</a> <br>
 ~~~html
 https://trello.com/b/w8M1B80d/scrum
 ~~~
