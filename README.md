@@ -5,7 +5,7 @@
 <h2 align="center"> Projeto desenvolvido para <a href="https://www.texperts.com.br/" target="_blank"/>[T.EX]</a> como exercício do curso Full Empilhar JavaScript.</h2>
 
 ##  Situação:
-: chave inglesa : Em construção... (30/09/2022)
+Em construção... (30/09/2022)
 
 ##  Detalhes do projeto:
 
