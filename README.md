@@ -3,15 +3,15 @@
 <a href="https://ibb.co/BtLrZ3s"><img src="https://i.ibb.co/BtLrZ3s/Hotelista-com-fundo.png" alt="Hotelista-com-fundo" border="0"></a>
 
 
-<h2 align="center"> Projeto desenvolvido para <a href="https://www.texperts.com.br/" target="_blank"/>[T.EX]</a> como exercício do curso Full Empilhar JavaScript.</h2>
+<h2 align="center">Projeto desenvolvido para <a href="https://www.texperts.com.br/" target="_blank"/>[T.EX]</a> como exercício do curso Full Empilhar JavaScript.</h2>
 
 ##  Situação:
 Em construção... (30/09/2022)
 
 ##  Detalhes do projeto:
 
-Todos os detalhes do HOTELISTA se encontram neste projeto: <a href="https://trello.com/b/w8M1B80d/scrum" target="_blank"/>[LINK DO TRELLO HOTELISTA]</a> < br>
 =======
+
 Todos os detalhes do HOTELISTA se encontram neste projeto: <a href="https://trello.com/b/w8M1B80d/scrum" target="_blank"/>[LINK DO TRELLO HOTELISTA]</a> <br>
 
 ~~~html
