@@ -34,7 +34,6 @@ DEVELOPER - PATRICIA SOUZA
 </div>
 
 ##  Licença
+===
 
-[ Licença MIT ](https://choosealicense.com/licenses/mit/)
-=======
 [ Licença MIT ](https://choosealicense.com/licenses/mit/)
