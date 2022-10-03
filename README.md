@@ -1,6 +1,6 @@
 #  <h1 align="center">Projeto HOTELISTA | T.EX - Especialistas em Tecnologia</h1>
 
-![HOTELISTA](https://imgur.com/a/HM60j0B)
+<img src="../github_grupo4/root/images/Hotelista_com_fundo.png" alt=hotelista >
 
 
 <h2 align="center"> Projeto desenvolvido para <a href="https://www.texperts.com.br/" target="_blank"/>[T.EX]</a> como exercício do curso Full Empilhar JavaScript.</h2>
