@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="images/Hotelista_sem_fundo.png" alt="Hotelista" width="128" />
+        <img src="/root/images/Hotelista_sem_fundo.png" alt="Hotelista" width="128" />
         <h1><span>Bem Vindos ao Hotelista!</span></h1>
         <nav>
 
@@ -21,6 +21,7 @@
         <p>Se você se enquadra como funcionário da empresa Hotelista, por favor faça o login abaixo para obter mais informações.
             Caso contrário, dirija-se para a página de login destinada ao público!
         </p>
+        <a href="/root/public/index_login.html">Login Público</a> 
         
         <section>
             <article>
@@ -30,7 +31,7 @@
                         <legend>Preencha tudo com atenção:</legend>
                         <ul>
                             <li>
-                                <label for="email">Email</label><br/>
+                                <label for="email">Email:</label><br/>
                                 <input type="email" id="email" name="email" required><br/>
                             </li>
                             <li>
@@ -38,9 +39,14 @@
                                 <input type="password" id="password" name="password" required> <br/>
                             </li>
                             <li>
-                                <a href="">
-                                    <button>Login</button>
-                                </a>
+                                
+                                <button>
+                                    <a href="/root/single_page_admin.html">
+                                        Login
+                                    </a>
+                                    
+                                </button>
+                                
                             </li>
                         </ul>
 
