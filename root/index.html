@@ -6,40 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotelista</title>
+    <link rel="stylesheet" href="/root/src/css/style.css">
     
     </head>
-<body>
+        <body>
     
-    <header>
-                <div style="text-align: right;">Olá usuário XXX</div>
-                <div style="text-align: right;" href="">
-                    <a href="sair">Sair</a>
+            <header>
+                <nav>
+                <div class="hotelista">
+                    <div class="logo">
+                        <a href="../index.html" class="logo">
+                            <img src="/root/images/Hotelista_sem_fundo.png" alt="Hotelista" width="100" />
+                        </a>
+                    </div>
+                    <div class="slogan">
+                        Quando estilo combina com conforto
+                    </div>
                 </div>
-
-        <img src="images/Hotelista_com_fundo.png" alt="nome da imagem" width="120" />
-        <span>Home</span>  
-        <div style="text-align: center;">
-            <font size="5">Quando estilo combina com conforto</font>
-        </div>
-        <div style="text-align: right;" href="">
-            <a href="sair">Cadastre-se</a>
-        </div>
-        <hr />
-        <nav>
-            <ul>
-                <li>
-                    <a href="local da pagina">Reservas</a> |
-                    <a href="local da pagina">Acomodações</a> |
-                    <a href="local da pagina">Contato</a>
-                </li>
-            </ul>
-        </nav>
-        <hr />
-    </header>
+                <ul class="navegacao">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="reservas.html">Reservas</a>
+                    </li>
+                    <li>
+                        <a href="quartos.html">Acomodações</a>
+                    </li>
+                    <li>
+                        <a href="contato.html">Contato</a>
+                    </li>
+                </ul>
+                <ul class="options">
+                    <li>
+                        <span>Olá, usuário XXX</span>
+                    </li>
+                    <li>
+                        <a href="">Sair</a>
+                    </li>
+                    <li class="cadastrese">
+                        <a href="">Cadastre-se</a>
+                    </li>
+                </ul>
+            </nav>
+            </header>
     <main>
-        <section>
-            <article id="home">
+        <div class="containers">
                 <h1>Pagina Inicial</h1>
+
+                <div class="container01">
+
                 <img src="images/RoyalTulipAlvorada vista paranoa 2.webp" alt="nome da imagem" width="300">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores inventore veniam animi debitis
                     blanditiis maxime nam possimus, deserunt dolorum voluptas dignissimos quia saepe, dolorem ea magnam
@@ -48,29 +64,31 @@
                     Cumque quasi voluptatum eius laboriosam temporibus explicabo iste deserunt, minima consequatur
                     quaerat hic, perspiciatis at. Aut recusandae tempora deleniti repellendus, odio explicabo esse sunt
                     consequatur blanditiis debitis.</p>
-            </article>
+                </div>
+        </div>
         </section>
     </main>
     <hr />
     <footer>
-        <p>E-mail para contato: hotelista@gmail.com</p> 
-        <div style="text-align: right;">Nosso Endereço: Rua Texperts, 01 | São Paulo | SP | 01001-001</div>
+        <p>E-mail para contato: atendimento@hotelista.com.br</p>
+        <p>Nosso Endereço: Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
         <p>Telefone para contato: +55 11 3232-3232</p>
-        <hr />
         <nav>
             <ul>
                 <li>
-                    <a href="local da pagina">Reservas</a> <br />                                 
-                    <a href="local da pagina">Acomodações</a> <br />                    
-                    <a href="local da pagina">Contato</a> <br />
+                    <a href="reservas.html">Reservas</a> <br />
+                    <a href="quartos.html">Acomodações</a> <br />
+                    <a href="contato.html">Contato</a> <br />
                 </li>
             </ul>
         </nav>
-        <hr />
-        <img src="images/Coderize_com_fundo.png" alt="Coderize" width="100">
-        <p>Coderize &copy;2022 - Todos os direitos reservados</p>
-        <form action="" method="post"></form>
+        <div class="copyright">
+            <p class="copyright">
+                <img src="/root/images/Coderize_com_fundo.png" alt="Coderize" width="100">
+                Coderize &copy;2022 - Todos os direitos reservados
+            </p>
+        </div>
     </footer>
-</body>
-
-</html>
+    </body>
+    
+    </html>
