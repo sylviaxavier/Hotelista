@@ -2,7 +2,6 @@
 
 body {
     font-family: 'Poppins';
-    background-color: #ffffff;
     color: #333333;
     margin: 0;
 }
@@ -146,3 +145,115 @@ footer div.copyright p img {
     width: auto;
     vertical-align: middle;
 }
+/*Inicio da estilização - acomodações*/
+body{
+    background-color: #89a7b1;
+}
+.containers h2{
+    text-align: center;
+}
+.containers{
+    padding:20px;
+    justify-content: center;
+}
+.container01{
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex: 0 1 20%;
+    margin-left: 11%;
+}
+div>div{
+    padding: 10px;
+}
+#img1{
+    max-width: 290px;
+    min-width: 220px;
+    width: 280px;
+    height: 213px;
+}
+#img2{
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+#img3{
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+#img4{
+    max-width: 290px;
+    min-width: 220px;
+    width: 280px;
+    height: 213px;
+}
+#img5{
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+#img6{
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+#img7{
+    max-width: 290px;
+    min-width: 220px;
+    width: 280px;
+    height: 213px;
+}
+#img8{
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+#img9{
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+
+.destak{
+    padding: 10%;
+}
+.destak img{
+    display: inline-block;
+    vertical-align:middle;
+    padding-right: 10%;
+    width: 40%;
+}
+.right{
+    float:right; 
+    margin-right:0; 
+    margin-left:10px; 
+    margin-bottom:5px;
+
+}
+.destak h2{
+    padding: 10px;
+}
+.destak p{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin-right: 9%;
+    text-align: justify;
+    align-items: center;
+}
+.destak{
+    padding-bottom: 30%;
+}
+
+/*Fim da estilização - acomodações*/
