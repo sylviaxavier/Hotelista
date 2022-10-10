@@ -2,4 +2,147 @@
 
 body {
     font-family: 'Poppins';
+    background-color: #ffffff;
+    color: #333333;
+    margin: 0;
+}
+
+/* CABEÇALHO */
+header div.hotelista {
+    float: left;
+    min-width: 100%;
+}
+
+header div.hotelista div {
+    padding: 16px 16px 0 16px;
+}
+
+header div.hotelista div.logo {
+    object-fit: contain;
+    height: 100%;
+    max-width: 5%;
+    display: inline-block;
+}
+
+header div.hotelista div.logo img {
+    width: 100%;
+}
+
+header div.hotelista div.slogan {
+    font-size: xx-large;
+    display: inline-block;
+}
+
+header ul.navegacao {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34344e;
+    min-width: 100%;
+    height: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header ul.navegacao li {
+    float: left;
+}
+
+header ul.navegacao li a {
+    display: block;
+    color: #cbdad5;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+header ul.navegacao li a:hover {
+    background-color: #cbdad5;
+    color: #333333;
+}
+
+header ul.options {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #cbdad5;
+    color: #34344e;
+    min-width: 100%;
+    height: auto;
+}
+
+header ul.options li {
+    float: right;
+}
+
+header ul.options li.cadastrese {
+    float: left;
+}
+
+header ul.options li a {
+    display: block;
+    color: #34344e;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+header ul.options li span {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+header ul.options li a:hover {
+    background-color: #34344e;
+    color: #cbdad5;
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    line-height: small;
+    font-size: smaller;
+    list-style-type: none;
+    text-decoration: none;
+    line-height: 10px;
+    padding-top: 16px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer li a {
+    display: block;
+    padding: 8px 16px;
+    color: #333333;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    color: #89a7b1;
+}
+
+footer div.copyright {
+    font-size: large;
+    background-color: #34344e;
+    color: #cbdad5;
+
+}
+
+footer div.copyright p {
+    margin: 0;
+}
+
+footer div.copyright p img {
+    border-radius: 50%;
+    max-height: 5em;
+    width: auto;
+    vertical-align: middle;
 }
