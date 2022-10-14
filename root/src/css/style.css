@@ -128,6 +128,8 @@ footer p {
 
 footer ul {
     list-style-type: none;
+    margin: 0 25% 0 25%;
+    padding: 0;
 }
 
 footer li a {
@@ -146,7 +148,8 @@ footer div.copyright {
     font-size: large;
     background-color: #34344e;
     color: #cbdad5;
-
+    margin-top: 32px;
+    border-top: 4px #cbdad5 solid;
 }
 
 footer div.copyright p {
@@ -391,7 +394,7 @@ form button {
     transition-duration: 0.25s;
 }
 
-form button:hover{
+form button:hover {
     background-color: #566981;
     color: #cbdad5;
 }
@@ -418,35 +421,52 @@ form.login {
 
 /*Inicio responsividade*/
 
-@media (max-width:415px) and (orientation:portrait) {
-    .logo img {
-        width: 20vw !important;
-        height: 10vh;
+@media (max-width:425px) and (orientation:portrait) {
+
+    /* Login */
+    form.login {
+        max-width: 85%;
     }
 
-    .slogan p {
-        font-size: 1.2rem;
-        padding: 10px 10px 8px 8px;
+    /* Cabeçalho */
+    header div.hotelista div.logo {
+        max-width: 10% !important;
     }
 
-    .navegacao {
-        display: inline-block;
-        font-size: 11.3px;
-    }
-
-    .options {
-        display: inline-block;
-        font-size: 13px;
-    }
-
-    footer p a {
+    header div.hotelista div.slogan {
+        font-size: small;
         display: inline-block;
     }
 
-    .logoCode {
-        line-height: 20px;
-        padding: 10px;
+    header div.hotelista {
+        margin: 16px 0 16px 0;
     }
 
+    header ul.navegacao li a {
+        padding: 12px;
+        font-size: small;
+    }
 
+    header ul.options li {
+        font-size: small;
+    }
+
+    header ul.options li a {
+        padding: 8px;
+    }
+
+    header ul.options li span {
+        padding: 8px;
+    }
+
+    /* Rodapé */
+    footer div.copyright p {
+        font-size: smaller;
+        padding-bottom: 16px;
+        line-height: 16px;
+    }
+
+    footer div.copyright p img {
+        max-height: 7.5em;
+    }
 }
