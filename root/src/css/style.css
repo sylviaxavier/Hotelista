@@ -2,18 +2,22 @@
 
 body {
     font-family: 'Poppins';
-    color: #333333;
+    background-color: #89a7b1;
     margin: 0;
 }
 
 /* CABEÇALHO */
+header {
+    margin-bottom: 16px;
+}
+
 header div.hotelista {
     float: left;
     min-width: 100%;
 }
 
 header div.hotelista div {
-    padding: 16px 16px 0 16px;
+    padding: 0 16px 0 16px;
 }
 
 header div.hotelista div.logo {
@@ -25,6 +29,11 @@ header div.hotelista div.logo {
 
 header div.hotelista div.logo img {
     width: 100%;
+    vertical-align: middle;
+}
+
+header div.hotelista div.logo img:hover {
+    opacity: 0.6;
 }
 
 header div.hotelista div.slogan {
@@ -104,13 +113,17 @@ header ul.options li a:hover {
 
 /* RODAPÉ */
 footer {
+    padding-top: 128px;
     text-align: center;
     line-height: small;
     font-size: smaller;
     list-style-type: none;
     text-decoration: none;
     line-height: 10px;
-    padding-top: 16px;
+}
+
+footer p {
+    text-align: center;
 }
 
 footer ul {
@@ -122,10 +135,11 @@ footer li a {
     padding: 8px 16px;
     color: #333333;
     text-decoration: none;
+    text-align: center;
 }
 
 footer li a:hover {
-    color: #89a7b1;
+    color: #566981;
 }
 
 footer div.copyright {
@@ -136,7 +150,8 @@ footer div.copyright {
 }
 
 footer div.copyright p {
-    margin: 0;
+    margin: auto;
+    display: inline-block;
 }
 
 footer div.copyright p img {
@@ -144,20 +159,22 @@ footer div.copyright p img {
     max-height: 5em;
     width: auto;
     vertical-align: middle;
+    display: inline-block;
 }
+
 /*Inicio da estilização - acomodações*/
-body{
-    background-color: #89a7b1;
-}
-.containers h2{
+
+.containers h2 {
     text-align: center;
 }
-.containers{
-    padding:20px;
+
+.containers {
+    padding: 20px;
     justify-content: center;
 }
-.container01{
-    
+
+.container01 {
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
@@ -167,84 +184,98 @@ body{
     flex: 0 1 20%;
     margin-left: 11%;
 }
-div>div{
+
+div>div {
     padding: 10px;
 }
-#img1{
+
+#img1 {
     max-width: 290px;
     min-width: 220px;
     width: 280px;
     height: 213px;
 }
-#img2{
-    max-width: 290px;
-    min-width: 220px;
-    width: 290px;
-    height: 213px;
-}
-#img3{
-    max-width: 290px;
-    min-width: 220px;
-    width: 290px;
-    height: 213px;
-}
-#img4{
-    max-width: 290px;
-    min-width: 220px;
-    width: 280px;
-    height: 213px;
-}
-#img5{
-    max-width: 290px;
-    min-width: 220px;
-    width: 290px;
-    height: 213px;
-}
-#img6{
-    max-width: 290px;
-    min-width: 220px;
-    width: 290px;
-    height: 213px;
-}
-#img7{
-    max-width: 290px;
-    min-width: 220px;
-    width: 280px;
-    height: 213px;
-}
-#img8{
-    max-width: 290px;
-    min-width: 220px;
-    width: 290px;
-    height: 213px;
-}
-#img9{
+
+#img2 {
     max-width: 290px;
     min-width: 220px;
     width: 290px;
     height: 213px;
 }
 
-.destak{
+#img3 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+
+#img4 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 280px;
+    height: 213px;
+}
+
+#img5 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+
+#img6 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+
+#img7 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 280px;
+    height: 213px;
+}
+
+#img8 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+
+#img9 {
+    max-width: 290px;
+    min-width: 220px;
+    width: 290px;
+    height: 213px;
+}
+
+.destak {
     padding: 10%;
 }
-.destak img{
+
+.destak img {
     display: inline-block;
-    vertical-align:middle;
+    vertical-align: middle;
     padding-right: 10%;
     width: 40%;
 }
-.right{
-    float:right; 
-    margin-right:0; 
-    margin-left:10px; 
-    margin-bottom:5px;
+
+.right {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
 
 }
-.destak h2{
+
+.destak h2 {
     padding: 10px;
 }
-.destak p{
+
+.destak p {
     display: inline-block;
     vertical-align: top;
     width: 40%;
@@ -252,7 +283,8 @@ div>div{
     text-align: justify;
     align-items: center;
 }
-.destak{
+
+.destak {
     padding-bottom: 30%;
 }
 
@@ -260,14 +292,14 @@ div>div{
 
 /*Início da estilização - Sobre*/
 
-.hotel img{
+.hotel img {
     display: inline-block;
-    vertical-align:middle;
+    vertical-align: middle;
     padding-right: 5%;
     width: 35%;
 }
 
-.hotel p{
+.hotel p {
     display: inline-block;
     vertical-align: top;
     width: 45%;
@@ -276,8 +308,8 @@ div>div{
     align-items: center;
 }
 
-.containersobre{
-    
+.containersobre {
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
@@ -287,22 +319,26 @@ div>div{
     flex: 0 0 20%;
     margin-left: 10%;
 }
-div>div{
+
+div>div {
     padding: 10px;
 }
-#img1sobre{
+
+#img1sobre {
     max-width: 510px;
     min-width: 310px;
     width: 400px;
     height: 300px;
 }
-#img2sobre{
+
+#img2sobre {
     max-width: 510px;
     min-width: 310px;
     width: 400px;
     height: 300px;
 }
-#img3sobre{
+
+#img3sobre {
     max-width: 510px;
     min-width: 310px;
     width: 400px;
@@ -311,28 +347,103 @@ div>div{
 
 /*Fim da estilização - Sobre*/
 
+/* Forms */
+
+form {
+    display: list-item;
+    list-style-type: none;
+    text-align: center;
+    color: #cbdad5;
+    background-color: #34344e;
+    border: 2px solid #cbdad5;
+    border-radius: 8px;
+    box-shadow: 8px 8px #333333;
+}
+
+form h2 {
+    padding: 0;
+}
+
+form input {
+    border: none;
+    border-bottom: 2px solid #89a7b1;
+    background-color: #cbdad5;
+    border-radius: 4px 4px 0 0;
+    padding: 0 8px 0 8px;
+    width: 60%;
+    height: 28px;
+    box-shadow: 4px 4px #333333;
+    font-family: 'Poppins';
+}
+
+form button {
+    border: 2px solid #89a7b1;
+    background-color: #cbdad5;
+    border-radius: 4px;
+    padding: 8px 32px 8px 32px;
+    width: 75%;
+    margin-top: 32px;
+    font-size: medium;
+    font-weight: bold;
+    color: #333333;
+    box-shadow: 4px 4px #333333;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+form button:hover{
+    background-color: #566981;
+    color: #cbdad5;
+}
+
+form a {
+    text-decoration: underline;
+    font-size: small;
+    color: #89a7b1;
+    transition-duration: 0.25s;
+}
+
+form a:hover {
+    color: #cbdad5;
+}
+
+/* Login */
+
+form.login {
+    max-width: 50%;
+    margin: auto;
+    padding: 0 0 32px 0;
+    line-height: 48px;
+}
+
 /*Inicio responsividade*/
-@media (max-width:415px) and (orientation:portrait){
-    .logo img{
+
+@media (max-width:415px) and (orientation:portrait) {
+    .logo img {
         width: 20vw !important;
         height: 10vh;
     }
-    .slogan p{
+
+    .slogan p {
         font-size: 1.2rem;
         padding: 10px 10px 8px 8px;
     }
-    .navegacao{
+
+    .navegacao {
         display: inline-block;
         font-size: 11.3px;
     }
-    .options{
+
+    .options {
         display: inline-block;
         font-size: 13px;
     }
-    footer p a{
+
+    footer p a {
         display: inline-block;
     }
-    .logoCode{
+
+    .logoCode {
         line-height: 20px;
         padding: 10px;
     }
