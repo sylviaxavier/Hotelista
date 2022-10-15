@@ -419,6 +419,14 @@ form.login {
     line-height: 48px;
 }
 
+/* Tela home */
+.titulo1 {
+    margin: 0 0 40px 238px;
+}
+.texto1{
+    text-align: justify;
+}
+
 /*Inicio responsividade*/
 
 @media (max-width:425px) and (orientation:portrait) {
