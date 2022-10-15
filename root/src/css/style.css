@@ -435,6 +435,10 @@ form.login {
     form.login {
         max-width: 85%;
     }
+    /* Barra de navegação */
+        nav ul {
+            display: grid
+        }
 
     /* Cabeçalho */
     header div.hotelista div.logo {
@@ -477,4 +481,20 @@ form.login {
     footer div.copyright p img {
         max-height: 7.5em;
     }
+
+    /* Página home */
+    .img01{
+        max-width: 100%;
+    }
+    .img02 {
+            max-width: 100%;
+    }
+    
+  .container01 {
+    display:block;
+  }
+  .titulo1{
+    margin: 0 0 20px 80px;
+  }
+
 }
