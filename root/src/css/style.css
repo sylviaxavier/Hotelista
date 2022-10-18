@@ -415,10 +415,18 @@ form.login {
 
 /* Tela home */
 .titulo1 {
-    margin: 0 0 40px 238px;
+    margin: 0 0 10px 43px;
 }
 .texto1{
     text-align: justify;
+    margin: 0 1% 0 1%;
+    }
+.containerhome h1{
+    margin: 0 1% 0 1%;
+    padding-bottom: 1%;
+    }
+.containerhome img{
+    margin: 0 1% 0 1%;
 }
 
 /*Estilização Página Contato*/
@@ -508,7 +516,7 @@ form.login {
     footer div.copyright p img {
         max-height: 7.5em;
     }
-
+  
     /* Página home */
     .img01{
         max-width: 100%;
@@ -521,7 +529,7 @@ form.login {
     display:block;
   }
   .titulo1{
-    margin: 0 0 20px 80px;
+    margin: 0 0 10px 43px;
   }
   /*Página Acomodações*/
   .container01{
