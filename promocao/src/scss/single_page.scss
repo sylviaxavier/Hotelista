@@ -1,0 +1,15 @@
+@use '_variaveis' as v;
+@use '_mixins' as mx;
+
+footer{
+    background-color: v.$corFundo;
+}
+h4{
+    margin-left: v.$m1;
+}
+ul{
+    @include mx.marcador;
+}
+a{
+    @include mx.link;
+}
