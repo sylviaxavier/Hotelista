@@ -576,6 +576,7 @@ form.login {
 .article-singlepage{
     min-height: 100vh;
     padding: 40px 0 0 0;
+    margin-top: 10px;
     }
     
     div.navup-singlepage{
@@ -583,8 +584,77 @@ form.login {
     cursor:pointer;
     width:100px;
     height:50px;
-    position:fixed;
-    top:95%; left: 50%;
-    
+    position:absolute;
+    top:90%; left: 50%;
     }
-    
+
+    .container {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        margin: -40px;
+    }
+      
+    .header-image {
+        position: absolute;
+        opacity: 0.6;
+        height: 100vh;
+        width: 100vw;
+        margin: 25px;
+        margin-top: -25px;
+    }
+      
+    .header-texto {
+        position: absolute;
+        font-size: 82px;
+        left: 500px;
+        top: 435px;
+        font-family: 'Poppins';
+        font-weight: bold
+    }
+
+    .h2-oferta {
+        position: relative;
+        text-align: center;
+        font-size: 50px;
+        margin-top: -40px;
+        font-family: 'Poppins';
+        font-weight: bold
+    }
+
+    .h2-singlepage {
+        position: absolute;
+        text-align: center;
+        font-size: 70px;
+        left: 750px;
+        top: 135px;
+        font-family: 'Poppins';
+        font-weight: bold
+    }
+    .iframe-singlepage{
+        height: 80vh;
+        width: 95vw;
+        margin: 35px;
+        margin-top: -15px;
+    }
+
+    .body-image {
+        position: absolute;
+        opacity: 0.6;
+        height: 100vh;
+        width: 100vw;
+        padding-left: 25px;
+        margin-top: -50;
+    }
+
+    .p-singlepage{
+        position: absolute;
+        text-align: center;
+        font-size: 16px;
+        left: 80px;
+        top: 335px;
+        font-family: 'Poppins';
+        font-weight: bold
+
+    }
+
