@@ -608,7 +608,7 @@ form.login {
         position: absolute;
         font-size: 82px;
         left: 500px;
-        top: 435px;
+        top: 235px;
         font-family: 'Poppins';
         font-weight: bold
     }
@@ -626,7 +626,7 @@ form.login {
         position: absolute;
         text-align: center;
         font-size: 70px;
-        left: 750px;
+        left: 550px;
         top: 135px;
         font-family: 'Poppins';
         font-weight: bold
