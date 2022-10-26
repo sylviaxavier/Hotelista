@@ -1,573 +1,627 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-body {
+:root {
+    --black: #333333;
+    --dark-gray: #c0c0c0;
+    --gray: #e0e0e0; 
+}
+
+* {
     font-family: 'Poppins';
-    background-color: #89a7b1;
+}
+
+body {
+    background-color: #ffffff;
     margin: 0;
+    font-size: medium;
 }
 
 /* CABEÇALHO */
 header {
-    margin-bottom: 16px;
-}
-
-header div.hotelista {
-    float: left;
-    min-width: 100%;
-}
-
-header div.hotelista div {
-    padding: 0 16px 0 16px;
-}
-
-header div.hotelista div.logo {
-    object-fit: contain;
-    height: 100%;
-    max-width: 5%;
-    display: inline-block;
-}
-
-header div.hotelista div.logo img {
-    width: 100%;
-    vertical-align: middle;
-}
-
-header div.hotelista div.logo img:hover {
-    opacity: 0.6;
-}
-
-header div.hotelista div.slogan {
-    font-size: xx-large;
-    display: inline-block;
-}
-
-header ul.navegacao {
-    list-style-type: none;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #34344e;
-    min-width: 100%;
-    height: auto;
-    position: -webkit-sticky;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
-    z-index: 999;
+    z-index: 100;
+    width: 100%;
 }
 
-header ul.navegacao li {
-    float: left;
-}
-
-header ul.navegacao li a {
+.navbar {
     display: block;
-    color: #cbdad5;
-    text-align: center;
-    padding: 16px;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 14px;
+    color: var(--black);
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--black);
+}
+
+.navbar-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+a.navbar-logo {
     text-decoration: none;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    width: 4em;
+    height: 4em;
+    transition: 0.5s;
 }
 
-header ul.navegacao li a:hover {
-    background-color: #cbdad5;
-    color: #333333;
+a.navbar-logo:hover {
+    opacity: 0.7;
 }
 
-header ul.options {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #cbdad5;
-    color: #34344e;
-    min-width: 100%;
+img.navbar-logo {
+    width: 100%;
     height: auto;
 }
 
-header ul.options li {
-    float: right;
+.navbar-menu-wrap {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: middle;
+    justify-content: end;
 }
 
-header ul.options li.cadastrese {
-    float: left;
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
 }
 
-header ul.options li a {
-    display: block;
-    color: #34344e;
-    text-align: center;
-    padding: 16px;
+.navbar-button {
+    display: none;
+}
+
+.navbar-link {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1em 0 1em;
+    padding: 0;
+    color: var(--black);
     text-decoration: none;
+    transition: 0.5s;
 }
 
-header ul.options li span {
-    display: block;
-    text-align: center;
-    padding: 16px;
+.navbar-link:hover:not(.active),
+.navbar-dropdown-button:hover {
+    opacity: 0.7;
+}
+
+a.active {
+    text-decoration: underline;
+}
+
+.navbar-dropdown-wrap {
     text-decoration: none;
+    font-style: normal;
+    position: relative;
+    margin-left: 2em;
 }
 
-header ul.options li a:hover {
-    background-color: #34344e;
-    color: #cbdad5;
+.navbar-dropdown-wrap .navbar-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-dropdown-button {
+    display: inline;
+    cursor: pointer;
+    font-family: 'Material Icons';
+    vertical-align: middle;
+    font-size: 24px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    padding: 0.25em;
+}
+
+.navbar-dropdown {
+    display: none;
+    position: absolute;
+    right: 2%;
+    background-color: #ffffff;
+    width: 15em;
+    z-index: 101;
+    border: 2px solid var(--black);
+    padding: 1em 0 1em 2em;
+}
+
+.navbar-dropdown-wrap:hover .navbar-dropdown {
+    display: block;
+}
+
+.navbar-dropdown-wrap:hover .navbar-dropdown-button {
+    opacity: 0.7;
+}
+
+.navbar-dropdown a,
+.navbar-user {
+    display: inline-block;
+    padding: 0;
+    color: var(--black);
+    line-height: 2em;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding-left: 5%;
 }
 
 /* RODAPÉ */
+.footer-title {
+    text-align: center;
+    margin-top: 3em;
+}
+
 footer {
-    padding-top: 128px;
+    width: 100%;
+    color: var(--black);
     text-align: center;
-    line-height: small;
-    font-size: smaller;
-    list-style-type: none;
-    text-decoration: none;
-    line-height: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10vh;
+    border-top: 2px solid var(--black);
 }
 
+footer a,
 footer p {
-    text-align: center;
-}
-
-footer ul {
-    list-style-type: none;
-    margin: 0 25% 0 25%;
-    padding: 0;
-}
-
-footer li a {
-    display: block;
-    padding: 8px 16px;
-    color: #333333;
+    color: var(--black);
     text-decoration: none;
-    text-align: center;
-}
-
-footer li a:hover {
-    color: #566981;
-}
-
-footer div.copyright {
-    font-size: large;
-    background-color: #34344e;
-    color: #cbdad5;
-    margin-top: 32px;
-    border-top: 4px #cbdad5 solid;
-}
-
-footer div.copyright p {
-    margin: auto;
-    display: inline-block;
-}
-
-footer div.copyright p img {
-    border-radius: 50%;
-    max-height: 5em;
-    width: auto;
-    vertical-align: middle;
-    display: inline-block;
-}
-
-/*Inicio da estilização - acomodações*/
-
-.containers h2 {
-    text-align: center;
-    margin: 6% 0% 6% 0%;
-}
-
-.container01 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-.box{
-    width: 100%;
-    display: grid;
-    margin: 0 auto;
-    margin-bottom: 15%;
-}
-.card{
-    position: relative;
-    width: 300px;
-    height: 350px;
-    background: #566981;
-    margin: 0 auto;
-    border-radius: 5px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.2);
-}
-.card:before,.card:after {
-    content:"";
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2em;
     transition: 0.5s;
 }
 
-.card .imgBx{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    right: 10px;
+footer nav {
+    margin: 1em 0;
+    width: 25%;
+    border: 1px solid var(--gray);
     transition: 0.5s;
-    z-index: 1;
 }
-.card:hover .imgBx{
-    bottom: 80px;
+
+footer nav:hover {
+    border: 1px solid var(--dark-gray);
 }
-.card .imgBx img{
-    position: absolute;
-    top: 0;
-    left: 0;
+
+footer a {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.copyright {
     width: 100%;
-    height: 100%;
-    object-fit: cover;  
+    padding: 2em 0;
+    background-color: white;
+    transition: 0.5s;
 }
-.card .details{
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    height: 60px;
+
+footer img {
+    filter: invert(1);
+    padding: 1em;
+    border: 1px solid var(--black);
+    transition: 0.5s;
+}
+
+.copyright:hover {
+    background-color: var(--black);
+    color: white;
+}
+
+.copyright:hover p {
+    color: white;
+}
+
+.copyright:hover img {
+    filter: invert(0);
+    border: 1px solid white;
+}
+
+/* PADRÕES */
+.margin-top {
+    margin-top: 20vh;
+}
+
+h1 {
+    color: var(--black);
+    font-size: xx-large;
+    font-weight: normal;
+    padding: 1rem;
     text-align: center;
 }
-.card .details h4{
-   margin: 0;
-   padding: 0;
-   font-weight: 600;
-   font-size: 1rem;
-   color: #89a09a;
-   text-transform: uppercase;
-   margin-top: 5px;
-} 
-.card .details h4 span{
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: #29293d;
-  display: block;
-  margin-top: 5px;
-} 
-.destak {
-    padding: 10%;
+
+.imagem-retrato {
+    display: none;
 }
 
-.destak img {
-    display: inline-block;
-    vertical-align: middle;
-    padding-right: 10%;
-    width: 40%;
+.imagem-paisagem {
+    display: block;
 }
 
-.right {
-    float: right;
-    margin-right: 0;
-    margin-left: 10px;
-    margin-bottom: 5px;
-
-}
-
-.destak h2 {
-    padding: 10px;
-}
-
-.destak p {
-    display: inline-block;
-    vertical-align: top;
-    width: 40%;
-    margin-right: 9%;
-    text-align: justify;
+.button-wrap {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.destak {
-    padding-bottom: 30%;
-}
-
-/*Fim da estilização - acomodações*/
-
-/*Início da estilização - Sobre*/
-
-.hotel img {
-    display: inline-block;
-    vertical-align: middle;
-    padding-right: 5%;
-    width: 35%;
-}
-
-.hotel p {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%;
-    margin-right: 1%;
-    text-align: justify;
+.button {
+    display: flex;
+    padding: 1.5em 2.5em;
     align-items: center;
-}
-
-.containersobre {
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    text-align: center;
+    flex: 0 0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid var(--gray);
     justify-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
-    flex: 0 0 20%;
-    margin-left: 10%;
+    max-width: 25%;
+    transition: 0.5s;
 }
 
-div>div {
-    padding: 10px;
+.button:hover {
+    border-color: var(--dark-gray);
 }
 
-#img1sobre {
-    max-width: 510px;
-    min-width: 310px;
-    width: 400px;
-    height: 300px;
+.button-text {
+    color: var(--black);
+    text-align: center;
+    display: block;
 }
 
-#img2sobre {
-    max-width: 510px;
-    min-width: 310px;
-    width: 400px;
-    height: 300px;
+.button-arrow {
+    display: inline;
+    padding-left: 1em;
+    transition: 0.5s;
+    margin: 0;
 }
 
-#img3sobre {
-    max-width: 510px;
-    min-width: 310px;
-    width: 400px;
-    height: 300px;
+.button:hover .button-arrow {
+    transform: translate3d(1em, 0, 0);
 }
-
-/*Fim da estilização - Sobre*/
-
-/* Forms */
 
 form {
-    display: list-item;
-    list-style-type: none;
-    text-align: center;
-    color: #cbdad5;
-    background-color: #34344e;
-    border: 2px solid #cbdad5;
-    border-radius: 8px;
-    box-shadow: 8px 8px #333333;
+    padding: 1em 5em;
+    border: 1px solid var(--gray);
+    margin: 10vh 15%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    color: var(--black);
 }
 
-form h2 {
+form:hover,
+input:hover,
+select:hover,
+textarea:hover {
+    border: 1px solid var(--dark-gray);
+}
+
+form h1 {
+    margin: 0;
     padding: 0;
+    margin-bottom: 2vh;
 }
 
-form input {
-    border: none;
-    border-bottom: 2px solid #89a7b1;
-    background-color: #cbdad5;
-    border-radius: 4px 4px 0 0;
-    padding: 0 8px 0 8px;
-    width: 60%;
-    height: 28px;
-    box-shadow: 4px 4px #333333;
-    font-family: 'Poppins';
+label {
+    font-size: large;
+    line-height: 5vh;
 }
 
-form button {
-    border: 2px solid #89a7b1;
-    background-color: #cbdad5;
-    border-radius: 4px;
-    padding: 8px 32px 8px 32px;
-    width: 75%;
-    margin-top: 32px;
-    font-size: medium;
-    font-weight: bold;
-    color: #333333;
-    box-shadow: 4px 4px #333333;
-    cursor: pointer;
-    transition-duration: 0.25s;
+input,
+select {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3vh;
+    padding: 0.25em 0.5em;
+    text-align: start;
+    border: 1px solid var(--gray);
+    transition: 0.5s;
 }
 
-form button:hover {
-    background-color: #566981;
-    color: #cbdad5;
+textarea {
+    width: 100%;
+    height: 15vh;
+    resize: vertical;
+    padding: 0.25em 0.5em;
+    border: 1px solid var(--gray);
+    margin-bottom: 3vh;
+}
+
+button.button {
+    background-color: white;
+    margin: 5vh 0;
+    width: 30%;
+    padding: 1em 2em;
 }
 
 form a {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #a0a0a0;
     font-size: small;
-    color: #89a7b1;
-    transition-duration: 0.25s;
+    transition: 0.5s;
 }
 
 form a:hover {
-    color: #cbdad5;
+    color: var(--black);
+    text-decoration: underline;
 }
-
-/* Login */
 
 form.login {
-    max-width: 50%;
-    margin: auto;
-    padding: 0 0 32px 0;
-    line-height: 48px;
-}
-
-/* Tela home */
-.titulo1 {
-    margin: 0 0 10px 43px;
-}
-.texto1{
-    text-align: justify;
-    margin: 0 1% 0 1%;
-    }
-.containerhome h1{
-    margin: 0 1% 0 1%;
-    padding-bottom: 1%;
-    }
-.containerhome img{
-    margin: 0 1% 0 1%;
-}
-
-/*Estilização Página Contato*/
-.input-nome {
-    width:30%;
-}
-
-.input-email {
-    width:30%;
-}
-
-.input-tel {
-    width:5.5%
-}
-
-.msg {
-    resize: none;
-  }
-
-.enviar-button {
-    border: 2px solid #89a7b1;
-    background-color: #cbdad5;
-    border-radius: 4px;
-    padding: 8px 32px 8px 32px;
-    width: 10%;
-    margin-top: 5px;
-    font-size: medium;
-    font-weight: bold;
-    color: #333333;
-    box-shadow: 4px 4px #333333;
-    cursor: pointer;
-    transition-duration: 0.25s;
-}
-
-
-/*Inicio responsividade*/
-
-@media (max-width:425px) and (orientation:portrait) {
-
-    /* Login */
-    form.login {
-        max-width: 85%;
-    }
-    /* Barra de navegação */
-        nav ul {
-            display: grid
-        }
-
-    /* Cabeçalho */
-    header div.hotelista div.logo {
-        max-width: 10% !important;
-    }
-
-    header div.hotelista div.slogan {
-        font-size: small;
-        display: inline-block;
-    }
-
-    header div.hotelista {
-        margin: 16px 0 16px 0;
-    }
-
-    header ul.navegacao li a {
-        padding: 12px;
-        font-size: small;
-    }
-
-    header ul.options li {
-        font-size: small;
-    }
-
-    header ul.options li a {
-        padding: 8px;
-    }
-
-    header ul.options li span {
-        padding: 8px;
-    }
-
-    /* Rodapé */
-    footer div.copyright p {
-        font-size: smaller;
-        padding-bottom: 16px;
-        line-height: 16px;
-    }
-
-    footer div.copyright p img {
-        max-height: 7.5em;
-    }
-  
-    /* Página home */
-    .img01{
-        max-width: 100%;
-    }
-    .img02 {
-            max-width: 100%;
-    }
-    
-  .container01 {
-    display:block;
-  }
-  .titulo1{
-    margin: 0 0 10px 43px;
-  }
-  /*Página Acomodações*/
-  .container01{
-    display: block;
-    margin: 0;
-    align-items: center;
-  }
-  .destak h2{
     text-align: center;
-  }
-  .destak img{
-    height: 20vh;
-    width: 80vw;
-    float: left;
-  }
-  .destak p{
-    width: 100%;
-  }
+    align-items: center;
+}
 
-    /* Contato*/
-    .h2-contato {
+.white {
+    color: white;
+}
+
+.black {
+    color: var(--black);
+}
+
+.hero {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    border-bottom: 4px solid var(--black);
+    z-index: -1;
+}
+
+.hero-titulo {
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-titulo-background {
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-sobre {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    right: 10%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    font-size: large;
+}
+
+.hero-opcoes {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: large;
+    width: 80%;
+    color: white;
+
+}
+
+.hero-opcoes div {
+    padding: 2em;
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* HOME */
+.inicio-home {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+.inicio-home img {
+    width: 100%;
+    border-bottom: 4px solid var(--black);
+}
+
+.acomodacoes-home-wrap {
+    margin-top: 5em;
+    text-align: center;
+}
+
+.titulo-home2 {
+    margin: 0;
+}
+
+.galeria-home {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+
+.galeria-home img {
+    max-width: 33.33333333333%;
+}
+
+.button-home {
+    max-width: 30%;
+}
+
+/* QUARTOS */
+.quartos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5em;
+}
+
+.quartos h1 {
+    margin-bottom: 0;
+    font-size: 1.75em;
+}
+
+.quarto {
+    padding: 0.5em 0 0 0;
+    margin: 0 1%;
+    margin-bottom: 2em;
+}
+
+.quarto-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.quarto-img-wrap {
+    max-width: 30%;
+}
+
+.quarto-img-wrap img {
+    max-width: 100%;
+    transition: 0.25s;
+}
+
+.quarto-img-info-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 2em 0;
+    margin: 0;
+    color: white;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    opacity: 0;
+}
+
+.quarto-wrap:hover .quarto-img-info-wrap {
+    opacity: 1;
+}
+
+.quarto-wrap:hover img {
+    filter: brightness(30%);
+}
+
+.quarto-img-info {
+    text-align: justify;
+    width: 50%;
+}
+
+.quarto-img-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.quarto-destaque {
+    display: flex;
+    margin: 0;
+    margin-bottom: 25vh;
+}
+
+.quarto-destaque img {
+    width: 50%;
+    height: auto;
+}
+
+.quarto-destaque-info {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+.quarto-destaque-info h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.quarto-destaque-info p {
+    margin: 0;
+    text-align: justify;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width:600px) and (orientation:portrait) {
+
+    /* PADRÕES */
+    .imagem-retrato {
+        display: block;
+    }
+
+    .imagem-paisagem {
+        display: none;
+    }
+
+    /* CABEÇALHO */
+    header {
+        position: static;
+    }
+
+    .navbar-wrap,
+    .navbar-menu {
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    .navbar-link {
+        margin: 0.25em 0 0.25em 0;
         text-align: center;
     }
-    .input-nome {
-        width: 80%;
-      }
-    .input-email {
-        width: 80%;
-      } 
-    .input-tel {
-        width: 30%;
-      }     
 
-    .msg {
-        resize: none;
-        width: 80%;
-      }
-    .enviar-button {
-        width: 35%;
-    }       
+    .navbar-dropdown-wrap {
+        margin: 1em 0 1em 0;
+        text-align: center;
+    }
+
+    .navbar-dropdown {
+        left: -25%;
+    }
+
+    /* HOME */
+    .hero-titulo {
+        padding-top: 1em;
+        padding-bottom: 5em;
+    }
+
+    .galeria-home img {
+        max-width: 100%;
+    }
+
+    /* QUARTOS */
 }

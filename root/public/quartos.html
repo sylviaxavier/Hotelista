@@ -1,225 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<hr>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotelista</title>
-<link rel="stylesheet" href="../src/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelista - Acomodações</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-
     <header>
         <nav>
-            <div class="hotelista">
-                <div class="logo">
-                    <a href="../index.html" class="logo">
-                        <img src="../images/Hotelista_sem_fundo.png" alt="Hotelista" width="100" />
+            <div class="navbar">
+                <div class="navbar-wrap">
+                    <a class="navbar-logo" href="../index.html">
+                        <img class="navbar-logo" src="../images/logotipo/Hotelista_sem_fundo.png"
+                            alt="Logotipo Hotelista - Página home">
                     </a>
-                </div>
-                <div class="slogan">
-                    Quando estilo combina com conforto
+                    <div class="navbar-menu-wrap">
+                        <div class="navbar-menu">
+                            <a class="navbar-link" href="../index.html">Home</a>
+                            <a class="navbar-link" href="../public/reservas.html">Reserve Já</a>
+                            <a class="navbar-link active" href="../public/quartos.html">Nossas Acomodações</a>
+                            <a class="navbar-link" href="../public/contato.html">Contato</a>
+                            <a class="navbar-link" href="../public/sobre.html">Sobre</a>
+                            <i class="navbar-dropdown-wrap">
+                                <p class="navbar-dropdown-button">&#xe7fd;</p>
+                                <div class="navbar-dropdown">
+                                    <p class="navbar-user">Olá, usuário!</p>
+                                    <a class="navbar-link" href="../public/login.html">Login</a>
+                                    <a class="navbar-link" href="#cadastro">Cadastre-se</a>
+                                </div>
+                            </i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <ul class="navegacao">
-                <li>
-                    <a href="../index.html">Home</a>
-                </li>
-                <li>
-                    <a href="reservas.html">Reservas</a>
-                </li>
-                <li>
-                    <a href="quartos.html">Acomodações</a>
-                </li>
-                <li>
-                    <a href="contato.html">Contato</a>
-                </li>
-                <li>
-                    <a href="sobre.html">Sobre</a>
-                </li>
-            </ul>
-            <ul class="options">
-                <li>
-                    <span>Olá, usuário XXX</span>
-                </li>
-                <li>
-                    <a href="">Sair</a>
-                </li>
-                <li class="cadastrese">
-                    <a href="">Cadastre-se</a>
-                </li>
-            </ul>
         </nav>
     </header>
+
     <main>
+        <section>
+            <h1>Nossas acomodações</h1>
+            <div class="quartos">
+                <h1>Quarto Simples</h1>
+                <div class="quarto">
+                    <div class="quarto-wrap">
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/simples.png" alt="Quarto Simples 1">
 
-        <div class="containers">
-        
-            <h2>Nossas Acomodações</h2>
-            
-            <div class="container01">
-                
-                <section>
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/quartoLuxo.jpg" alt="quartoImg">
-                          </div>
-                          <div class="details">
-                              <h4>Suíte Master<br><span>Quarto</span></h4>
-                          </div>
+                        </div>
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/simples2.png" alt="Quarto Simples 2">
+                        </div>
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/banheiro.png" alt="Quarto Simples 3">
+                        </div>
+                        <div class="quarto-img-info-wrap">
+                            <div class="quarto-img-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Necessitatibus nisi vitae soluta eius voluptate tenetur vel ex, sint distinctio. Eos
+                                sapiente rerum molestias, in asperiores voluptatibus minima quidem provident dolor? Quae
+                                id laborum harum nam ab culpa officia magnam alias modi architecto? Libero, cupiditate
+                                alias reiciendis vel dolor architecto possimus.</div>
+                            <div class="quarto-img-list">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/leisure-beautiful-health-garden-landscape.jpg" alt="AreaImg">
-                          </div>
-                          <div class="details">
-                              <h4>Suíte Master<br><span>Area externa</span></h4>
-                          </div>
+                </div>
+                <h1>Quarto Médio</h1>
+                <div class="quarto">
+                    <div class="quarto-wrap">
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/medio.png" alt="Quarto Médio 1">
+
+                        </div>
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/medio2.png" alt="Quarto Médio 2">
+                        </div>
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/medio3.png" alt="Quarto Médio 3">
+                        </div>
+                        <div class="quarto-img-info-wrap">
+                            <div class="quarto-img-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et,
+                                vitae. Aperiam quos dolorem error. Quibusdam exercitationem nihil alias facere aut minus
+                                sit quam consequatur possimus dignissimos! Architecto id voluptatem amet maxime cum
+                                deleniti recusandae, quos eius deserunt aut soluta inventore a facilis tempore
+                                dignissimos similique doloremque expedita reiciendis provident magnam.</div>
+                            <div class="quarto-img-list">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/8244739_1749.jpg" alt="suiteImg">
-                          </div>
-                          <div class="details">
-                              <h4>Suíte Master<br><span>Banheiro</span></h4>
-                          </div>
+                </div>
+                <h1>Quarto de Luxo</h1>
+                <div class="quarto">
+                    <div class="quarto-wrap">
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/luxo.png" alt="Quarto de Luxo 1">
+
+                        </div>
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/luxo2.png" alt="Quarto de Luxo 2">
+                        </div>
+                        <div class="quarto-img-wrap">
+                            <img src="../images/quartos/luxo3.png" alt="Quarto de Luxo 3">
+                        </div>
+                        <div class="quarto-img-info-wrap">
+                            <div class="quarto-img-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
+                                dicta pariatur totam incidunt eos libero deserunt earum possimus autem aliquid, quam
+                                enim quo voluptate consequuntur error dolores vero voluptates perferendis! Cupiditate
+                                consequatur, magnam quae vero nobis sed iure! Porro ipsam consequuntur recusandae non
+                                quo error tempore, optio ipsum iste incidunt!</div>
+                            <div class="quarto-img-list">
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/quartoDuplo.jpg" alt="quartoImg">
-                          </div>
-                          <div class="details">
-                              <h4>Quarto Duplo<br><span>Quarto</span></h4>
-                          </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/hotel-4364099_1280.jpg" alt="quartoImg">
-                          </div>
-                          <div class="details">
-                              <h4>Quarto Duplo<br><span>Quarto com Varanda</span></h4>
-                          </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/double-sink-1416377_1920.jpg" alt="banheiroImg">
-                          </div>
-                          <div class="details">
-                              <h4>Quarto Duplo<br><span>Banheiro</span></h4>
-                          </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/quartoPadrao.jpg" alt="quartoImg">
-                          </div>
-                          <div class="details">
-                              <h4>Quarto Simples<br><span>Quarto</span></h4>
-                          </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/hotel-1330834_1920.jpg" alt="quartoImg">
-                          </div>
-                          <div class="details">
-                              <h4>Quarto Simples<br><span>Quarto e escritório</span></h4>
-                          </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                <section>
-    
-                    <div class="box">
-                        <div class="card">
-                          <div class="imgBx">
-                              <img src="../images/hotel-1330854_1280.jpg" alt="banheiroImg">
-                          </div>
-                          <div class="details">
-                              <h4>Quarto Simples<br><span>Banheiro</span></h4>
-                          </div>
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
-        </div>    
-        <section class="destak">
-            <h2>Produto em Destaque</h2>
-            <img class="right" src="../images/leisure-beautiful-health-garden-landscape.jpg" alt="" width="300" >
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eum molestiae aliquam eius minima minus fuga ab, neque blanditiis vel quod, quisquam ea officia voluptate consequuntur at, reprehenderit tempore quibusdam provident rem nulla distinctio nobis totam? Vel, at eum. Laudantium ipsam repudiandae voluptates itaque ullam et odit autem, architecto temporibus.</p>
+        </section>
 
+        <section>
+            <h1>Quarto em Destaque</h1>
+            <div class="quarto-destaque">
+                <img src="../images/quartos/luxo.png" alt="Quarto em destaque: Quarto de Luxo">
+                <div class="quarto-destaque-info">
+                    <h1>Quarto de Luxo</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, exercitationem, quod
+                        asperiores aspernatur maiores a placeat vitae fugiat iste architecto quasi. Accusamus provident
+                        similique quam temporibus, veniam dolorum beatae molestias nobis mollitia magnam est tempore
+                        debitis quae, vitae qui fugiat obcaecati! Explicabo quis totam doloremque voluptates. Expedita
+                        accusamus quo quaerat natus distinctio? Veritatis quis aperiam dolore iste magnam corrupti
+                        ducimus quia distinctio, quisquam officiis autem repudiandae pariatur. Laborum quasi nam modi
+                        nulla voluptatum esse accusamus.</p>
+                </div>
+            </div>
         </section>
     </main>
-    <hr />
+
     <footer>
-        <p>E-mail para contato: atendimento@hotelista.com.br</p>
-        <p>Nosso Endereço: Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
+        <p>atendimento@hotelista.com.br</p>
+        <p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
         <p>Telefone para contato: +55 11 3232-3232</p>
         <nav>
-            <ul>
-                <li>
-                    <a href="reservas.html">Reservas</a> <br />
-                    <a href="quartos.html">Acomodações</a> <br />
-                    <a href="contato.html">Contato</a> <br />
-                </li>
-                <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
-            </ul>
+            <a class="active" href="../index.html">Home</a><br>
+            <a href="../public/reservas.html">Reserve Já</a><br>
+            <a href="../public/quartos.html">Nossas Acomodações</a><br>
+            <a href="../public/contato.html">Contato</a><br>
+            <a href="../public/sobre.html">Sobre</a>
         </nav>
         <div class="copyright">
-            <p class="copyright">
-                <img src="../images/Coderize_com_fundo.png" alt="Coderize" width="100">
-                Coderize &copy;2022 - Todos os direitos reservados
-            </p>
+            <img src="../images/logotipo/Coderize_sem_fundo.png" alt="Coderize" width="100">
+            <p>Coderize &copy;2022 - Todos os direitos reservados</p>
         </div>
     </footer>
 </body>
-    
+
 </html>

@@ -5,75 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelista - Login</title>
     <link rel="stylesheet" href="../src/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Hotelista</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="hotelista">
-                <div class="logo">
-                    <a href="../index.html" class="logo">
-                        <img src="../images/Hotelista_sem_fundo.png" alt="Hotelista" width="100" />
+            <div class="navbar">
+                <div class="navbar-wrap">
+                    <a class="navbar-logo" href="../index.html">
+                        <img class="navbar-logo" src="../images/logotipo/Hotelista_sem_fundo.png"
+                            alt="Logotipo Hotelista - Página home">
                     </a>
-                </div>
-                <div class="slogan">
-                    <p>Quando estilo combina com conforto</p>
+                    <div class="navbar-menu-wrap">
+                        <div class="navbar-menu">
+                            <a class="navbar-link" href="../index.html">Home</a>
+                            <a class="navbar-link" href="../public/reservas.html">Reserve Já</a>
+                            <a class="navbar-link" href="../public/quartos.html">Nossas Acomodações</a>
+                            <a class="navbar-link" href="../public/contato.html">Contato</a>
+                            <a class="navbar-link" href="../public/sobre.html">Sobre</a>
+                            <i class="navbar-dropdown-wrap">
+                                <p class="navbar-dropdown-button">&#xe7fd;</p>
+                                <div class="navbar-dropdown">
+                                    <p class="navbar-user">Olá, usuário!</p>
+                                    <a class="navbar-link active" href="../public/login.html">Login</a>
+                                    <a class="navbar-link" href="#cadastro">Cadastre-se</a>
+                                </div>
+                            </i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <ul class="navegacao">
-                <li>
-                    <a href="../index.html">Home</a>
-                </li>
-                <li>
-                    <a href="../public/reservas.html">Reservas</a>
-                </li>
-                <li>
-                    <a href="../public/quartos.html">Acomodações</a>
-                </li>
-                <li>
-                    <a href="../public/contato.html">Contato</a>
-                </li>
-                <li>
-                    <a href="../public/sobre.html">Sobre</a>
-                </li>
-            </ul>
-            <ul class="options">
-                <li>
-                    <span>Olá, usuário XXX</span>
-                </li>
-                <li>
-                    <a href="">Sair</a>
-                </li>
-                <li class="cadastrese">
-                    <a href="">Cadastre-se</a>
-                </li>
-            </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <article>
-                <br>
-                <form class="login">
-                    <h2>Faça o seu Login:</h2>
-                    <legend></legend>
-                    <input placeholder="Email" type="email" id="email" name="email" autocomplete="off" required>
-                    <br>
-                    <input placeholder="Senha" type="password" id="password" name="password" required>
-                    <br>
-                    <button type="submit">
-                        Login
-                    </button>
-                    <br>
-                    <a href="">Esqueci minha senha</a>
-                </form>
-                <br>
-            </article>
+            <form class="login" action="">
+                <h1>Faça seu login!</h1>
+
+                <label for="email">E-mail:</label>
+                <input name="email" id="email" placeholder="Seu e-mail" type="email" required>
+
+                <label for="senha">Senha:</label>
+                <input name="senha" id="senha" placeholder="Sua senha" type="password" required>
+
+                <button class="button" type="submit" value="Enviar">
+                    <div class="button-text">Enviar</div>
+                    <p class="button-arrow">→</p>
+                </button>
+
+                <a href="#EsqueceuSenha">Esqueceu sua senha?</a>
+            </form>
         </section>
     </main>
 
@@ -82,23 +67,15 @@
         <p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
         <p>Telefone para contato: +55 11 3232-3232</p>
         <nav>
-            <ul>
-                <li class="footBar">
-                    <a href="reservas.html">Reservas</a>
-                    <a href="quartos.html">Acomodações</a>
-                    <a href="contato.html">Contato</a>
-                </li>
-                <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
-            </ul>
+            <a class="active" href="../index.html">Home</a><br>
+            <a href="../public/reservas.html">Reserve Já</a><br>
+            <a href="../public/quartos.html">Nossas Acomodações</a><br>
+            <a href="../public/contato.html">Contato</a><br>
+            <a href="../public/sobre.html">Sobre</a>
         </nav>
         <div class="copyright">
-            <p class="copyright">
-                <img src="../images/Coderize_com_fundo.png" alt="Coderize" width="100">
-            <p class="logoCode">Coderize &copy;2022 - Todos os direitos reservados</p>
-            </p>
+            <img src="../images/logotipo/Coderize_sem_fundo.png" alt="Coderize" width="100">
+            <p>Coderize &copy;2022 - Todos os direitos reservados</p>
         </div>
     </footer>
 </body>
