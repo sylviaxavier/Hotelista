@@ -8,13 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Promoção</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/root/src/css/style.css">
     
 </head>
 <body>
-    <div class="navup-singlepage">
-        <a href="#navBar"><i class="fa fa-arrow-circle-o-up fa-2x" aria-hidden="true"></i></a>
-    </div>
     <header id="navBar">
         <article class="article-singlepage" id="">
         <div class="container">
@@ -25,10 +21,10 @@
     </header>
     <main>
         <section class="oferta">
-        <article class="article-singlepage" id="">
-            <h2 class="h2-oferta">Detalhes da nossa oferta:</h2>
-                <iframe class="iframe-singlepage" src="https://www.youtube.com/embed/OnoxheRX-zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </article>
+            <article class="article-singlepage" id="oferta">
+                <h2 class="h2-oferta">Detalhes da nossa oferta:</h2>
+                    <iframe class="iframe-singlepage" src="https://www.youtube.com/embed/OnoxheRX-zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </article>
         </section>
         <section class="beneficios">
                 <article class="article-singlepage" id="benef1">
@@ -84,46 +80,41 @@
                 <br/>
                 <hr/>
         </section>
-        <section class="contatosRedes">
+        <section class="contatosRedes" id="CeR">
             <h1>Contatos</h1>
 
         </section>
 
     </main>
-    <footer>
-        <h4>Formulário de Interesse:</h4>
-        <form action="" class="form_footer">
-            <div class="input-container">
-                <i class="fas fa-user"></i>
-                <input class="input-nome" type="name" placeholder="nome" name="name" required>
-            </div>
-            <div class="input-container">
-                <i class="fas fa-envelope"></i>
-                <input class="input-email" type="email" placeholder="e-mail" name="email" required>
-            </div>
-            <div class="input-container">
-                <i class="fas fa-phone"></i>
-                <input class="input-tel" type="tel" maxlength="15" placeholder="(xx) xxxxx-xxxx" name="name" required>
-            </div>
-        </form>
-        <div>
-            <h4>Links:</h4>
+    <footer class="footer_singlePage">
+        <div class="links__footer">
             <ul>
-                <li><a href="#">Oferta</a> </li>
-                <li><a href="#">Beneficios</a> </li>
-                <li><a href="#">Contatos e Redes Sociais</a></li>
-            </ul>
-            <br />
-            <br />
-            <ul>
-                <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
+                <h4>Links</h4>
+                <li><a href="#oferta">Oferta</a> </li>
+                <li><a href="#benef1">Beneficios</a> </li>
+                <li><a href="#CeR">Contatos e Redes Sociais</a></li>
             </ul>
         <div>
+        <div class="form__footer">
+            <h4>Formulário de Interesse</h4>
+            <form action="" class="form_footer_singlePage">
+                <div class="input-containerfooter_singlePage">
+                    <i class="fas fa-user"></i>
+                    <input class="input-nome" type="name" placeholder="nome" name="name" required>
+                </div>
+                <div class="input-containerfooter_singlePage">
+                    <i class="fas fa-envelope"></i>
+                    <input class="input-email" type="email" placeholder="e-mail" name="email" required>
+                </div>
+                <div class="input-containerfooter_singlePage">
+                    <i class="fas fa-phone"></i>
+                    <input class="input-tel" type="tel" maxlength="15" placeholder="(xx) xxxxx-xxxx" name="name" required>
+                </div>
+                <button>Enviar</button>
+            </form>
+        </div>
         <div class="copyright">
-            <p class="copyright">
+            <p>
                 <img src="/root/images/Coderize_com_fundo.png" alt="Coderize" width="50">
                 Coderize &copy;2022 - Todos os direitos reservados
             </p>
