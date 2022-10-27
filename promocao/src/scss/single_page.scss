@@ -1,15 +1,117 @@
 @use '_variaveis' as v;
 @use '_mixins' as mx;
-
-footer{
+/*parte do Allan*/
+body{
+    font-family: v.$fonte;
+}
+.article-singlepage{
+    min-height: v.$altura;
+    width: v.$largura;
+    padding: v.$p2;
+    margin-top: v.$m3;
+}
+div.navup-singlepage{
+    color: v.$cor1;
+    cursor: pointer;
+    width: v.$width1;
+    height: v.$height1;
+    position: v.$absolute;
+    top: v.$top1;
+    left: v.$left1;
+}
+.container{
+    position: v.$relative;
+    height: v.$altura;
+    width: v.$largura;
+    margin: v.$m4;
+}
+.header-image{
+    position: v.$absolute;
+    opacity: v.$opacidade;
+    height: v.$altura;
+    width: v.$largura;
+    margin: v.$m5;
+    margin-top: v.$m6;
+}
+.header-texto{
+    position: v.$absolute;
+    top: v.$top2;
+    left: v.$left2;
+    font-size: v.$f-Size1;
+    font-weight: v.$negrito;
+}
+.h2-oferta{
+    position: v.$relative;
+    text-align: v.$centro;
+    font-size: v.$f-Size2;
+    margin-top: v.$m4;
+    font-weight: v.$negrito;
+}
+.h2-singlepage{
+    position: v.$absolute;
+    text-align: v.$centro;
+    font-size: v.$f-Size3;
+    top: v.$top3;
+    left: v.$left3;
+    font-weight: v.$negrito;
+}
+.iframe-singlepage{
+    height: v.$height2;
+    width: v.$width2;
+    margin: v.$m7;
+    margin-top: v.$m8;
+    margin-right: v.$mb;
+}
+.body-image{
+    position: v.$absolute;
+    opacity: v.$opacidade;
+    height: v.$altura;
+    width: v.$largura;
+    padding-left: v.$m5;
+    margin-top: v.$m9;
+}
+.p-singlepage{
+    position: v.$absolute;
+    text-align: v.$justificado;
+    font-size: v.$f-Size4;
+    top: v.$top4;
+    left: v.$left4;
+    font-weight: v.$negrito;
+}
+/*FOOTER*/
+.footer_singlePage{
     background-color: v.$corFundo;
+    font-family: v.$fonte;
+    height: v.$altura;
 }
-h4{
-    margin-left: v.$m1;
-}
-ul{
+.links__footer ul{
     @include mx.marcador;
 }
-a{
-    @include mx.link;
+.links__footer ul li{
+    @include mx.li;
+}
+.links__footer ul li a{
+    @include mx.links;
+}
+.form__footer{
+    margin-top: v.$margin;
+    text-align: v.$centro;
+}
+.form_footer_singlePage input{
+    @include mx.input;
+}
+.form_footer_singlePage button{
+    @include mx.button;
+}
+.input-nome, .input-email, .input-tel{
+    width: v.$inputWidth;
+}
+.copyright p{
+    text-align: v.$centro;
+}
+.copyright{
+    @include mx.copyright;
+}
+.copyright p img{
+    @include mx.logoFooter;
 }

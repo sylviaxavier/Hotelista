@@ -1,18 +1,171 @@
-footer {
-  background-color: #6f737e;
+/*parte do Allan*/
+body {
+  font-family: "Poppins";
 }
 
-h4 {
-  margin-left: 1.2rem;
+.article-singlepage {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 40px 0 0 0;
+  margin-top: 10px;
 }
 
-ul {
+div.navup-singlepage {
+  color: black;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: -40px;
+}
+
+.header-image {
+  position: absolute;
+  opacity: 0.6;
+  height: 100vh;
+  width: 100vw;
+  margin: 25px;
+  margin-top: -25px;
+}
+
+.header-texto {
+  position: absolute;
+  top: 350px;
+  left: 550px;
+  font-size: 82px;
+  font-weight: bold;
+}
+
+.h2-oferta {
+  position: relative;
+  text-align: center;
+  font-size: 50px;
+  margin-top: -40px;
+  font-weight: bold;
+}
+
+.h2-singlepage {
+  position: absolute;
+  text-align: center;
+  font-size: 70px;
+  top: 235px;
+  left: 550px;
+  font-weight: bold;
+}
+
+.iframe-singlepage {
+  height: 80vh;
+  width: 95vw;
+  margin: 35px;
+  margin-top: -15px;
+  margin-right: 1.3rem;
+}
+
+.body-image {
+  position: absolute;
+  opacity: 0.6;
+  height: 100vh;
+  width: 100vw;
+  padding-left: 25px;
+  margin-top: -50px;
+}
+
+.p-singlepage {
+  position: absolute;
+  text-align: justify;
+  font-size: 16px;
+  top: 370px;
+  left: 80px;
+  font-weight: bold;
+}
+
+/*FOOTER*/
+.footer_singlePage {
+  background-color: #c1c6d7;
+  font-family: "Poppins";
+  height: 100vh;
+}
+
+.links__footer ul {
   list-style: none;
+  text-align: center;
+  padding-top: 3%;
 }
 
-a {
+.links__footer ul li {
   text-decoration: none;
   color: #fff;
+  display: inline-block;
+  justify-content: space-around;
+}
+
+.links__footer ul li a {
+  display: block;
+  padding: 8px 16px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.form__footer {
+  margin-top: 8%;
+  text-align: center;
+}
+
+.form_footer_singlePage input {
+  border-bottom: 2px solid #89a7b1;
+  background-color: #fff;
+  border-radius: 4px 4px 0 0;
+  margin: 0.5%;
+  width: 60%;
+  height: 28px;
+  padding: 0.5rem;
+  box-shadow: 4px 4px #333333;
+}
+
+.form_footer_singlePage button {
+  border: 2px solid #89a7b1;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 8px 32px 8px 32px;
+  width: 15%;
+  margin-top: 32px;
+  font-size: small;
+  font-weight: bold;
+  color: #333333;
+  box-shadow: 4px 4px #333333;
+  cursor: pointer;
+}
+
+.input-nome, .input-email, .input-tel {
+  width: 30%;
+}
+
+.copyright p {
+  text-align: center;
+}
+
+.copyright {
+  font-size: large;
+  background-color: #34344e;
+  color: #cbdad5;
+  margin-top: 15%;
+  border-top: 4px #cbdad5 solid;
+}
+
+.copyright p img {
+  border-radius: 50%;
+  max-height: 5em;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style_promo.css.map */
