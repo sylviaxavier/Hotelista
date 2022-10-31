@@ -657,4 +657,15 @@ form.login {
         font-weight: bold
 
     }
+    .footer_singlepage{
+        background-color: #89a7b1;
+    }
+    .form_footer{
+        display:inline-table
+
+    }
+    .input-container{
+               
+        
+    }
 
