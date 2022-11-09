@@ -1,10 +1,9 @@
 let bgImages = [
-    './images/produtos/noodles-7390775_1920.jpg',
-    './images/produtos/beef-g66eb2a540_1920.jpg',
-    './images/produtos/rice-noodles-855077_1920.jpg',
-    './images/produtos/spare-ribs-7410906_1920.jpg',
-    './images/produtos/sushi-354628_1920.jpg',
-    './images/produtos/salad-374173_1920.jpg'
+    '/root/images/banner/area_livre.jpg',
+    '/root/images/banner/galeria_arquitetura.jpg',
+    '/root/images/banner/parque_aquatico.jpg',
+    '/root/images/banner/quadra_tenis.jpg',
+    '/root/images/banner/recreacao.jpg'
 ]
 
 const sorteio = parseInt(Math.random()* bgImages.length)

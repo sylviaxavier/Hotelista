@@ -11,19 +11,6 @@
 	--extra-grande: xx-large;
 	--fonte-icone-perfil: 36px;
 }
-.headBanner{
-	width: 100vw;
-	height: 30vh;
-	background-image: url(/images/produtos/noodles-7390775_1920.jpg);
-	background-size: cover;
-}
-.banner-section{
-	height: 40vh;
-}
-.banner-titulo{
-	padding-top: 20%;
-}
-
 * {
 	font-family: "Poppins";
 }
@@ -559,6 +546,19 @@ form.login {
 
 .button-home {
 	max-width: 30%;
+}
+/*BANNER*/
+.headBanner{
+	width: 100vw;
+	height: 30vh;
+	background-image: url(/root/images/banner/area_livre.jpg);
+	background-size: cover;
+}
+.banner-section{
+	height: 30vh;
+}
+.banner-titulo{
+	padding-top: 15%;
 }
 
 /* QUARTOS */
