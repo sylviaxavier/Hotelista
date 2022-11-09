@@ -1,179 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<hr>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hotelista</title>
-<link rel="stylesheet" href="/root/src/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hotelista</title>
+	<link rel="stylesheet" href="../src/css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
+	<header>
+		<nav>
+			<div class="navbar">
+				<div class="navbar-wrap">
+					<a class="navbar-logo" href="../index.html">
+						<img class="navbar-logo" src="../images/logotipo/Hotelista_sem_fundo.png"
+							alt="Logotipo Hotelista - Página home">
+					</a>
+					<div class="navbar-menu-wrap">
+						<div class="navbar-menu">
+							<a class="navbar-link" href="../index.html">Home</a>
+							<a class="navbar-link active" href="reservas.html">Reserve Já</a>
+							<a class="navbar-link" href="quartos.html">Nossas Acomodações</a>
+							<a class="navbar-link" href="contato.html">Contato</a>
+							<a class="navbar-link" href="sobre.html">Sobre</a>
+							<i class="navbar-dropdown-wrap">
+								<p class="navbar-dropdown-button">&#xe853;</p>
+								<div class="navbar-dropdown">
+									<p class="navbar-user">Olá, usuário!</p>
+									<a class="navbar-link" href="login.html">Login</a>
+									<a class="navbar-link" href="#cadastro">Cadastre-se</a>
+								</div>
+							</i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
 
-    <header>
-        <nav>
-            <div class="hotelista">
-                <div class="logo">
-                    <a href="../index.html" class="logo">
-                        <img src="/root/images/Hotelista_sem_fundo.png" alt="Hotelista" width="100" />
-                    </a>
-                </div>
-                <div class="slogan">
-                    Quando estilo combina com conforto
-                </div>
-            </div>
-            <ul class="navegacao">
-                <li>
-                    <a href="../index.html">Login</a>
-                </li>
-                <li>
-                    <a href="../public/home_public.html">Home</a>
-                </li>
-                <li>
-                    <a href="../public/quartos.html">Acomodações</a>
-                </li>
-                <li>
-                    <a href="../public/contato.html">Contato</a>
-                </li>
-                <li>
-                    <a href="../public/sobre.html">Sobre</a>
-                </li>
-            </ul>
-            <ul class="options">
-                <li>
-                    <span>Olá, usuário XXX</span>
-                </li>
-                <li>
-                    <a href="">Sair</a>
-                </li>
-                <li class="cadastrese">
-                    <a href="">Cadastre-se</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="containers">
-        <h1>Reservas</h1>
-        
-        <div class="container01">
-            
-            <div class="campo">
-                <label><strong>Qual acomodação você tem interesse em reservar?</strong></label>
-                <label>
-                    <article id="Quarto1">
-                    <h1 style="text-align:center;">Acomodação - Suíte Superior</h1>
-                    <img src="../images/quartoLuxo.jpg" alt="quarto 1" width="300">
-                    <p style="text-align:justify;">Descrição do Quarto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis consequuntur commodi
-                        aliquid, similique molestias esse repellat a quibusdam! Repellendus iure asperiores laborum ex temporibus
-                        tenetur non minima error debitis inventore. Saepe excepturi sed ullam ratione, molestiae quasi autem iure unde
-                        consectetur corrupti facilis animi dicta vel placeat suscipit nulla soluta voluptate tempore doloribus quas
-                        reprehenderit. Culpa reprehenderit, eaque soluta asperiores cum neque, labore saepe accusamus fugit tempore
-                        libero eligendi maxime odio architecto? Dolore voluptatem atque dolor</p>
-                        <p>Valor: R$ 200,00 a diária (por pessoa)<p>
-                    </article>
-                    <input type="radio" name="devweb" value="frontend" checked> Suíte Superior
-                </label>
-                <label> 
-                    <article id="Quarto2">
-                    <h1 style="text-align: center;">Acomodação - Quarto Duplo</h1>
-                    <img src="../images/quartoDuplo.jpg" alt="quarto 2" width="300">
-                    <p style="text-align:justify;">Descrição do Quarto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis consequuntur commodi
-                        aliquid, similique molestias esse repellat a quibusdam! Repellendus iure asperiores laborum ex temporibus
-                        tenetur non minima error debitis inventore. Saepe excepturi sed ullam ratione, molestiae quasi autem iure unde
-                        consectetur corrupti facilis animi dicta vel placeat suscipit nulla soluta voluptate tempore doloribus quas
-                        reprehenderit. Culpa reprehenderit, eaque soluta asperiores cum neque, labore saepe accusamus fugit tempore
-                        libero eligendi maxime odio architecto? Dolore voluptatem atque dolor</p>
-                    <p>Valor: R$ 150,00 a diária (por pessoa)<p>
-                    </article>
-                    <input type="radio" name="devweb" value="backend"> Quarto Duplo
-                </label>
-                <label> 
-                    <article id="Quarto3">
-                    <h1 style="text-align: center;">Acomodação - Suíte Econômica</h1>
-                    <img src="../images/hotel-1330834_1920.jpg" alt="quarto 3" width="300">
-                    <p style="text-align:justify;">Descrição do Quarto: Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis consequuntur commodi
-                        aliquid, similique molestias esse repellat a quibusdam! Repellendus iure asperiores laborum ex temporibus
-                        tenetur non minima error debitis inventore. Saepe excepturi sed ullam ratione, molestiae quasi autem iure unde
-                        consectetur corrupti facilis animi dicta vel placeat suscipit nulla soluta voluptate tempore doloribus quas
-                        reprehenderit. Culpa reprehenderit, eaque soluta asperiores cum neque, labore saepe accusamus fugit tempore
-                        libero eligendi maxime odio architecto? Dolore voluptatem atque dolor</p>
-                    <p>Valor: R$ 100,00 a diária (por pessoa)<p>
-                    </article>
-                    <input type="radio" name="devweb" value="fullstack"> Suíte Econômica
-                </label>
-            </div>
-            <div>
+	<main>
+		<h1>Minha Reserva</h1>
+		<section>
+			<form class="form-reservas" id="form-reservas" action="">
+				<div>
+					<label for="checkin">Data de <b>check-in</b></label>
+					<input name="checkin" id="checkin" placeholder="Sua data de check-in" type="date" required>
+				</div>
+				<div>
+					<label for="checkout">Data de <b>check-out</b></label>
+					<input name="checkout" id="checkout" placeholder="Sua data de check-out" type="date" required>
+				</div>
+				<div>
+					<label for="qntdPessoas">Quantidade de pessoas</label>
+					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" required>
+				</div>
+			</form>
+		</section>
+		<section>
+			<div class="reservas-wrap">
+				<div class="reservas-quartos">
+					<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
+						<input name="quarto" id="quarto1" type="radio" required form="form-reservas">
+						<div class="reservas-quarto-wrap-div">
+							<img src="../images/quartos/simples.png" alt="Quarto Simples">
+							<div class="reservas-quarto">
+								<h2>Quarto Simples</h2>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
+									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
+									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
+									consequuntur quas, vero fuga?</p>
+								<span>R$249,99</span>
+							</div>
+						</div>
+					</label>
+					<label class="reservas-quarto-wrap" for="quarto2" form="form-reservas">
+						<input name="quarto" id="quarto2" type="radio" required form="form-reservas">
+						<div class="reservas-quarto-wrap-div">
+							<img src="../images/quartos/medio.png" alt="Quarto Médio">
+							<div class="reservas-quarto">
+								<h2>Quarto Médio</h2>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
+									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
+									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
+									consequuntur quas, vero fuga?</p>
+								<span>R$490,99</span>
+							</div>
+						</div>
+					</label>
+					<label class="reservas-quarto-wrap" for="quarto3" form="form-reservas">
+						<input name="quarto" id="quarto3" type="radio" required form="form-reservas">
+						<div class="reservas-quarto-wrap-div">
+							<img src="../images/quartos/luxo.png" alt="Quarto de Luxo">
+							<div class="reservas-quarto">
+								<h2>Quarto de Luxo</h2>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
+									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
+									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
+									consequuntur quas, vero fuga?</p>
+								<span>R$769,99</span>
+							</div>
+						</div>
+					</label>
+				</div>
+				<div class="reservas-resumo-wrap">
+					<div class="reservas-resumo">
+						<h2>Sua Reserva:</h2>
+						<div class="reservas-resumo-info">
+							<div>
+								<p>Quarto:</p>
+								<p>XXX</p>
+							</div>
+							<div>
+								<p>Check-in:</p>
+								<p>XX/XX/XXXX</p>
+							</div>
+							<div>
+								<p>Check-out:</p>
+								<p>XX/XX/XXXX</p>
+							</div>
+							<div>
+								<p>Pessoas:</p>
+								<p>XX</p>
+							</div>
+						</div>
+						<a href="#Serviços">Adicionar mais serviços</a>
+						<button class="button" type="submit" value="Continuar" form="form-reservas">
+							<div class="button-text">Continuar</div>
+							<p class="button-arrow">→</p>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 
-            <form action="" method="post">
-                    <fieldset>
-                        <legend>Resumo da reserva</legend>
-                        <ul>
-                            <li>
-                                <label for="checkin_date">Apartamento</label>
-                                <input type="name"><br>
-                            </li>
-                            <li>
-                                <label for="checkin_date">Data de check-in</label>
-                                <input type="date"><br>
-                            </li>
-                            <li>
-                                <label for="checkout_date">Data de check-out</label>
-                                <input type="date"><br>
-                            </li>
-                            <li>
-                                <label for="adult_number">Quantidade de adultos</label>
-                                <input type="number"><br>
-                            </li>
-                            <li>
-                                <label for="child_number">Quantidade de crianças</label>
-                                <input type="number">
-                            </li>
-                            <a href="none">Adicionar mais SERVIÇOS</a>
-                            <br />
-                            <br />
-                                <li>
-                                    <button>
-                                        <a href="/root/single_page.html">
-                                            Continuar
-                                        </a>
-                                    </button>
-                                </li>
-                            </form>
-                        </ul>
-                    </fieldset>
-                </form>
-                </div>
-            </section>
-    </main>
-    <hr />
-    <footer>
-        <p>atendimento@hotelista.com.br</p>
-        <p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
-        <p>Telefone para contato: +55 11 3232-3232</p>
-        <nav>
-            <ul>
-                <li class="footBar">
-                    <a href="reservas.html">Home</a> <br />
-                    <a href="quartos.html">Acomodações</a> <br />
-                    <a href="contato.html">Contato</a> <br />
-                </li>
-                <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
-            </ul>
-        </nav>
-        <div class="copyright">
-            <p class="copyright">
-                <img src="/root/images/Coderize_com_fundo.png" alt="Coderize" width="100">
-                <p class="logoCode">Coderize &copy;2022 - Todos os direitos reservados</p>
-            </p>
-        </div>
-    </footer>
-    </body>
-    
-    </html>
+	<footer>
+		<p>atendimento@hotelista.com.br</p>
+		<p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
+		<p>Telefone para contato: +55 11 3232-3232</p>
+		<div class="midias-sociais">
+			<a href="#Facebook" class="fa fa-facebook"></a>
+			<a href="#Instagram" class="fa fa-instagram"></a>
+			<a href="#Twitter" class="fa fa-twitter"></a>
+			<a href="#Whatsapp" class="fa fa-whatsapp"></a>
+		</div>
+		<nav>
+			<a class="active" href="index.html">Home</a><br>
+			<a href="reservas.html">Reserve Já</a><br>
+			<a href="quartos.html">Nossas Acomodações</a><br>
+			<a href="contato.html">Contato</a><br>
+			<a href="sobre.html">Sobre</a>
+		</nav>
+		<div class="copyright">
+			<img src="../images/logotipo/Coderize_sem_fundo.png" alt="Coderize" width="100">
+			<p>Coderize &copy;2022 - Todos os direitos reservados</p>
+		</div>
+	</footer>
+</body>
+
+</html>

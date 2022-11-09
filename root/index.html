@@ -1,97 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotelista</title>
-    <link rel="stylesheet" href="/root/src/css/style.css">
-    
-</head>
-<body>
-    
-    <header>
-        <nav>
-            <div class="hotelista">
-                <div class="logo">
-                    <a href="../index.html" class="logo">
-                        <img src="/root/images/Hotelista_sem_fundo.png" alt="Hotelista" width="100" />
-                    </a>
-                </div>
-                <div class="slogan">
-                    <p>Quando estilo combina com conforto</p>
-                </div>
-            </div>
-                <ul class="navegacao">
-                    <li>
-                        <a href="../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="./public/reservas.html">Reservas</a>
-                    </li>
-                    <li>
-                        <a href="./public/quartos.html">Acomodações</a>
-                    </li>
-                    <li>
-                        <a href="./public/contato.html">Contato</a>
-                    </li>
-                </ul>
-                <ul class="options">
-                    <li>
-                        <span>Olá, usuário XXX</span>
-                    </li>
-                    <li>
-                        <a href="">Sair</a>
-                    </li>
-                    <li class="cadastrese">
-                        <a href="">Cadastre-se</a>
-                    </li>
-                </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <div class="containers">
-                <h1>Pagina Inicial</h1>
-                <div class="container01">
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-                    <img src="images/RoyalTulipAlvorada vista paranoa 2.webp" alt="nome da imagem" width="300">
-                    <div class="vertical">
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores inventore veniam animi debitis
-                            blanditiis maxime nam possimus, deserunt dolorum voluptas dignissimos quia saepe, dolorem ea magnam
-                            nesciunt totam minus rerum eaque. Distinctio sit repudiandae, iure facilis temporibus possimus illo,
-                            ea ut harum quas dolorem quae commodi perferendis quo quam officia! Laboriosam, aperiam eaque.
-                            Cumque quasi voluptatum eius laboriosam temporibus explicabo iste deserunt, minima consequatur
-                            quaerat hic, perspiciatis at. Aut recusandae tempora deleniti repellendus, odio explicabo esse sunt
-                            consequatur blanditiis debitis.
-                        </p>
-                    </div>
-                </div>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="navbar-wrap">
+            <a class="navbar-logo" href="index.html">
+              <img
+                class="navbar-logo"
+                src="images/logotipo/Hotelista_sem_fundo.png"
+                alt="Logotipo Hotelista - Página home"
+              />
+            </a>
+            <div class="navbar-menu-wrap">
+              <div class="navbar-menu">
+                <a class="navbar-link active" href="index.html">Home</a>
+                <a class="navbar-link" href="public/reservas.html"
+                  >Reserve Já</a
+                >
+                <a class="navbar-link" href="public/quartos.html"
+                  >Nossas Acomodações</a
+                >
+                <a class="navbar-link" href="public/contato.html">Contato</a>
+                <a class="navbar-link" href="public/sobre.html">Sobre</a>
+                <i class="navbar-dropdown-wrap">
+                  <p class="navbar-dropdown-button">&#xe853;</p>
+                  <div class="navbar-dropdown">
+                    <p class="navbar-user">Olá, usuário!</p>
+                    <a class="navbar-link" href="public/login.html">Login</a>
+                    <a class="navbar-link" href="#cadastro">Cadastre-se</a>
+                  </div>
+                </i>
+              </div>
             </div>
-        </section>
-    </main>
-    <hr />
-    <footer>
-        <p>atendimento@hotelista.com.br</p>
-        <p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
-        <p>Telefone para contato: +55 11 3232-3232</p>
-        <nav>
-            <ul>
-                <li class="footBar">
-                    <a href="reservas.html">Reservas</a> <br />
-                    <a href="quartos.html">Acomodações</a> <br />
-                    <a href="contato.html">Contato</a> <br />
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright">
-            <p class="copyright">
-                <img src="/root/images/Coderize_com_fundo.png" alt="Coderize" width="100">
-                <p class="logoCode">Coderize &copy;2022 - Todos os direitos reservados</p>
-            </p>
+          </div>
         </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="hero">
+          <img
+            class="imagem-paisagem"
+            src="images/home/fachada - paisagem.png"
+            alt="Fachada do hotel"
+          />
+          <img
+            class="imagem-retrato"
+            src="images/home/fachada - retrato.png"
+            alt="Fachada do hotel"
+          />
+          <h1 class="hero-titulo white">Sua melhor escolha de vista</h1>
+          <div class="hero-sobre">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+            sapiente reprehenderit corporis, nulla voluptatem esse. Temporibus
+            necessitatibus ex soluta atque fuga amet architecto tempora cumque!
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="acomodacoes-home-wrap">
+          <h1 class="titulo-home2">Nossas Acomodações</h1>
+          <div class="galeria-home">
+            <img src="images/quartos/simples.png" alt="Quarto Simples" />
+            <img src="images/quartos/medio.png" alt="Quarto Médio" />
+            <img src="images/quartos/banheiro.png" alt="Banheiro" />
+            <img src="images/quartos/luxo.png" alt="Quarto de Luxo" />
+            <img src="images/quartos/medio2.png" alt="Quarto Médio" />
+            <img src="images/quartos/luxo2.png" alt="Quarto de Luxo" />
+          </div>
+        </div>
+
+        <div class="button-wrap">
+          <a class="button button-home" href="#Serviços">
+            <div class="button-text">Conheça mais sobre nossos serviços</div>
+            <p class="button-arrow">→</p>
+          </a>
+        </div>
+      </section>
+      <section>
+        <div class="margin-top hero">
+          <img
+            class="imagem-paisagem"
+            src="images/home/gastronomia - paisagem.png"
+            alt="Área de jantar"
+          />
+          <img
+            class="imagem-retrato"
+            src="images/home/gastronomia - retrato.png"
+            alt="Área de jantar"
+          />
+          <h1 class="hero-titulo-background white">Opções gastronômicas</h1>
+          <div class="hero-opcoes">
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptate commodi repudiandae tempora consequatur! Sunt iusto
+              temporibus nisi sint voluptate fugiat.
+            </div>
+            <div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              molestiae, amet sequi deleniti quis optio voluptate. Ipsa quis
+              deserunt recusandae.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h1 class="footer-title">Tenha uma boa estadia!</h1>
+      </section>
+    </main>
+
+    <footer>
+      <p>atendimento@hotelista.com.br</p>
+      <p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
+      <p>Telefone para contato: +55 11 3232-3232</p>
+      <div class="midias-sociais">
+        <a href="#Facebook" class="fa fa-facebook"></a>
+        <a href="#Instagram" class="fa fa-instagram"></a>
+        <a href="#Twitter" class="fa fa-twitter"></a>
+        <a href="#Whatsapp" class="fa fa-whatsapp"></a>
+      </div>
+      <nav>
+        <a class="active" href="index.html">Home</a><br />
+        <a href="public/reservas.html">Reserve Já</a><br />
+        <a href="public/quartos.html">Nossas Acomodações</a><br />
+        <a href="public/contato.html">Contato</a><br />
+        <a href="public/sobre.html">Sobre</a>
+      </nav>
+      <div class="copyright">
+        <img
+          src="images/logotipo/Coderize_sem_fundo.png"
+          alt="Coderize"
+          width="100"
+        />
+        <p>Coderize &copy;2022 - Todos os direitos reservados</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
