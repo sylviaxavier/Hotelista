@@ -11,6 +11,18 @@
 	--extra-grande: xx-large;
 	--fonte-icone-perfil: 36px;
 }
+.headBanner{
+	width: 100vw;
+	height: 30vh;
+	background-image: url(/images/produtos/noodles-7390775_1920.jpg);
+	background-size: cover;
+}
+.banner-section{
+	height: 40vh;
+}
+.banner-titulo{
+	padding-top: 20%;
+}
 
 * {
 	font-family: "Poppins";
