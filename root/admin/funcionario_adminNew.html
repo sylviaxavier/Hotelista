@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotelista</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/root/src/js/localStorage_admin.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="navbar-wrap">
+                    <a class="navbar-logo" href="../index.html">
+                        <img class="navbar-logo" src="../images/logotipo/Hotelista_sem_fundo.png"
+                            alt="Logotipo Hotelista - Página home">
+                    </a>
+                    <div class="navbar-menu-wrap">
+                        <div class="navbar-menu">
+                            <a class="navbar-link" href="../index.html">Home</a>
+                            <a class="navbar-link" href=".html">Hóspedes</a>
+                            <a class="navbar-link" href=".html">Reservas</a>
+                            <i class="navbar-dropdown-wrap">
+                                <p class="navbar-dropdown-button">&#xe853;</p>
+                                <div class="navbar-dropdown">
+                                    <p class="navbar-user">Olá, usuário!</p>
+                                    <a class="navbar-link" href="login.html">Login</a>
+                                    <a class="navbar-link" href="#cadastro">Cadastre-se</a>
+                                </div>
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form action="">
+                <h1>Cadastro de Funcionários</h1>
+
+                <label for="codigo">Código:</label>
+                <input name="codigo" id="codigo" placeholder="Sua matricula" type="number">
+
+                <label for="nome">Nome:</label>
+                <input name="nome" id="nome" placeholder="Seu nome" type="text">
+                
+                <label for="tempo">Tempo de Empresa:</label>
+                <input  name="tempo" id="tempo" placeholder="Quantos anos de empresa" type="number">
+
+                <label for="atividade">Atividade Atual:</label>
+                <select name="atividade" id="atividade">
+                    <option value="atividade1">Recepção</option>
+                    <option value="atividade2">Restaurante</option>
+                    <option value="atividade3">Garagem</option>
+                    <option value="atividade4">Serviço de Quarto</option>
+                    <option value="atividade5">Gerência</option>
+                    <option value="atividade6">Concierge</option>
+                    <option value="atividade7">Supervisor de Andar</option>
+                </select>
+                
+                <label for="ferias">Férias:</label>
+                <select name="ferias" id="ferias">
+                    <option value="ferias1">Sim</option>
+                    <option value="ferias2">Não</option>
+                </select>
+
+                <label for="afastamento">Afastamento Médico:</label>
+                <select name="afastamento" id="afastamento">
+                    <option value="afastamento1">Sim</option>
+                    <option value="afastamento2">Não</option>
+                </select>
+
+                <label for="comentarios">Comentários:</label>
+                <textarea class="grande" name="comentarios" id="comentarios" placeholder="Seus comentários..."
+                    type="text"></textarea>
+
+                <button  class="button" type="submit" value="Enviar">
+                    <div id="botao" class="button-text">Enviar</div>
+                    <p class="button-arrow">→</p>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>atendimento@hotelista.com.br</p>
+        <p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
+        <p>Telefone para contato: +55 11 3232-3232</p>
+        <div class="midias-sociais">
+            <a href="#Facebook" class="fa fa-facebook"></a>
+            <a href="#Instagram" class="fa fa-instagram"></a>
+            <a href="#Twitter" class="fa fa-twitter"></a>
+            <a href="#Whatsapp" class="fa fa-whatsapp"></a>
+        </div>
+        <nav>
+            <a class="active" href="../index.html">Home</a><br>
+            <a href=".html">Hóspedes</a><br>
+            <a href=".html">Reservas</a><br>
+            
+        </nav>
+        <div class="copyright">
+            <img src="../images/logotipo/Coderize_sem_fundo.png" alt="Coderize" width="100">
+            <p>Coderize &copy;2022 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>
