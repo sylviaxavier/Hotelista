@@ -27,25 +27,45 @@ let validComentarios = false
 let botao = document.querySelector ("#botao")
 
 codigo.addEventListener('keyup', () => {
-    if(codigo.value.length <=4){
+    if(codigo.value.length <=5){
         codigoLabel.setAttribute('style', 'color: red')
+        validCodigo = false
     } else {
-        codigoLabel.setAttribute('(style)', 'color: green')
+        codigoLabel.setAttribute('style', 'color: green')
+        validCodigo = true
+
     }
 })
+
 nome.addEventListener('keyup', () => {
     if(nome.value.length <=10){
         nomeLabel.setAttribute('style', 'color: red')
+        validNome = false
     } else {
         nomeLabel.setAttribute('style', 'color: green')
+        validNome = true
     }
 })
 
 
-function cadastrar(){
-    if (validCodigo && validNome && validTempo && validAtividade && validAfastamento && validComentarios) {
+function enviar(){
+    if (validCodigo || validNome || validTempo || validAtividade || validAfastamento || validComentarios) {
+        let listaUser =  JSON.parse(localStorage.getItem('listaUser') || '[]')
+
+        listaUser.push ({
+            codigoCad: codigo.value,
+            nomeCad: nome.value,
+            tempoCad: tempo.value,
+            atividadeCad: atividade.value,
+            afastamentoCad: afastamento.value,
+            comentariosCad: comentarios.value
+        })
+
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+
+        alert('Cadastro realizado com sucesso!')
         
     } else {
-        alert('Há algum campo vazio')
+        alert('Há algum campo vazio!')
     }
 }
