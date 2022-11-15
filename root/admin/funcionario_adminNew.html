@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../src/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/root/src/js/localStorage_admin.js"></script>
+    <script src="/root/src/js/localStorage_admin.js" async></script>
 </head>
 
 <body>
@@ -46,13 +46,13 @@
             <form action="">
                 <h1>Cadastro de Funcionários</h1>
 
-                <label for="codigo">Código:</label>
+                <label id="codigoLabel" for="codigo">Código:</label>
                 <input name="codigo" id="codigo" placeholder="Sua matricula" type="number">
 
-                <label for="nome">Nome:</label>
+                <label id="nomeLabel" for="nome">Nome:</label>
                 <input name="nome" id="nome" placeholder="Seu nome" type="text">
                 
-                <label for="tempo">Tempo de Empresa:</label>
+                <label id="tempolabel" for="tempo">Tempo de Empresa:</label>
                 <input  name="tempo" id="tempo" placeholder="Quantos anos de empresa" type="number">
 
                 <label for="atividade">Atividade Atual:</label>
@@ -67,13 +67,13 @@
                 </select>
                 
                 <label for="ferias">Férias:</label>
-                <select name="ferias" id="ferias">
+                <select name="ferias" id="ferias" required>
                     <option value="ferias1">Sim</option>
                     <option value="ferias2">Não</option>
                 </select>
 
                 <label for="afastamento">Afastamento Médico:</label>
-                <select name="afastamento" id="afastamento">
+                <select name="afastamento" id="afastamento" required>
                     <option value="afastamento1">Sim</option>
                     <option value="afastamento2">Não</option>
                 </select>
@@ -82,8 +82,8 @@
                 <textarea class="grande" name="comentarios" id="comentarios" placeholder="Seus comentários..."
                     type="text"></textarea>
 
-                <button  class="button" type="submit" value="Enviar">
-                    <div id="botao" class="button-text">Enviar</div>
+                <button  class="button" type="submit" value="Enviar" onclick='enviar()'>
+                    <div class="button-text">Enviar</div>
                     <p class="button-arrow">→</p>
                 </button>
             </form>
