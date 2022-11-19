@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="../src/css/style.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="/root/src/js/reservas.js" async></script>
 
 </head>
 
@@ -57,7 +58,7 @@
 				</div>
 				<div>
 					<label for="qntdPessoas">Quantidade de pessoas</label>
-					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" required>
+					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" min = "1" max = "5" required>
 				</div>
 			</form>
 		</section>
@@ -65,7 +66,7 @@
 			<div class="reservas-wrap">
 				<div class="reservas-quartos">
 					<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
-						<input name="quarto" id="quarto1" type="radio" required form="form-reservas">
+						<input name="quarto" id="quarto1" type="radio" required form="form-reservas" onclick="quartos()">
 						<div class="reservas-quarto-wrap-div">
 							<img src="../images/quartos/simples.png" alt="Quarto Simples">
 							<div class="reservas-quarto">
@@ -117,18 +118,44 @@
 							</div>
 							<div>
 								<p>Check-in:</p>
-								<p>XX/XX/XXXX</p>
+								<p id="pcheckin"></p>
 							</div>
 							<div>
 								<p>Check-out:</p>
-								<p>XX/XX/XXXX</p>
+								<p id="pcheckout"></p>
 							</div>
 							<div>
 								<p>Pessoas:</p>
-								<p>XX</p>
+								<p id="pessoas"></p>
 							</div>
 						</div>
-						<a href="#Serviços">Adicionar mais serviços</a>
+						<a onclick="document.getElementById('id01').style.display='block'" href="#Serviços">Adicionar mais serviços</a>
+						<div id = "id01" class="modal-servicos">
+							<div class="modal-content">
+								<div class="modal-container">									
+									<span onclick="document.getElementById('id01').style.display='none'">&times;</span>
+									<h4>Serviços Adicionais:</h4>
+									<input class ="reservas-margin-servicos" type="checkbox" id="servico01" name="servicos" value="servico01" onClick="servicos()">
+									<label for="servico01">R$ <span id = "span1">20.50</span> - Café da manhã</label> </br>
+									<input class ="reservas-margin-servicos" type="checkbox" id="servico02" name="servicos" value="servico02" onClick="servicos()">
+									<label for="servico02">R$ <span id = "span2">30.00</span> - Almoço</label> </br>
+									<input class ="reservas-margin-servicos" type="checkbox" id="servico03" name="servicos" value="servico03" onClick="servicos()">
+									<label for="servico02">R$ <span id = "span3">40.00</span> - Jantar</label> </br>
+									<input class ="reservas-margin-servicos" type="checkbox" id="servico04" name="servicos" value="servico04" onClick="servicos()">
+									<label for="servico02">R$ <span id = "span4">15.00</span> - Limpeza diária</label> </br>
+									<input class ="reservas-margin-servicos" type="checkbox" id="servico05" name="servicos" value="servico05" onClick="servicos()">
+									<label for="servico02">R$ <span id = "span5">50.00</span> - Frigobar com variedades</label> </br>
+									<p><b>*valores por pessoa, exceto limpeza diária.</b></p>
+									<label id="totalServicos">Subtotal serviços: R$ </label>
+
+								</div>
+
+							</div>
+
+						</div>
+
+
+
 						<button class="button" type="submit" value="Continuar" form="form-reservas">
 							<div class="button-text">Continuar</div>
 							<p class="button-arrow">→</p>
