@@ -58,7 +58,8 @@
 				</div>
 				<div>
 					<label for="qntdPessoas">Quantidade de pessoas</label>
-					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" min = "1" max = "5" required>
+					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" value="1" min="1"
+						max="5" required>
 				</div>
 			</form>
 		</section>
@@ -66,44 +67,44 @@
 			<div class="reservas-wrap">
 				<div class="reservas-quartos">
 					<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
-						<input name="quarto" id="quarto1" type="radio" required form="form-reservas" onclick="quartos()">
+						<input name="quarto-radio" id="quarto1" type="radio" required form="form-reservas">
 						<div class="reservas-quarto-wrap-div">
 							<img src="../images/quartos/simples.png" alt="Quarto Simples">
 							<div class="reservas-quarto">
-								<h2>Quarto Simples</h2>
+								<h2 id="quartoTitulo">Quarto Simples</h2>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
 									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
 									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
 									consequuntur quas, vero fuga?</p>
-								<span>R$249,99</span>
+								<span>R$<span id="quartoValor">99,99</span></span>
 							</div>
 						</div>
 					</label>
 					<label class="reservas-quarto-wrap" for="quarto2" form="form-reservas">
-						<input name="quarto" id="quarto2" type="radio" required form="form-reservas">
+						<input name="quarto-radio" id="quarto2" type="radio" required form="form-reservas">
 						<div class="reservas-quarto-wrap-div">
 							<img src="../images/quartos/medio.png" alt="Quarto Médio">
 							<div class="reservas-quarto">
-								<h2>Quarto Médio</h2>
+								<h2 id="quartoTitulo">Quarto Médio</h2>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
 									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
 									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
 									consequuntur quas, vero fuga?</p>
-								<span>R$490,99</span>
+								<span>R$<span id="quartoValor">190,99</span></span>
 							</div>
 						</div>
 					</label>
 					<label class="reservas-quarto-wrap" for="quarto3" form="form-reservas">
-						<input name="quarto" id="quarto3" type="radio" required form="form-reservas">
+						<input name="quarto-radio" id="quarto3" type="radio" required form="form-reservas">
 						<div class="reservas-quarto-wrap-div">
 							<img src="../images/quartos/luxo.png" alt="Quarto de Luxo">
 							<div class="reservas-quarto">
-								<h2>Quarto de Luxo</h2>
+								<h2 id="quartoTitulo">Quarto de Luxo</h2>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
 									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
 									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
 									consequuntur quas, vero fuga?</p>
-								<span>R$769,99</span>
+								<span>R$<span id="quartoValor">249,99</span></span>
 							</div>
 						</div>
 					</label>
@@ -114,7 +115,7 @@
 						<div class="reservas-resumo-info">
 							<div>
 								<p>Quarto:</p>
-								<p>XXX</p>
+								<p id="pquarto">__________</p>
 							</div>
 							<div>
 								<p>Check-in:</p>
@@ -129,37 +130,89 @@
 								<p id="pessoas"></p>
 							</div>
 						</div>
-						<a onclick="document.getElementById('id01').style.display='block'" href="#Serviços">Adicionar mais serviços</a>
-						<div id = "id01" class="modal-servicos">
-							<div class="modal-content">
-								<div class="modal-container">									
-									<span onclick="document.getElementById('id01').style.display='none'">&times;</span>
-									<h4>Serviços Adicionais:</h4>
-									<input class ="reservas-margin-servicos" type="checkbox" id="servico01" name="servicos" value="servico01" onClick="servicos()">
-									<label for="servico01">R$ <span id = "span1">20.50</span> - Café da manhã</label> </br>
-									<input class ="reservas-margin-servicos" type="checkbox" id="servico02" name="servicos" value="servico02" onClick="servicos()">
-									<label for="servico02">R$ <span id = "span2">30.00</span> - Almoço</label> </br>
-									<input class ="reservas-margin-servicos" type="checkbox" id="servico03" name="servicos" value="servico03" onClick="servicos()">
-									<label for="servico02">R$ <span id = "span3">40.00</span> - Jantar</label> </br>
-									<input class ="reservas-margin-servicos" type="checkbox" id="servico04" name="servicos" value="servico04" onClick="servicos()">
-									<label for="servico02">R$ <span id = "span4">15.00</span> - Limpeza diária</label> </br>
-									<input class ="reservas-margin-servicos" type="checkbox" id="servico05" name="servicos" value="servico05" onClick="servicos()">
-									<label for="servico02">R$ <span id = "span5">50.00</span> - Frigobar com variedades</label> </br>
-									<p><b>*valores por pessoa, exceto limpeza diária.</b></p>
-									<label id="totalServicos">Subtotal serviços: R$ </label>
-
-								</div>
-
-							</div>
-
-						</div>
-
-
+						<a onclick="closeOpenModal()" href="#Serviços">Adicionar
+							mais serviços</a>
 
 						<button class="button" type="submit" value="Continuar" form="form-reservas">
 							<div class="button-text">Continuar</div>
 							<p class="button-arrow">→</p>
 						</button>
+					</div>
+				</div>
+			</div>
+			<div id="servicosModal" class="modal-wrap hide">
+				<div class="modal">
+					<div class="modal-header">
+						<h2>Serviços Adicionais:</h2>
+						<span class="modal-exit-btn" onclick="closeOpenModal()">&#xe5c9;</span>
+					</div>
+					<div class="res-serv">
+						<div>
+							<input class="reservas-margin-servicos" type="checkbox" id="servico01" name="servicos"
+								value="servico01" onClick="servicos()">
+							<label for="servico01">R$ <span id="span1">20,50</span> - Café da manhã</label>
+						</div>
+						<div>
+							<input class="reservas-margin-servicos" type="checkbox" id="servico02" name="servicos"
+								value="servico02" onClick="servicos()">
+							<label for="servico02">R$ <span id="span2">30,00</span> - Almoço</label>
+						</div>
+						<div>
+							<input class="reservas-margin-servicos" type="checkbox" id="servico03" name="servicos"
+								value="servico03" onClick="servicos()">
+							<label for="servico03">R$ <span id="span3">40,00</span> - Jantar</label>
+						</div>
+						<div>
+							<input class="reservas-margin-servicos" type="checkbox" id="servico04" name="servicos"
+								value="servico04" onClick="servicos()">
+							<label for="servico04">R$ <span id="span4">15,00</span> - Limpeza diária</label>
+						</div>
+						<div>
+							<input class="reservas-margin-servicos" type="checkbox" id="servico05" name="servicos"
+								value="servico05" onClick="servicos()">
+							<label for="servico05">R$ <span id="span5">50,00</span> - Frigobar com
+								variedades</label>
+						</div>
+						<p><b>*valores por pessoa, exceto limpeza diária.</b></p>
+						<h3 id="totalServicos">Subtotal serviços: R$ 0,00</h3>
+					</div>
+				</div>
+			</div>
+			<div class="modal-wrap hide">
+				<div class="modal">
+					<div class="res-modal-desc">
+						<div class="res-modal-desc-quarto">
+							<img class="res-modal-img" src="../images/quartos/luxo.png" alt="">
+							<div class="res-modal-img-desc">
+								<h2>Título</h2>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium at sint vel
+									mollitia praesentium assumenda quam cum nesciunt vitae eum itaque minima dicta quis
+									voluptatem minus sit debitis culpa modi aliquam eligendi, adipisci quisquam? Placeat
+									quas sequi earum id officiis voluptatum, natus ratione quisquam aliquam, temporibus
+									porro ipsum rem repudiandae.</p>
+							</div>
+						</div>
+						<div class="res-modal-desc-info">
+							<div class="res-modal-desc-pessoas">X pessoas</div>
+							<div class="res-modal-desc-checkin">00/00/0000</div>
+							<div class="res-modal-desc-checkout">00/00/0000</div>
+						</div>
+					</div>
+					<div class="res-modal-itens">
+						<div>
+							<p>Quarto</p>
+							<p>R$ 0000,00</p>
+						</div>
+						<div>
+							<p>Pessoas</p>
+							<p>R$ 0000,00</p>
+						</div>
+					</div>
+					<div class="res-modal-btn button-wrap">
+						<a class="button button-home" href="#Serviços">
+							<div class="button-text">Continuar</div>
+							<p class="button-arrow">→</p>
+						</a>
 					</div>
 				</div>
 			</div>
