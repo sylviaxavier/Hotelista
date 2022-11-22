@@ -11,6 +11,7 @@
 	--extra-grande: xx-large;
 	--fonte-icone-perfil: 36px;
 }
+
 * {
 	font-family: "Poppins";
 }
@@ -252,29 +253,23 @@ footer a:hover {
 .copyright {
 	width: 100%;
 	padding: 2em 0;
-	background-color: white;
+	background-color: var(--black);
+	color: white;
 	transition: 0.5s;
 }
 
-footer img {
-	filter: invert(1);
+.copyright p {
+	color: white;
+}
+
+.copyright img {
 	padding: 1em;
 	border: 1px solid var(--black);
 	transition: 0.5s;
 }
 
-.copyright:hover {
-	background-color: var(--black);
-	color: white;
-}
-
-.copyright:hover p {
-	color: white;
-}
-
 .copyright:hover img {
-	filter: invert(0);
-	border: 1px solid white;
+	border: 1px solid var(--dark-gray);
 }
 
 /* PADRÕES */
@@ -547,17 +542,20 @@ form.login {
 .button-home {
 	max-width: 30%;
 }
+
 /*BANNER*/
-.headBanner{
+.headBanner {
 	width: 100vw;
 	height: 30vh;
 	background-image: url(/root/images/banner/area_livre.jpg);
 	background-size: cover;
 }
-.banner-section{
+
+.banner-section {
 	height: 30vh;
 }
-.banner-titulo{
+
+.banner-titulo {
 	padding-top: 15%;
 }
 
@@ -809,13 +807,106 @@ form.login {
 	padding: 0 1em;
 }
 
-.reservas-margin-servicos{
+.reservas-margin-servicos {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
 
-.hide{
-    display: none;
+.hide {
+	display: none;
+}
+
+.modal-wrap {
+	/*display: hide;*/
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 110;
+}
+
+.modal {
+	margin: 2% auto;
+	padding: 0 1em;
+	border: 1px solid var(--black);
+	width: 50%;
+	height: 80%;
+	background-color: white;
+}
+
+.modal-exit-btn {
+	cursor: pointer;
+	font-family: "Material Icons";
+	vertical-align: middle;
+	font-size: var(--extra-grande);
+	color: var(--dark-gray);
+	margin-block: 0;
+	transition: 0.5s;
+	padding: 0;
+}
+
+.modal-exit-btn:hover {
+	opacity: 0.7;
+}
+
+.modal {
+	text-align: center;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.modal-header {
+	border-bottom: 1px solid var(--gray);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.modal-header h2 {
+	text-align: center;
+	width: 90%;
+}
+
+.res-serv {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 1em;
+}
+
+.res-serv div {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: space-between;
+	width: 75%;
+}
+
+.res-serv div label {
+	margin-left: 1rem;
+}
+
+.res-modal-desc {
+	display: flex;
+}
+
+.res-modal-desc-quarto {
+	max-width: 50%;
+}
+
+.res-modal-img {
+	max-width: 25%;
+}
+
+.modal b {
+	font-size: var(--pequeno);
+	font-weight: normal;
+	color: var(--dark-gray);
 }
 
 /* RESPONSIVIDADE */
@@ -965,4 +1056,10 @@ form.login {
 	.reservas-quartos {
 		max-width: 100%;
 	}
+
+	.modal {
+		width: 90%;
+	}
+
+	.modal input[type="checkbox"] {}
 }
