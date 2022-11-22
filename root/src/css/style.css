@@ -809,6 +809,15 @@ form.login {
 	padding: 0 1em;
 }
 
+.reservas-margin-servicos{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.hide{
+    display: none;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 600px) and (orientation: portrait) {
 	:root {
