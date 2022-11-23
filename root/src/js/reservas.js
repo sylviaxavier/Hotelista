@@ -5,9 +5,7 @@ const inputQuartos = document.querySelectorAll('input[name="quarto-radio"]'); //
 const h2QuartoTitulo = document.querySelectorAll('#quartoTitulo');
 
 // Setando valores padrão no ínicio do funcionamento do código
-document.querySelector('#pcheckin').textContent = '__/__/____'; // Data de check-in
-document.querySelector('#pcheckout').textContent = '__/__/____'; // Data de check-out
-localStorage.setItem('qtdePessoas', inputNumber.value); // Quantidade de pessoas
+localStorage.setItem('qtdePessoas', parseInt(inputNumber.value)); // Quantidade de pessoas padrão (1)
 document.querySelector('#pessoas').textContent = localStorage.getItem('qtdePessoas');
 
 //Guardando checkin
@@ -42,8 +40,10 @@ inputNumber.addEventListener('change', () => {
 
 	inputNumber.value = inputNumber.value > 5 ? 5 : inputNumber.value < 1 ? 1 : inputNumber.value;
 
-	localStorage.setItem('qtdePessoas', inputNumber.value);
+	localStorage.setItem('qtdePessoas', parseInt(inputNumber.value));
 	document.querySelector('#pessoas').textContent = localStorage.getItem('qtdePessoas');
+
+
 })
 
 // Botões radio "onchange" = quartos()
@@ -70,65 +70,56 @@ function closeOpenModal() {
 
 //Serviços Adicionais
 function servicos() {
-	let val1, val2, val3, val4, val5, valorTotal;
-
-	localStorage.removeItem('servicoAdicional01');
-	localStorage.removeItem('servicoAdicional02');
-	localStorage.removeItem('servicoAdicional03');
-	localStorage.removeItem('servicoAdicional04');
-	localStorage.removeItem('servicoAdicional05');
-
-	localStorage.setItem('valor01', 0);
-	localStorage.setItem('valor02', 0);
-	localStorage.setItem('valor03', 0);
-	localStorage.setItem('valor04', 0);
-	localStorage.setItem('valor05', 0);
+	let val = [];
 
 	const servicos = document.getElementsByName('servicos')
 
-	for (var i = 0; i < servicos.length; i++) {
+	for (let i = 0; i < servicos.length; i++) {
 		if (servicos[i].checked) {
-			if (servicos[i].value == "servico01") {
-				let servico_01 = "Café da manhã";
-				localStorage.setItem('servicoAdicional01', servico_01)
-				let valor = document.getElementById('span1').innerText
-				localStorage.setItem('valor01', valor)
+			let nome = document.getElementsByName('servicoNome')[i].textContent;
+			let valor = document.getElementsByName('servicoValor')[i].textContent.replace(',', '.');
+			let porPessoa = document.getElementsByName('servicoValor')[i].id === 'pPessoa' ? true : false;
 
+			val[i] = {
+				nome,
+				valor,
+				porPessoa
 			}
-			else if (servicos[i].value == "servico02") {
-				var servico_02 = "Almoço";
-				localStorage.setItem('servicoAdicional02', servico_02)
-				let valor = document.getElementById('span2').innerText
-				localStorage.setItem('valor02', valor)
-			}
-			else if (servicos[i].value == "servico03") {
-				var servico_03 = "Jantar";
-				localStorage.setItem('servicoAdicional03', servico_03)
-				let valor = document.getElementById('span3').innerText
-				localStorage.setItem('valor03', valor)
-			}
-			else if (servicos[i].value == "servico04") {
-				var servico_04 = "Limpeza diária";
-				localStorage.setItem('servicoAdicional04', servico_04)
-				let valor = document.getElementById('span4').innerText
-				localStorage.setItem('valor04', valor)
-			}
-			else if (servicos[i].value == "servico05") {
-				var servico_05 = "Frigobar com variedades";
-				localStorage.setItem('servicoAdicional05', servico_05)
-				let valor = document.getElementById('span5').innerText
-				localStorage.setItem('valor05', valor)
-			}
+
+			localStorage.setItem(`servico${i}`, val[i]);
 		}
-
 	}
-	val1 = (parseFloat(textContent = localStorage.getItem('valor01')))
-	val2 = (parseFloat(textContent = localStorage.getItem('valor02')))
-	val3 = (parseFloat(textContent = localStorage.getItem('valor03')))
-	val4 = (parseFloat(textContent = localStorage.getItem('valor04')))
-	val5 = (parseFloat(textContent = localStorage.getItem('valor05')))
 
-	let pessoas = (parseInt(textContent = localStorage.getItem('qtdePessoas')))
-	valorTotal = (val1 + val2 + val3 + val5) * pessoas + val4
-	document.querySelector('#totalServicos').textContent = ('Subtotal serviços: R$ ' + valorTotal.toFixed(2))
+	let valorTotal = 0;
+
+	console.log(val);
+
+	for (let i = 0; i < val.length; i++) {
+		if (val[i] !== undefined) {
+			if (val[i].porPessoa)
+				valorTotal += parseFloat(val[i].valor) * parseInt(localStorage.getItem('qtdePessoas'));
+			else
+				valorTotal += parseFloat(val[i].valor);
+		}
+	}
+
+	document.querySelector('#totalServicos').textContent = ('Subtotal serviços: ' + formatarDinheiro(valorTotal))
+}
+
+// Transformar número em moeda (20.4 = "R$ 20,40")
+function formatarDinheiro(num) {
+	return num.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function valorTotalServ(val) {
+	for (let i = 0; i < val.length; i++) {
+		if (val[i] !== undefined) {
+			if (val[i].porPessoa)
+				valorTotal += parseFloat(val[i].valor) * parseInt(localStorage.getItem('qtdePessoas'));
+			else
+				valorTotal += parseFloat(val[i].valor);
+		}
+	}
+
+	document.querySelector('#totalServicos').textContent = ('Subtotal serviços: ' + formatarDinheiro(valorTotal))
 }

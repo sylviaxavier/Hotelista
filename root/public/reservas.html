@@ -119,15 +119,15 @@
 							</div>
 							<div>
 								<p>Check-in:</p>
-								<p id="pcheckin"></p>
+								<p id="pcheckin">__/__/____</p>
 							</div>
 							<div>
 								<p>Check-out:</p>
-								<p id="pcheckout"></p>
+								<p id="pcheckout">__/__/____</p>
 							</div>
 							<div>
 								<p>Pessoas:</p>
-								<p id="pessoas"></p>
+								<p id="pessoas">1</p>
 							</div>
 						</div>
 						<a onclick="closeOpenModal()" href="#Serviços">Adicionar
@@ -149,29 +149,33 @@
 					<div class="res-serv">
 						<div>
 							<input class="reservas-margin-servicos" type="checkbox" id="servico01" name="servicos"
-								value="servico01" onClick="servicos()">
-							<label for="servico01">R$ <span id="span1">20,50</span> - Café da manhã</label>
+								onClick="servicos()">
+							<label for="servico01">R$ <span name="servicoValor" id="pPessoa">20,50</span> - <span
+									name="servicoNome">Café da manhã</span>*</label>
 						</div>
 						<div>
 							<input class="reservas-margin-servicos" type="checkbox" id="servico02" name="servicos"
-								value="servico02" onClick="servicos()">
-							<label for="servico02">R$ <span id="span2">30,00</span> - Almoço</label>
+								onClick="servicos()">
+							<label for="servico02">R$ <span name="servicoValor" id="pPessoa">30,00</span> - <span
+									name="servicoNome">Almoço</span>*</label>
 						</div>
 						<div>
 							<input class="reservas-margin-servicos" type="checkbox" id="servico03" name="servicos"
-								value="servico03" onClick="servicos()">
-							<label for="servico03">R$ <span id="span3">40,00</span> - Jantar</label>
+								onClick="servicos()">
+							<label for="servico03">R$ <span name="servicoValor" id="pPessoa">40,00</span> - <span
+									name="servicoNome">Jantar</span>*</label>
 						</div>
 						<div>
 							<input class="reservas-margin-servicos" type="checkbox" id="servico04" name="servicos"
-								value="servico04" onClick="servicos()">
-							<label for="servico04">R$ <span id="span4">15,00</span> - Limpeza diária</label>
+								onClick="servicos()">
+							<label for="servico04">R$ <span name="servicoValor">15,00</span> - <span
+									name="servicoNome">Limpeza diária</span></label>
 						</div>
 						<div>
 							<input class="reservas-margin-servicos" type="checkbox" id="servico05" name="servicos"
-								value="servico05" onClick="servicos()">
-							<label for="servico05">R$ <span id="span5">50,00</span> - Frigobar com
-								variedades</label>
+								onClick="servicos()">
+							<label for="servico05">R$ <span name="servicoValor" id="pPessoa">50,00</span> - <span
+									name="servicoNome">Frigobar com variedades</span>*</label>
 						</div>
 						<p><b>*valores por pessoa, exceto limpeza diária.</b></p>
 						<h3 id="totalServicos">Subtotal serviços: R$ 0,00</h3>
