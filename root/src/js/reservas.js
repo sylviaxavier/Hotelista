@@ -42,8 +42,6 @@ inputNumber.addEventListener('change', () => {
 
 	localStorage.setItem('qtdePessoas', parseInt(inputNumber.value));
 	document.querySelector('#pessoas').textContent = localStorage.getItem('qtdePessoas');
-
-
 })
 
 // Botões radio "onchange" = quartos()
@@ -92,8 +90,6 @@ function servicos() {
 
 	let valorTotal = 0;
 
-	console.log(val);
-
 	for (let i = 0; i < val.length; i++) {
 		if (val[i] !== undefined) {
 			if (val[i].porPessoa)
@@ -121,5 +117,11 @@ function valorTotalServ(val) {
 		}
 	}
 
-	document.querySelector('#totalServicos').textContent = ('Subtotal serviços: ' + formatarDinheiro(valorTotal))
+	document.querySelector('#totalServicos').textContent = ('Subtotal serviços: ' + formatarDinheiro(valorTotal));
+	document.querySelector('#botaoAddServicos').textContent =
+		val.length > 0 ? `Adicionar mais serviços (${val.length})` : 'Adicionar mais serviços';
+}
+
+function diasEntreDatas(checkin, checkout) {
+	return Math.round((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24));
 }

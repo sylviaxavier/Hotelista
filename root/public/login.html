@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../src/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/root/src/js/login.js" async></script>
 </head>
 
 <body>
@@ -44,21 +45,25 @@
 
     <main>
         <section>
-            <form class="login" action="">
+            <form class="login" action="" onsubmit="login()">
                 <h1>Faça seu login!</h1>
 
                 <label for="email">E-mail:</label>
-                <input name="email" id="email" placeholder="Seu e-mail" type="email" required>
+                <input name="email" id="email" placeholder="Seu e-mail" type="text" required>
+                <span id="emailInvalido">E-mail inválido</span>
 
                 <label for="senha">Senha:</label>
                 <input name="senha" id="senha" placeholder="Sua senha" type="password" required>
+                <span id="senhaInvalida">Senha deve conter 8 caracteres, contendo pelo menos uma letra e um
+                    número</span>
 
-                <button class="button" type="submit" value="Enviar">
+
+                <button id="loginBtn" class="button" type="button">
                     <div class="button-text">Enviar</div>
                     <p class="button-arrow">→</p>
                 </button>
 
-                <a href="#EsqueceuSenha">Esqueceu sua senha?</a>
+                <a href="">Esqueceu sua senha?</a>
             </form>
         </section>
     </main>

@@ -420,6 +420,7 @@ form a,
 	text-decoration: none;
 	color: #a0a0a0;
 	font-size: var(--pequeno);
+	cursor: pointer;
 	transition: 0.5s;
 }
 
@@ -432,6 +433,26 @@ form a:hover,
 form.login {
 	text-align: center;
 	align-items: center;
+}
+
+.login span {
+	color: #ff5555;
+	opacity: 0;
+	font-size: var(--pequeno);
+	margin: 0;
+	line-height: 1em;
+	cursor: default;
+	margin-bottom: 1em;
+	transition: 0.25s;
+}
+
+.login input {
+	margin-bottom: 4px;
+}
+
+.login button {
+	border-color: var(--dark-gray);
+	margin-top: 2vh;
 }
 
 .white {
