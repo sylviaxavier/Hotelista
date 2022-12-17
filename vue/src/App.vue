@@ -3,6 +3,8 @@
   <header>
     <NavBarHeader/>
   </header>
+  <main>
+  </main>
   <footer>
     <NavBarFooter/>
   </footer>
@@ -27,7 +29,11 @@ export default {
 
 #app {
 	background-color: #ffffff;
-	margin: 0;
 	font-size: medium;
+  margin: 0 0 0 0;
+  padding:0 0 0 0;
+}
+#main{
+  max-width: 100%;
 }
 </style>

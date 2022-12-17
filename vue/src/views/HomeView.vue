@@ -10,8 +10,8 @@
             alt="Fachada do hotel"
           />
           <img
-            class="imagem-retrato"
-            src=""
+            class="imagem-retrato1"
+            :src="image1"
             alt="Fachada do hotel"
           />
           <h1 class="hero-titulo white">Sua melhor escolha de vista</h1>
@@ -26,15 +26,14 @@
         <div class="acomodacoes-home-wrap">
           <h1 class="titulo-home2">Nossas Acomodações</h1>
           <div class="galeria-home">
-            <img src="images/quartos/simples.png" alt="Quarto Simples" />
-            <img src="images/quartos/medio.png" alt="Quarto Médio" />
-            <img src="images/quartos/banheiro.png" alt="Banheiro" />
-            <img src="images/quartos/luxo.png" alt="Quarto de Luxo" />
-            <img src="images/quartos/medio2.png" alt="Quarto Médio" />
-            <img src="images/quartos/luxo2.png" alt="Quarto de Luxo" />
+            <img :src="imageQuartoSimples" alt="Quarto Simples" />
+            <img :src="imageQuartoMedio" alt="Quarto Médio" />
+            <img :src="imageBanheiro" alt="Banheiro" />
+            <img :src="imageQuartoLuxo" alt="Quarto de Luxo" />
+            <img :src="imageQuartoMedio" alt="Quarto Médio" />
+            <img :src="imageQuartoLuxo2" alt="Quarto de Luxo" />
           </div>
         </div>
-
         <div class="button-wrap">
           <a class="button button-home" href="#Serviços">
             <div class="button-text">Conheça mais sobre nossos serviços</div>
@@ -46,12 +45,12 @@
         <div class="margin-top hero">
           <img
             class="imagem-paisagem"
-            src=""
+            :src="imageGastronomia"
             alt="Área de jantar"
           />
           <img
-            class="imagem-retrato"
-            src=""
+            class="imagem-retrato1"
+            :src="imageGastronomia1"
             alt="Área de jantar"
           />
           <h1 class="hero-titulo-background white">Opções gastronômicas</h1>
@@ -81,11 +80,31 @@
 // @ is an alias to /src
 import NavBarHeader from '@/components/NavBarHeader.vue'
 import image from "../assets/home/fachada - paisagem.png"
+import image1 from "../assets/home/fachada - retrato.png"
+import imageQuartoSimples from "../assets/quartos/simples.png"
+import imageQuartoMedio from "../assets/quartos/medio.png"
+import imageBanheiro from "../assets/quartos/banheiro.png"
+import imageQuartoLuxo from "../assets/quartos/luxo.png"
+import imageQuartoMedio2 from "../assets/quartos/medio2.png"
+import imageQuartoLuxo2 from "../assets/quartos/luxo2.png"
+import imageGastronomia from "../assets/home/gastronomia - paisagem.png"
+import imageGastronomia1 from "../assets/home/gastronomia - retrato.png"
+
+
 
 export default {
   data: function(){
     return{
-      image: image
+      image: image,
+	  image1: image1,
+	  imageQuartoSimples: imageQuartoSimples,
+	  imageQuartoMedio: imageQuartoMedio,
+	  imageBanheiro: imageBanheiro,
+	  imageQuartoLuxo: imageQuartoLuxo,
+	  imageQuartoMedio2: imageQuartoMedio2,
+	  imageQuartoLuxo2: imageQuartoLuxo2,
+	  imageGastronomia: imageGastronomia,
+	  imageGastronomia1: imageGastronomia1
     }
   },
   name: 'HomeView',
@@ -96,7 +115,12 @@ export default {
 </script>
 <style>
 body{
-  overflow-x: hidden;
+	width: 100vw;
+	overflow-x: hidden;
+}
+main{
+	margin: 0%;
+	padding: 0%;
 }
 .footer-title {
 	text-align: center;
@@ -111,7 +135,7 @@ body{
 }
 
 .inicio-home img {
-	width: 100%;
+	width: 100vw;
 	border-bottom: 4px solid #333333;
 }
 
@@ -159,14 +183,15 @@ h1 {
 	text-align: center;
 }
 
-.imagem-retrato {
+.imagem-retrato1 {
 	display: none;
 }
 
 .imagem-paisagem {
 	display: block;
+	width: 100%;
+	height: 100%;
 }
-
 .button-wrap {
 	margin: 1em;
 	display: flex;
@@ -319,7 +344,8 @@ form.login {
 }
 
 .hero img {
-	width: 100%;
+	width: 100vw;
+	margin-right: 0%;
 	border-bottom: 4px solid #333333;
 	z-index: -1;
 }
@@ -369,5 +395,61 @@ form.login {
 	padding: 2em;
 	text-align: justify;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 600px) and (orientation: portrait){
+	/* PADRÕES */
+	.imagem-retrato1 {
+		display: block;
+	}
+
+	.imagem-paisagem {
+		display: none;
+	}
+
+	.button {
+		padding: 1em 2em;
+	}
+
+	.hero-titulo-background {
+		padding: 0.25rem;
+	}
+
+	.sobre-desc {
+		column-count: 1;
+	}
+
+	form {
+		padding: 1em;
+		margin: 10vh 2.5%;
+	}
+
+	input,
+	select,
+	button.button {
+		min-width: 80%;
+		max-width: 100%;
+	}
+	/* HOME */
+	.hero-titulo {
+		padding: 0;
+	}
+
+	.galeria-home img {
+		max-width: 90%;
+		padding-bottom: 1em;
+	}
+
+	.button-home {
+		max-width: 100%;
+	}
+
+	.hero-opcoes {
+		flex-direction: column;
+	}
+
+	.hero-opcoes div {
+		padding: 1em;
+	}
+	
 }
 </style>

@@ -47,8 +47,8 @@ export default {
 }
 
 h1 {
-	color: var(--black);
-	font-size: var(--extra-grande);
+	color: #333333;
+	font-size: xx-large;
 	font-weight: normal;
 	padding: 1rem;
 	text-align: center;
@@ -78,18 +78,18 @@ h1 {
 	text-decoration: none;
 	text-transform: uppercase;
 	cursor: pointer;
-	border: 1px solid var(--gray);
+	border: 1px solid #e0e0e0;
 	justify-content: center;
 	max-width: 25%;
 	transition: 0.5s;
 }
 
 .button:hover {
-	border-color: var(--dark-gray);
+	border-color: #c0c0c0;
 }
 
 .button-text {
-	color: var(--black);
+	color: #333333;
 	text-align: center;
 	display: block;
 }
@@ -108,13 +108,13 @@ h1 {
 form,
 .reservas-resumo {
 	padding: 1em 5em;
-	border: 1px solid var(--gray);
+	border: 1px solid #e0e0e0;
 	margin: 10vh 15%;
 	transition: 0.5s;
 	display: flex;
 	flex-direction: column;
 	text-align: start;
-	color: var(--black);
+	color: #333333;
 }
 
 form,
@@ -128,15 +128,15 @@ form:hover,
 input:hover,
 select:hover,
 textarea:hover {
-	border: 1px solid var(--dark-gray);
+	border: 1px solid #c0c0c0;
 }
 
 form:focus,
 input:focus,
 select:focus,
 textarea:focus {
-	outline: 2px solid var(--gray);
-	border: 1px solid var(--dark-gray);
+	outline: 2px solid #e0e0e0;
+	border: 1px solid #c0c0c0;
 }
 
 form h1 {
@@ -146,20 +146,20 @@ form h1 {
 }
 
 label {
-	font-size: var(--medio);
+	font-size: medium;
 	line-height: 5vh;
 }
 
 input,
 select {
-	color: var(--black);
+	color: #333333;
 	max-width: 50%;
 	margin: 0;
 	padding: 0;
 	margin-bottom: 3vh;
 	padding: 0.25em 0.5em;
 	text-align: start;
-	border: 1px solid var(--gray);
+	border: 1px solid #e0e0e0;
 	transition: 0.5s;
 }
 
@@ -168,7 +168,7 @@ textarea {
 	height: 15vh;
 	resize: vertical;
 	padding: 0.25em 0.5em;
-	border: 1px solid var(--gray);
+	border: 1px solid #e0e0e0;
 	margin-bottom: 3vh;
 	transition: 0.5s;
 }
@@ -184,13 +184,13 @@ form a,
 .reservas-resumo a {
 	text-decoration: none;
 	color: #a0a0a0;
-	font-size: var(--pequeno);
+	font-size: 14px;
 	transition: 0.5s;
 }
 
 form a:hover,
 .reservas-resumo a:hover {
-	color: var(--black);
+	color: #333333;
 	text-decoration: underline;
 }
 
@@ -204,7 +204,7 @@ form.login {
 }
 
 .black {
-	color: var(--black);
+	color: #333333;
 }
 
 .hero {
@@ -215,7 +215,7 @@ form.login {
 
 .hero img {
 	width: 100%;
-	border-bottom: 4px solid var(--black);
+	border-bottom: 4px solid #333333;
 	z-index: -1;
 }
 
@@ -244,7 +244,7 @@ form.login {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.5);
 	padding: 2em;
-	font-size: var(--medio);
+	font-size: medium;
 }
 
 .hero-opcoes {
@@ -255,7 +255,7 @@ form.login {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	font-size: var(--medio);
+	font-size: medium;
 	width: 80%;
 	color: white;
 }

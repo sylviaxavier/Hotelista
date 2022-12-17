@@ -4,12 +4,12 @@
         <div class="hero">
           <img
             class="imagem-paisagem"
-            src=""
+            :src="image"
             alt="Fachada do hotel"
           />
           <img
             class="imagem-retrato"
-            src=""
+            :src="image1"
             alt="Fachada do hotel"
           />
           <h1 class="hero-titulo-background white">Sobre o Hotelista</h1>
@@ -31,12 +31,12 @@
         <div class="acomodacoes-home-wrap">
           <h1 class="titulo-home2">Os Quartos</h1>
           <div class="galeria-home">
-            <img src="" alt="Quarto Simples" />
-            <img src="" alt="Quarto Médio" />
-            <img src="" alt="Banheiro" />
-            <img src="" alt="Quarto de Luxo" />
-            <img src="" alt="Quarto Médio" />
-            <img src="" alt="Quarto de Luxo" />
+            <img :src="imageQuartoSimples" alt="Quarto Simples" />
+            <img :src="imageQuartoMedio" alt="Quarto Médio" />
+            <img :src="imageBanheiro" alt="Banheiro" />
+            <img :src="imageQuartoLuxo" alt="Quarto de Luxo" />
+            <img :src="imageQuartoMedio2" alt="Quarto Médio" />
+            <img :src="imageQuartoLuxo2" alt="Quarto de Luxo" />
           </div>
         </div>
         <p class="sobre-desc">
@@ -52,7 +52,27 @@
     </main>
 </template>
 <script>
+import image from "../assets/home/fachada - paisagem.png"
+import image1 from "../assets/home/fachada - retrato.png"
+import imageQuartoSimples from "../assets/quartos/simples.png"
+import imageQuartoMedio from "../assets/quartos/medio.png"
+import imageBanheiro from "../assets/quartos/banheiro.png"
+import imageQuartoLuxo from "../assets/quartos/luxo.png"
+import imageQuartoMedio2 from "../assets/quartos/medio2.png"
+import imageQuartoLuxo2 from "../assets/quartos/luxo2.png"
 export default {
+  data:function (){
+    return{
+      image: image,
+	    //image1: image1
+	    imageQuartoSimples: imageQuartoSimples,
+      imageQuartoMedio: imageQuartoMedio,
+      imageBanheiro: imageBanheiro,
+      imageQuartoLuxo: imageQuartoLuxo,
+      imageQuartoMedio2: imageQuartoMedio2,
+      imageQuartoLuxo2: imageQuartoLuxo2,
+    }
+  },
   name:'SobreView'
 }
 </script>
@@ -63,7 +83,7 @@ export default {
 	text-align: justify;
 	column-count: 2;
 	column-gap: 2em;
-	border-top: 1px solid var(--dark-gray);
+	border-top: 1px solid #c0c0c0;
 	padding: 1vh;
 }
 </style>

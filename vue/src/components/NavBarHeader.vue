@@ -65,19 +65,18 @@ a {
   color: #333333;
   text-decoration: none;
 }
-
 nav{
 	margin: 0;
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
 	z-index: 100;
-	width: 100%;
+	width: 100vw;
+  background-color: aqua;
 }
 
 .navbar {
   display: block;
-  padding: 0.5em 1em 0.5em 1em;
   font-size: 14px;
   color: #333333;
   background-color: #ffffff;
@@ -96,9 +95,9 @@ a.navbar-logo {
   color: #333333;
   display: flex;
   align-items: center;
-  padding-left: 0;
-  width: 4em;
-  height: 4em;
+  padding-left: 0%;
+  width: 5em;
+  height: 5em;
   transition: 0.5s;
 }
 
@@ -108,7 +107,6 @@ a.navbar-logo:hover {
 
 img.navbar-logo {
   width: 100%;
-  height: auto;
 }
 .user-logo {
   width: 8%;
@@ -196,5 +194,31 @@ img.navbar-logo {
   text-align: left;
   margin: 0;
   padding-left: 5%;
+}
+@media (max-width: 600px) and (orientation: portrait){
+  /* CABEÇALHO */
+	header {
+		position: static;
+	}
+
+	.navbar-wrap,
+	.navbar-menu {
+		flex-direction: column;
+		margin-top: 1em;
+	}
+
+	.navbar-link {
+		margin: 0.25em 0 0.25em 0;
+		text-align: center;
+	}
+
+	.navbar-dropdown-wrap {
+		margin: 1em 0 1em 0;
+		text-align: center;
+	}
+
+	.navbar-dropdown {
+		left: -25%;
+	}
 }
 </style>

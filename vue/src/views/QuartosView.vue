@@ -16,14 +16,14 @@
                 <div class="quarto">
                     <div class="quarto-wrap">
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto Simples 1">
+                            <img :src="imageQuartoSimples" alt="Quarto Simples 1">
 
                         </div>
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto Simples 2">
+                            <img :src="imageQuartoSimples2" alt="Quarto Simples 2">
                         </div>
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto Simples 3">
+                            <img :src="imageBanheiro" alt="Quarto Simples 3">
                         </div>
                         <div class="quarto-img-info-wrap">
                             <div class="quarto-img-info">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -47,14 +47,14 @@
                 <div class="quarto">
                     <div class="quarto-wrap">
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto Médio 1">
+                            <img :src="imageQuartoMedio" alt="Quarto Médio 1">
 
                         </div>
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto Médio 2">
+                            <img :src="imageQuartoMedio2" alt="Quarto Médio 2">
                         </div>
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto Médio 3">
+                            <img :src="imageQuartoMedio3" alt="Quarto Médio 3">
                         </div>
                         <div class="quarto-img-info-wrap">
                             <div class="quarto-img-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et,
@@ -78,14 +78,14 @@
                 <div class="quarto">
                     <div class="quarto-wrap">
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto de Luxo 1">
+                            <img :src="imageQuartoLuxo" alt="Quarto de Luxo 1">
 
                         </div>
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto de Luxo 2">
+                            <img :src="imageQuartoLuxo2" alt="Quarto de Luxo 2">
                         </div>
                         <div class="quarto-img-wrap">
-                            <img src="" alt="Quarto de Luxo 3">
+                            <img :src="imageQuartoLuxo3" alt="Quarto de Luxo 3">
                         </div>
                         <div class="quarto-img-info-wrap">
                             <div class="quarto-img-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
@@ -111,7 +111,7 @@
         <section>
             <h1>Quarto em Destaque</h1>
             <div class="quarto-destaque">
-                <img src="" alt="Quarto em destaque: Quarto de Luxo">
+                <img :src="imageQuartoLuxo" alt="Quarto em destaque: Quarto de Luxo">
                 <div class="quarto-destaque-info">
                     <h1>Quarto de Luxo</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, exercitationem, quod
@@ -127,11 +127,54 @@
     </main>
 </template>
 <script>
+import imageQuartoSimples from "../assets/quartos/simples.png"
+import imageQuartoSimples2 from "../assets/quartos/simples2.png"
+import imageBanheiro from "../assets/quartos/banheiro.png"
+import imageQuartoMedio from "../assets/quartos/medio.png"
+import imageQuartoMedio2 from "../assets/quartos/medio2.png"
+import imageQuartoMedio3 from "../assets/quartos/medio3.png"
+import imageQuartoLuxo from "../assets/quartos/luxo.png"
+import imageQuartoLuxo2 from "../assets/quartos/luxo2.png"
+import imageQuartoLuxo3 from "../assets/quartos/luxo3.png"
+//import imageBanner from "../assets/banner/area_livre.jpg"
+
 export default {
-  name:'AcomodacoesView'
+
+    data: function(){
+        return{
+        imageQuartoSimples: imageQuartoSimples,
+        imageQuartoSimples2: imageQuartoSimples2,
+        imageBanheiro: imageBanheiro,
+        imageQuartoMedio: imageQuartoMedio,
+        imageQuartoMedio2: imageQuartoMedio2,
+        imageQuartoMedio3: imageQuartoMedio3,
+        imageQuartoLuxo: imageQuartoLuxo,
+        imageQuartoLuxo2: imageQuartoLuxo2,
+        imageQuartoLuxo3: imageQuartoLuxo3,
+        //imageBanner: imageBanner
+
+        }
+    },
+    name:'AcomodacoesView'
 }
 </script>
 <style>
+/*BANNER
+.headBanner {
+	width: 100vw;
+	height: 30vh;
+	background-image: url(imageBanner);
+	background-size: cover;
+}
+
+.banner-section {
+	height: 30vh;
+}
+
+.banner-titulo {
+	padding-top: 15%;
+}*/
+/*Acomodacoes */
 .quartos {
 	display: flex;
 	flex-direction: column;
@@ -140,7 +183,7 @@ export default {
 
 .quartos h1 {
 	margin-bottom: 0;
-	font-size: var(--grande);
+	font-size: 24px;
 }
 
 .quarto {
@@ -229,5 +272,32 @@ export default {
 .quarto-destaque-info p {
 	margin: 0;
 	text-align: justify;
+}
+@media (max-width: 600px) and (orientation: portrait){
+    /* QUARTOS */
+	.quarto-wrap {
+		flex-direction: column;
+	}
+
+	.quarto-wrap:hover {
+		background-color: var(--black);
+	}
+
+	.quarto-img-wrap {
+		max-width: 100%;
+	}
+
+	.quarto-img-info-wrap {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.quarto-destaque {
+		flex-direction: column;
+	}
+
+	.quarto-destaque img {
+		width: 100%;
+	}
 }
 </style>

@@ -14,7 +14,7 @@
 				<div>
 					<label for="qntdPessoas">Quantidade de pessoas</label>
 					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" value="1" min="1"
-						max="5" required>
+						max="4" required>
 				</div>
 			</form>
 		</section>
@@ -24,7 +24,7 @@
 					<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
 						<input name="quarto-radio" id="quarto1" type="radio" required form="form-reservas">
 						<div class="reservas-quarto-wrap-div">
-							<img src="" alt="Quarto Simples">
+							<img :src="imageQuartoSimples" alt="Quarto Simples">
 							<div class="reservas-quarto">
 								<h2 id="quartoTitulo">Quarto Simples</h2>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
@@ -38,7 +38,7 @@
 					<label class="reservas-quarto-wrap" for="quarto2" form="form-reservas">
 						<input name="quarto-radio" id="quarto2" type="radio" required form="form-reservas">
 						<div class="reservas-quarto-wrap-div">
-							<img src="" alt="Quarto Médio">
+							<img :src="imageQuartoMedio" alt="Quarto Médio">
 							<div class="reservas-quarto">
 								<h2 id="quartoTitulo">Quarto Médio</h2>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
@@ -52,7 +52,7 @@
 					<label class="reservas-quarto-wrap" for="quarto3" form="form-reservas">
 						<input name="quarto-radio" id="quarto3" type="radio" required form="form-reservas">
 						<div class="reservas-quarto-wrap-div">
-							<img src="" alt="Quarto de Luxo">
+							<img :src="imageQuarto4" alt="Quarto de Luxo">
 							<div class="reservas-quarto">
 								<h2 id="quartoTitulo">Quarto de Luxo</h2>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
@@ -179,9 +179,20 @@
 	</main>
 </template>
 <script>
+import imageQuartoSimples from "../assets/quartos/simples.png"
+import imageQuartoMedio from "../assets/quartos/medio.png"
+import imageQuarto4 from "../assets/quartos/luxo.png"
+
 export default {
+	data: function(){
+    return{
+	  imageQuartoSimples: imageQuartoSimples,
+	  imageQuartoMedio: imageQuartoMedio,
+	  imageQuarto4: imageQuarto4
+    }
+  },
   name:'ReservasView'
-  
+
 }
 </script>
 <style>
@@ -199,7 +210,7 @@ export default {
 
 .form-reservas label {
 	line-height: 1.25em;
-	font-size: var(--medio);
+	font-size: medium;
 	margin-right: 2em;
 }
 
@@ -215,7 +226,7 @@ export default {
 	justify-content: space-around;
 	padding: 5vh 0;
 	margin: 0 1em 0 5em;
-	border-top: 1px solid var(--gray);
+	border-top: 1px solid #e0e0e0;
 }
 
 .reservas-resumo-wrap {
@@ -241,7 +252,7 @@ export default {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	border-bottom: 1px solid var(--gray);
+	border-bottom: 1px solid #e0e0e0;
 }
 
 .reservas-resumo-info p {
@@ -254,7 +265,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	max-width: 75%;
-	border-top: 1px solid var(--gray);
+	border-top: 1px solid #e0e0e0;
 }
 
 .reservas-quartos:before {
@@ -278,7 +289,7 @@ export default {
 	border: 2px solid white;
 	border-top: 1px solid white;
 	border-right: 1px solid white;
-	border-bottom: 1px solid var(--gray);
+	border-bottom: 1px solid #e0e0e0;
 	border-left: 1px solid white;
 	cursor: pointer;
 	transition: 0.5s;
@@ -294,7 +305,7 @@ export default {
 .reservas-quarto-wrap img {
 	max-width: 25%;
 	height: auto;
-	background-color: var(--dark-gray);
+	background-color: #c0c0c0;
 	border-radius: 5%;
 }
 
@@ -310,11 +321,11 @@ export default {
 }
 
 .reservas-quarto-wrap:has(input[type="radio"]:checked) {
-	border: 1px solid var(--black);
+	border: 1px solid #333333;
 }
 
 .reservas-quarto-wrap:has(input[type="radio"]:hover:not(:checked)) {
-	border: 1px solid var(--dark-gray);
+	border: 1px solid #c0c0c0;
 }
 
 .reservas-quarto {
@@ -345,7 +356,7 @@ export default {
 .modal {
 	margin: 2% auto;
 	padding: 0 1em;
-	border: 1px solid var(--black);
+	border: 1px solid #333333;
 	width: 50%;
 	height: 80%;
 	background-color: white;
@@ -355,8 +366,8 @@ export default {
 	cursor: pointer;
 	font-family: "Material Icons";
 	vertical-align: middle;
-	font-size: var(--extra-grande);
-	color: var(--dark-gray);
+	font-size: xx-large;
+	color: #c0c0c0;
 	margin-block: 0;
 	transition: 0.5s;
 	padding: 0;
@@ -374,7 +385,7 @@ export default {
 }
 
 .modal-header {
-	border-bottom: 1px solid var(--gray);
+	border-bottom: 1px solid #e0e0e0;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -418,8 +429,41 @@ export default {
 }
 
 .modal b {
-	font-size: var(--pequeno);
+	font-size: 14px;
 	font-weight: normal;
-	color: var(--dark-gray);
+	color: #c0c0c0;
+}
+
+@media (max-width: 600px) and (orientation: portrait){
+	/* RESERVAS */
+	.form-reservas {
+		margin: 0;
+	}
+
+	.form-reservas div {
+		margin: 0.75em 0;
+	}
+
+	.reservas-wrap {
+		flex-direction: column-reverse;
+		margin: 0 1em;
+	}
+
+	.reservas-resumo-wrap {
+		max-width: 100%;
+		margin-bottom: 2em;
+	}
+
+	.reservas-resumo {
+		margin: 0;
+	}
+
+	.reservas-quartos {
+		max-width: 100%;
+	}
+
+	.modal {
+		width: 90%;
+	}
 }
 </style>
