@@ -1,5 +1,5 @@
 <template>
-	<body>
+	<footer>
 		<div class="footer">
 		<p>atendimento@hotelista.com.br</p>
 		<p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>
@@ -11,11 +11,11 @@
 			<a href="#Whatsapp" class="fa fa-whatsapp"></a>
 		</div>
 		<nav>
-			<a class="active" href="">Home</a><br />
-			<a href="">Reserve Já</a><br />
-			<a href="">Nossas Acomodações</a><br />
-			<a href="">Contato</a><br />
-			<a href="">Sobre</a>
+			<a class="active"><router-link to="/">Home</router-link></a><br />
+			<a href=""><router-link to="/reservas">Reserve já</router-link></a><br />
+			<a href=""><router-link to="/acomodacoes">Nossas Acomodações</router-link></a><br />
+			<a href=""><router-link to="/Contato">Contato</router-link></a><br />
+			<a href=""><router-link to="/Sobre">Sobre</router-link></a>
 		</nav>
 		<div class="copyright">
 			<img
@@ -26,7 +26,7 @@
 			<p>Coderize &copy;2022 - Todos os direitos reservados</p>
 		</div>
 		</div>
-	</body>
+	</footer>
 </template>
 
 <script>
@@ -144,4 +144,10 @@ footer a:hover {
 	border: 1px solid #c0c0c0;
 }
 
+@media (max-width: 600px) and (orientation: portrait){
+	/* RODAPÉ */
+	footer nav {
+		width: 75%;
+	}
+}
 </style>

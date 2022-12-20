@@ -24,10 +24,16 @@ export default {
 }
 </script>
 <style scoped>
-
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+*{
+  font-family: "Poppins";
+}
 #app {
 	background-color: #ffffff;
-	margin: 0;
 	font-size: medium;
+  width: 100vw;
+}
+#main{
+  width: 100vw;
 }
 </style>
