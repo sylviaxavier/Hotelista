@@ -280,7 +280,7 @@ export default {
 	}
 
 	.quarto-wrap:hover {
-		background-color: var(--black);
+		background-color: #333333;
 	}
 
 	.quarto-img-wrap {

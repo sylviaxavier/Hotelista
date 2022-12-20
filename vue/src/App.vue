@@ -3,8 +3,6 @@
   <header>
     <NavBarHeader/>
   </header>
-  <main>
-  </main>
   <footer>
     <NavBarFooter/>
   </footer>
@@ -26,14 +24,16 @@ export default {
 }
 </script>
 <style scoped>
-
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+*{
+  font-family: "Poppins";
+}
 #app {
 	background-color: #ffffff;
 	font-size: medium;
-  margin: 0 0 0 0;
-  padding:0 0 0 0;
+  width: 100vw;
 }
 #main{
-  max-width: 100%;
+  width: 100vw;
 }
 </style>

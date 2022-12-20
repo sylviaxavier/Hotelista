@@ -1,182 +1,183 @@
 <template>
-  <main>
-		<h1>Minha Reserva</h1>
-		<section>
-			<form class="form-reservas" id="form-reservas" action="">
-				<div>
-					<label for="checkin">Data de <b>check-in</b></label>
-					<input name="checkin" id="checkin" placeholder="Sua data de check-in" type="date" required>
-				</div>
-				<div>
-					<label for="checkout">Data de <b>check-out</b></label>
-					<input name="checkout" id="checkout" placeholder="Sua data de check-out" type="date" required>
-				</div>
-				<div>
-					<label for="qntdPessoas">Quantidade de pessoas</label>
-					<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" value="1" min="1"
-						max="4" required>
-				</div>
-			</form>
-		</section>
-		<section>
-			<div class="reservas-wrap">
-				<div class="reservas-quartos">
-					<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
-						<input name="quarto-radio" id="quarto1" type="radio" required form="form-reservas">
-						<div class="reservas-quarto-wrap-div">
-							<img :src="imageQuartoSimples" alt="Quarto Simples">
-							<div class="reservas-quarto">
-								<h2 id="quartoTitulo">Quarto Simples</h2>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
-									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
-									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
-									consequuntur quas, vero fuga?</p>
-								<span>R$<span id="quartoValor">99,99</span></span>
+		<main>
+		<ModalView/>
+			<h1>Minha Reserva</h1>
+			<section>
+				<form class="form-reservas" id="form-reservas" action="">
+					<div>
+						<label for="checkin">Data de <b>check-in</b></label>
+						<input name="checkin" id="checkin" placeholder="Sua data de check-in" type="date" required>
+					</div>
+					<div>
+						<label for="checkout">Data de <b>check-out</b></label>
+						<input name="checkout" id="checkout" placeholder="Sua data de check-out" type="date" required>
+					</div>
+					<div>
+						<label for="qntdPessoas">Quantidade de pessoas</label>
+						<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" value="1" min="1"
+							max="4" required>
+					</div>
+				</form>
+			</section>
+			<section>
+				<div class="reservas-wrap">
+					<div class="reservas-quartos">
+						<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
+							<input name="quarto-radio" id="quarto1" type="radio" required form="form-reservas">
+							<div class="reservas-quarto-wrap-div">
+								<img :src="imageQuartoSimples" alt="Quarto Simples">
+								<div class="reservas-quarto">
+									<h2 id="quartoTitulo">Quarto Simples</h2>
+									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
+										corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
+										sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
+										consequuntur quas, vero fuga?</p>
+									<span>R$<span id="quartoValor">99,99</span></span>
+								</div>
 							</div>
-						</div>
-					</label>
-					<label class="reservas-quarto-wrap" for="quarto2" form="form-reservas">
-						<input name="quarto-radio" id="quarto2" type="radio" required form="form-reservas">
-						<div class="reservas-quarto-wrap-div">
-							<img :src="imageQuartoMedio" alt="Quarto Médio">
-							<div class="reservas-quarto">
-								<h2 id="quartoTitulo">Quarto Médio</h2>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
-									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
-									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
-									consequuntur quas, vero fuga?</p>
-								<span>R$<span id="quartoValor">190,99</span></span>
+						</label>
+						<label class="reservas-quarto-wrap" for="quarto2" form="form-reservas">
+							<input name="quarto-radio" id="quarto2" type="radio" required form="form-reservas">
+							<div class="reservas-quarto-wrap-div">
+								<img :src="imageQuartoMedio" alt="Quarto Médio">
+								<div class="reservas-quarto">
+									<h2 id="quartoTitulo">Quarto Médio</h2>
+									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
+										corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
+										sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
+										consequuntur quas, vero fuga?</p>
+									<span>R$<span id="quartoValor">190,99</span></span>
+								</div>
 							</div>
-						</div>
-					</label>
-					<label class="reservas-quarto-wrap" for="quarto3" form="form-reservas">
-						<input name="quarto-radio" id="quarto3" type="radio" required form="form-reservas">
-						<div class="reservas-quarto-wrap-div">
-							<img :src="imageQuarto4" alt="Quarto de Luxo">
-							<div class="reservas-quarto">
-								<h2 id="quartoTitulo">Quarto de Luxo</h2>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
-									corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
-									sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
-									consequuntur quas, vero fuga?</p>
-								<span>R$<span id="quartoValor">249,99</span></span>
+						</label>
+						<label class="reservas-quarto-wrap" for="quarto3" form="form-reservas">
+							<input name="quarto-radio" id="quarto3" type="radio" required form="form-reservas">
+							<div class="reservas-quarto-wrap-div">
+								<img :src="imageQuarto4" alt="Quarto de Luxo">
+								<div class="reservas-quarto">
+									<h2 id="quartoTitulo">Quarto de Luxo</h2>
+									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae velit, aspernatur,
+										corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
+										sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
+										consequuntur quas, vero fuga?</p>
+									<span>R$<span id="quartoValor">249,99</span></span>
+								</div>
 							</div>
-						</div>
-					</label>
-				</div>
-				<div class="reservas-resumo-wrap">
-					<div class="reservas-resumo">
-						<h2>Sua Reserva:</h2>
-						<div class="reservas-resumo-info">
-							<div>
-								<p>Quarto:</p>
-								<p id="pquarto">__________</p>
+						</label>
+					</div>
+					<div class="reservas-resumo-wrap">
+						<div class="reservas-resumo reservas-resumo">
+							<h2>Sua Reserva:</h2>
+							<div class="reservas-resumo-info">
+								<div>
+									<p>Quarto:</p>
+									<p id="pquarto">__________</p>
+								</div>
+								<div>
+									<p>Check-in:</p>
+									<p id="pcheckin">__/__/____</p>
+								</div>
+								<div>
+									<p>Check-out:</p>
+									<p id="pcheckout">__/__/____</p>
+								</div>
+								<div>
+									<p>Pessoas:</p>
+									<p id="pessoas">1</p>
+								</div>
 							</div>
-							<div>
-								<p>Check-in:</p>
-								<p id="pcheckin">__/__/____</p>
-							</div>
-							<div>
-								<p>Check-out:</p>
-								<p id="pcheckout">__/__/____</p>
-							</div>
-							<div>
-								<p>Pessoas:</p>
-								<p id="pessoas">1</p>
-							</div>
-						</div>
-						<a onclick="closeOpenModal()" href="#Serviços">Adicionar
-							mais serviços</a>
+							<a onclick="closeOpenModal()" href="#Serviços">Adicionar
+								mais serviços</a>
 
-						<button class="button" type="submit" value="Continuar" form="form-reservas">
-							<div class="button-text">Continuar</div>
-							<p class="button-arrow">→</p>
-						</button>
+							<button class="button" type="submit" value="Continuar" form="form-reservas">
+								<div class="button-text">Continuar</div>
+								<p class="button-arrow">→</p>
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div id="servicosModal" class="modal-wrap hide">
-				<div class="modal">
-					<div class="modal-header">
-						<h2>Serviços Adicionais:</h2>
-						<span class="modal-exit-btn" onclick="closeOpenModal()">&#xe5c9;</span>
-					</div>
-					<div class="res-serv">
-						<div>
-							<input class="reservas-margin-servicos" type="checkbox" id="servico01" name="servicos"
-								onClick="servicos()">
-							<label for="servico01">R$ <span name="servicoValor" id="pPessoa">20,50</span> - <span
-									name="servicoNome">Café da manhã</span>*</label>
+				<div id="servicosModal" class="modal-wrap hide">
+					<div class="modal">
+						<div class="modal-header">
+							<h2>Serviços Adicionais:</h2>
+							<span class="modal-exit-btn" onclick="closeOpenModal()">&#xe5c9;</span>
 						</div>
-						<div>
-							<input class="reservas-margin-servicos" type="checkbox" id="servico02" name="servicos"
-								onClick="servicos()">
-							<label for="servico02">R$ <span name="servicoValor" id="pPessoa">30,00</span> - <span
-									name="servicoNome">Almoço</span>*</label>
+						<div class="res-serv">
+							<div>
+								<input class="reservas-margin-servicos" type="checkbox" id="servico01" name="servicos"
+									onClick="servicos()">
+								<label for="servico01">R$ <span name="servicoValor" id="pPessoa">20,50</span> - <span
+										name="servicoNome">Café da manhã</span>*</label>
+							</div>
+							<div>
+								<input class="reservas-margin-servicos" type="checkbox" id="servico02" name="servicos"
+									onClick="servicos()">
+								<label for="servico02">R$ <span name="servicoValor" id="pPessoa">30,00</span> - <span
+										name="servicoNome">Almoço</span>*</label>
+							</div>
+							<div>
+								<input class="reservas-margin-servicos" type="checkbox" id="servico03" name="servicos"
+									onClick="servicos()">
+								<label for="servico03">R$ <span name="servicoValor" id="pPessoa">40,00</span> - <span
+										name="servicoNome">Jantar</span>*</label>
+							</div>
+							<div>
+								<input class="reservas-margin-servicos" type="checkbox" id="servico04" name="servicos"
+									onClick="servicos()">
+								<label for="servico04">R$ <span name="servicoValor">15,00</span> - <span
+										name="servicoNome">Limpeza diária</span></label>
+							</div>
+							<div>
+								<input class="reservas-margin-servicos" type="checkbox" id="servico05" name="servicos"
+									onClick="servicos()">
+								<label for="servico05">R$ <span name="servicoValor" id="pPessoa">50,00</span> - <span
+										name="servicoNome">Frigobar com variedades</span>*</label>
+							</div>
+							<p><b>*valores por pessoa, exceto limpeza diária.</b></p>
+							<h3 id="totalServicos">Subtotal serviços: R$ 0,00</h3>
 						</div>
-						<div>
-							<input class="reservas-margin-servicos" type="checkbox" id="servico03" name="servicos"
-								onClick="servicos()">
-							<label for="servico03">R$ <span name="servicoValor" id="pPessoa">40,00</span> - <span
-									name="servicoNome">Jantar</span>*</label>
-						</div>
-						<div>
-							<input class="reservas-margin-servicos" type="checkbox" id="servico04" name="servicos"
-								onClick="servicos()">
-							<label for="servico04">R$ <span name="servicoValor">15,00</span> - <span
-									name="servicoNome">Limpeza diária</span></label>
-						</div>
-						<div>
-							<input class="reservas-margin-servicos" type="checkbox" id="servico05" name="servicos"
-								onClick="servicos()">
-							<label for="servico05">R$ <span name="servicoValor" id="pPessoa">50,00</span> - <span
-									name="servicoNome">Frigobar com variedades</span>*</label>
-						</div>
-						<p><b>*valores por pessoa, exceto limpeza diária.</b></p>
-						<h3 id="totalServicos">Subtotal serviços: R$ 0,00</h3>
 					</div>
 				</div>
-			</div>
-			<div class="modal-wrap hide">
-				<div class="modal">
-					<div class="res-modal-desc">
-						<div class="res-modal-desc-quarto">
-							<img class="res-modal-img" src="" alt="">
-							<div class="res-modal-img-desc">
-								<h2>Título</h2>
-								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium at sint vel
-									mollitia praesentium assumenda quam cum nesciunt vitae eum itaque minima dicta quis
-									voluptatem minus sit debitis culpa modi aliquam eligendi, adipisci quisquam? Placeat
-									quas sequi earum id officiis voluptatum, natus ratione quisquam aliquam, temporibus
-									porro ipsum rem repudiandae.</p>
+				<div class="modal-wrap hide">
+					<div class="modal">
+						<div class="res-modal-desc">
+							<div class="res-modal-desc-quarto">
+								<img class="res-modal-img" src="" alt="">
+								<div class="res-modal-img-desc">
+									<h2>Título</h2>
+									<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium at sint vel
+										mollitia praesentium assumenda quam cum nesciunt vitae eum itaque minima dicta quis
+										voluptatem minus sit debitis culpa modi aliquam eligendi, adipisci quisquam? Placeat
+										quas sequi earum id officiis voluptatum, natus ratione quisquam aliquam, temporibus
+										porro ipsum rem repudiandae.</p>
+								</div>
+							</div>
+							<div class="res-modal-desc-info">
+								<div class="res-modal-desc-pessoas">X pessoas</div>
+								<div class="res-modal-desc-checkin">00/00/0000</div>
+								<div class="res-modal-desc-checkout">00/00/0000</div>
 							</div>
 						</div>
-						<div class="res-modal-desc-info">
-							<div class="res-modal-desc-pessoas">X pessoas</div>
-							<div class="res-modal-desc-checkin">00/00/0000</div>
-							<div class="res-modal-desc-checkout">00/00/0000</div>
+						<div class="res-modal-itens">
+							<div>
+								<p>Quarto</p>
+								<p>R$ 0000,00</p>
+							</div>
+							<div>
+								<p>Pessoas</p>
+								<p>R$ 0000,00</p>
+							</div>
 						</div>
-					</div>
-					<div class="res-modal-itens">
-						<div>
-							<p>Quarto</p>
-							<p>R$ 0000,00</p>
+						<div class="res-modal-btn button-wrap">
+							<a class="button button-home" href="#Serviços">
+								<div class="button-text">Continuar</div>
+								<p class="button-arrow">→</p>
+							</a>
 						</div>
-						<div>
-							<p>Pessoas</p>
-							<p>R$ 0000,00</p>
-						</div>
-					</div>
-					<div class="res-modal-btn button-wrap">
-						<a class="button button-home" href="#Serviços">
-							<div class="button-text">Continuar</div>
-							<p class="button-arrow">→</p>
-						</a>
 					</div>
 				</div>
-			</div>
-		</section>
-	</main>
+			</section>
+		</main>
 </template>
 <script>
 import imageQuartoSimples from "../assets/quartos/simples.png"
@@ -447,6 +448,24 @@ export default {
 	.reservas-wrap {
 		flex-direction: column-reverse;
 		margin: 0 1em;
+	}
+	.reservas-quarto-wrap h2{
+		text-align: center;
+		margin-bottom: 10%;
+	}
+	.reservas-quarto-wrap img {
+		max-width: 45%;
+		margin-top: 40%;
+		margin-left: 7em;
+		margin-bottom: 30em;
+		position: absolute;
+		border-radius: 5%;
+	}
+	.reservas-quarto-wrap p {
+		position: relative;
+		max-height: 40%;
+		text-align: justify;
+		margin-top: 15em;
 	}
 
 	.reservas-resumo-wrap {
