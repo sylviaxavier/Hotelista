@@ -26,7 +26,18 @@ const routes = [
     path: '/contato',
     name: 'ContatoView',
     component: () => import( '../views/ContatoView.vue')
+  },
+  {
+    path: '/login',
+    name: 'LoginView',
+    component: () => import( '../views/LoginView.vue')
+  },
+  {
+    path: '/cadastro',
+    name: 'CadastroView',
+    component: () => import( '../views/CadastroView.vue')
   }
+
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

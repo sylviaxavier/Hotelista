@@ -6,6 +6,8 @@
   <footer>
     <NavBarFooter/>
   </footer>
+  
+  <!--<LoginView/>-->
 </html>
 </template>
 
@@ -13,12 +15,14 @@
 
 import NavBarHeader from './components/NavBarHeader.vue'
 import NavBarFooter from './components/NavBarFooter.vue'
+//import LoginView from './views/LoginView.vue'
 
 export default {
   name:'App',
   components:{
     NavBarHeader,
-    NavBarFooter
+    NavBarFooter,
+    //LoginView
   
   }
 }

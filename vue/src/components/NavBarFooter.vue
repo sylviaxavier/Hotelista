@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .footer {
 	width: 100%;
@@ -109,6 +109,7 @@ footer nav {
 }
 
 footer nav:hover {
+	opacity: 0.9;
 	border: 1px solid #c0c0c0;
 }
 
