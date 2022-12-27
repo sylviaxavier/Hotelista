@@ -32,16 +32,15 @@
               >
               <a class="navbar-link"><router-link to="/acomodacoes">Nossas Acomodações</router-link></a
 			  >               
-              <a class="navbar-link"><router-link to="/Contato">Contato</router-link></a
+              <a class="navbar-link"><router-link to="/contato">Contato</router-link></a
               >
-              <a class="navbar-link"><router-link to="/Sobre">Sobre</router-link></a
+              <a class="navbar-link"><router-link to="/sobre">Sobre</router-link></a
               >
               <i class="navbar-dropdown-wrap">
                 <p class="navbar-dropdown-button">&#xe853;</p>
                 <div class="navbar-dropdown">
                   <p class="navbar-user">Olá, usuário!</p>
-                  <a class="navbar-link">Login</a>
-                  <a class="navbar-link" href="#cadastro">Cadastre-se</a>
+                  <a class="navbar-link"><router-link to="/login">Login</router-link></a>
                 </div>
               </i>
 
@@ -60,7 +59,7 @@ export default {
   name: "NavBarHeader",
 };
 </script>
-<style scoped>
+<style>
 /* CABEÇALHO */
 nav{
 	position: sticky;
@@ -110,7 +109,7 @@ img.navbar-logo {
 	flex: 1 0 auto;
 	display: flex;
 	align-items: middle;
-	justify-content: end;
+	justify-content: flex-end;
 }
 
 .navbar-menu {
