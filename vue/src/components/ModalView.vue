@@ -88,7 +88,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 101;
   }
 
   .modal {
