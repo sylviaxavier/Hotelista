@@ -77,6 +77,7 @@
           <div class="button-text">Enviar</div>
           <p class="button-arrow">→</p>
         </button>
+        <router-link to="/login">Já possui conta?</router-link>
       </form>
     </section>
   </main>
