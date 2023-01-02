@@ -159,21 +159,27 @@ export default {
 }
 </script>
 <style>
-/*BANNER
+/*BANNER */ 
 .headBanner {
 	width: 100vw;
 	height: 30vh;
-	background-image: url(imageBanner);
-	background-size: cover;
+    background-image: url(../assets/banner/quadra_tenis.jpg);
+	background-size:cover;
+    background-position: 25% 75%;
 }
 
 .banner-section {
-	height: 30vh;
+	height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .banner-titulo {
 	padding-top: 15%;
-}*/
+    color: white;
+}
+
 /*Acomodacoes */
 .quartos {
 	display: flex;

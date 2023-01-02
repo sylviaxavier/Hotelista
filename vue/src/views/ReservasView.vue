@@ -1,8 +1,9 @@
 <template>
 		<main id="main">
-			<h1>Minha Reserva</h1>
+			<div class="headBanner">
+			<h1 class="banner-titulo">Minha Reserva</h1>
 			<section>
-				<form class="form-reservas" id="form-reservas" action="">
+				<form class="form-reservas sombra-box" id="form-reservas" action="">
 					<div>
 						<label for="checkin">Data de <b>check-in</b></label>
 						<input name="checkin" id="checkin" placeholder="Sua data de check-in" type="date" required>
@@ -18,6 +19,7 @@
 					</div>
 				</form>
 			</section>
+			</div>
 			<section>
 				<div class="reservas-wrap">
 					<div class="reservas-quartos">
@@ -139,6 +141,34 @@ export default {
 }
 </script>
 <style>
+/*BANNER */ 
+.headBanner {
+	width: 100vw;
+	height: 30vh;
+    background-image: url(../assets/banner/recreacao.jpg);
+	background-size:cover;
+    background-position: 25% 75%;
+}
+
+.banner-section {
+	height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	
+}
+
+.banner-titulo {
+	color: black;
+}
+
+.sombra-box{
+	background-color:white;
+	opacity: 90%;
+}
+
+/*FORMS*/
+
 .form-reservas {
 	margin: 0 20%;
 	margin-bottom: 5vh;
