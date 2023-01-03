@@ -930,6 +930,11 @@ form.login {
 	color: var(--dark-gray);
 }
 
+.input-cupom {
+	margin-top: 2%;
+	margin-bottom: 1%;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 600px) and (orientation: portrait) {
 	:root {

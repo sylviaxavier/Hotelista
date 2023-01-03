@@ -3,6 +3,9 @@ const inputCheckout = document.querySelector('#checkout'); // Input para check-i
 const inputNumber = document.querySelector('#qntdPessoas'); // Input para quantidade de pessoas de tipo number
 const inputQuartos = document.querySelectorAll('input[name="quarto-radio"]'); // Inputs para quarto de tipo radio
 const h2QuartoTitulo = document.querySelectorAll('#quartoTitulo');
+const valorQuarto = document.querySelectorAll('#quartoValor');
+const inputEle = document.getElementById('inputDesconto');
+const btnDesconto = document.getElementById('btnDesconto');
 
 // Setando valores padrão no ínicio do funcionamento do código
 localStorage.setItem('qtdePessoas', parseInt(inputNumber.value)); // Quantidade de pessoas padrão (1)
@@ -54,7 +57,9 @@ function quartos() {
 	for (let i = 0; i < inputQuartos.length; i++) {
 		if (inputQuartos[i].checked) {
 			localStorage.setItem('quarto', i + 1);
-			document.querySelector('#pquarto').textContent = h2QuartoTitulo[i].textContent;
+			document.querySelector('#pquarto').textContent = h2QuartoTitulo[i].textContent;	
+			localStorage.setItem('valorQuarto', parseFloat(valorQuarto[i].innerHTML).toFixed(2));	
+			document.querySelector('#pvalorReserva').innerHTML = ("Valor da reserva: R$ "  + calcularValorTotalReserva());
 			break;
 		}
 	}
@@ -100,6 +105,8 @@ function servicos() {
 	}
 
 	document.querySelector('#totalServicos').textContent = ('Subtotal serviços: ' + formatarDinheiro(valorTotal))
+	localStorage.setItem('valorTotalAdicionais', parseFloat(valorTotal).toFixed(2))
+	calcularValorTotalReserva()
 }
 
 // Transformar número em moeda (20.4 = "R$ 20,40")
@@ -125,3 +132,55 @@ function valorTotalServ(val) {
 function diasEntreDatas(checkin, checkout) {
 	return Math.round((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24));
 }
+
+function geradorCupomDesconto() {
+
+	var cupomDesconto = '';
+	var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+	for (var i = 0; i < 8; i++) {
+		cupomDesconto += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+	}
+
+	return cupomDesconto
+
+}
+
+function calcularValorTotalReserva(){
+
+	let valorTotalAdicionais = localStorage.getItem('valorTotalAdicionais') 
+	let valorQuarto = localStorage.getItem('valorQuarto')
+
+	let valorTotalReserva = parseFloat(valorTotalAdicionais) + parseFloat(valorQuarto)
+
+	return parseFloat(valorTotalReserva).toFixed(2)
+}
+
+function calcularDesconto(){
+
+	let valorDesconto = calcularValorTotalReserva() * (10/100)
+	let valorTotal = calcularValorTotalReserva() - valorDesconto
+	document.querySelector('#pvalorReserva').innerHTML = ("Valor da reserva: R$ "  + parseFloat(valorTotal).toFixed(2));
+
+	return parseFloat(valorTotal).toFixed(2)	
+
+}
+
+	btnDesconto.addEventListener("click", () => {
+		const inputCupom = document.getElementById("inputDesconto").value;
+		localStorage.setItem("cupomInputado", inputCupom);
+
+		var cupomValido = localStorage.getItem('cupomValido');
+
+		if (inputCupom == cupomValido){
+			calcularDesconto()
+		} else {
+			alert("Cupom inválido");
+		}
+
+
+});
+
+	var cupomDesconto = geradorCupomDesconto()
+	localStorage.setItem("cupomValido", cupomDesconto);
+	console.log(cupomDesconto)
