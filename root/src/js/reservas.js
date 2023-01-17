@@ -6,6 +6,8 @@ const h2QuartoTitulo = document.querySelectorAll('#quartoTitulo');
 const valorQuarto = document.querySelectorAll('#quartoValor');
 const inputEle = document.getElementById('inputDesconto');
 const btnDesconto = document.getElementById('btnDesconto');
+const btnConfirmarReserva = document.getElementById('btnConfirmarReserva')
+
 
 // Setando valores padrão no ínicio do funcionamento do código
 localStorage.setItem('qtdePessoas', parseInt(inputNumber.value)); // Quantidade de pessoas padrão (1)
@@ -15,7 +17,7 @@ document.querySelector('#pessoas').textContent = localStorage.getItem('qtdePesso
 inputCheckin.onchange = function () {
 	if (inputCheckin.value === '') return;
 
-	localStorage.setItem('checkin', inputCheckin.value);
+	localStorage.setItem('checkin', pegarData(inputCheckin.value));
 	document.querySelector('#pcheckin').textContent = pegarData(localStorage.getItem('checkin'));
 }
 
@@ -23,7 +25,7 @@ inputCheckin.onchange = function () {
 inputCheckout.onchange = function () {
 	if (inputCheckout.value === '') return;
 
-	localStorage.setItem('checkout', inputCheckout.value);
+	localStorage.setItem('checkout', pegarData(inputCheckout.value));
 	document.querySelector('#pcheckout').textContent = pegarData(localStorage.getItem('checkout'));
 }
 
@@ -57,6 +59,7 @@ function quartos() {
 	for (let i = 0; i < inputQuartos.length; i++) {
 		if (inputQuartos[i].checked) {
 			localStorage.setItem('quarto', i + 1);
+			localStorage.setItem('nomeQuarto', h2QuartoTitulo[i].textContent);
 			document.querySelector('#pquarto').textContent = h2QuartoTitulo[i].textContent;	
 			localStorage.setItem('valorQuarto', parseFloat(valorQuarto[i].innerHTML).toFixed(2));	
 			document.querySelector('#pvalorReserva').innerHTML = ("Valor da reserva: R$ "  + calcularValorTotalReserva());
@@ -66,10 +69,27 @@ function quartos() {
 }
 
 // Mostrar e fechar modal
-function closeOpenModal() {
-	document.getElementById('servicosModal').style.display =
-		document.getElementById('servicosModal').style.display === 'block' ? 'none' : 'block';
+function closeOpenModal(modal) {
+			document.getElementById('servicosModal').style.display =
+			document.getElementById('servicosModal').style.display === 'block' ? 'none' : 'block';
 }
+
+// Mostrar e fechar modal
+function closeOpenModalResumo() {
+
+		document.getElementById('resumoReservaModal').style.display =
+		document.getElementById('resumoReservaModal').style.display === 'block' ? 'none' : 'block';
+}
+
+function closeOpenModalResumoConfirmar() {
+
+		document.getElementById('resumoReservaModal').style.display =
+		document.getElementById('resumoReservaModal').style.display === 'block' ? 'none' : 'block';
+		document.getElementById('aMinhasReservas').style.display = 'block';
+}
+
+
+
 
 //Serviços Adicionais
 function servicos() {
@@ -153,6 +173,8 @@ function calcularValorTotalReserva(){
 
 	let valorTotalReserva = parseFloat(valorTotalAdicionais) + parseFloat(valorQuarto)
 
+	localStorage.setItem('valorTotalReserva', valorTotalReserva);
+
 	return parseFloat(valorTotalReserva).toFixed(2)
 }
 
@@ -180,6 +202,13 @@ function calcularDesconto(){
 
 
 });
+
+//Modal Resumo Reserva
+document.querySelector('#totalModalResumo').textContent = "Valor total da reserva: R$" + localStorage.getItem('valorTotalReserva');
+document.querySelector('#quartoModalResumo').textContent = "Quarto: " + localStorage.getItem('nomeQuarto');
+document.querySelector('#checkinModalResumo').textContent = "Data do Check-in: " + localStorage.getItem('checkin');
+document.querySelector('#checkoutModalResumo').textContent = "Data do Check-out: " + localStorage.getItem('checkout');
+document.querySelector('#pessoasModalResumo').textContent = "Número de hóspedes: " + localStorage.getItem('qtdePessoas');
 
 	var cupomDesconto = geradorCupomDesconto()
 	localStorage.setItem("cupomValido", cupomDesconto);
