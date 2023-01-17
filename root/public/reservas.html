@@ -29,6 +29,7 @@
 							<a class="navbar-link" href="quartos.html">Nossas Acomodações</a>
 							<a class="navbar-link" href="contato.html">Contato</a>
 							<a class="navbar-link" href="sobre.html">Sobre</a>
+							<a id="aMinhasReservas" class="navbar-link hide" href="sobre.html">Minhas Reservas</a>
 							<i class="navbar-dropdown-wrap">
 								<p class="navbar-dropdown-button">&#xe853;</p>
 								<div class="navbar-dropdown">
@@ -137,7 +138,7 @@
 						<div>
 							<p id="pvalorReserva">Valor da reserva:</p>
 						</div>
-						<button class="button" type="submit" value="Continuar" form="form-reservas">
+						<button id ="btnContinuar" class="button" type="submit" value="Continuar" form="form-reservas" onclick="closeOpenModalResumo()">
 							<div class="button-text">Continuar</div>
 							<p class="button-arrow">→</p>
 						</button>
@@ -222,6 +223,35 @@
 							<p class="button-arrow">→</p>
 						</a>
 					</div>
+				</div>
+			</div>
+				<div id="resumoReservaModal" class="modal-wrap hide">
+				<div class="modal">
+					<div class="modal-header">
+						<h2>Resumo da Reserva:</h2>
+						<span class="modal-exit-btn" onclick="closeOpenModalResumo()">&#xe5c9;</span>
+					</div>
+							<div class="modal-resumo-div">
+								<p id="quartoModalResumo">:</p>
+							</div>
+							<div class="modal-resumo-div">
+								<p id="checkinModalResumo"></p>
+							</div>
+							<div class="modal-resumo-div">
+								<p id="checkoutModalResumo"></p>
+							</div>
+							<div class="modal-resumo-div">
+								<p id="pessoasModalResumo"></p>
+							</div>
+							<div class="modal-resumo-border">
+							</div>
+							<div>
+								<h4>Serviços Adicionais:</h4>
+							</div>
+							<div class="modal-resumo-footer">
+								<h4 id="totalModalResumo"></h4>
+								<button id="btnConfirmarReserva" class="btn-confirmar-reserva" type="submit" value="Confirmar" form="form-reservas" onclick="closeOpenModalResumoConfirmar()">Confirmar reserva</button>	
+							</div>
 				</div>
 			</div>
 		</section>
