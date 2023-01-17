@@ -6,15 +6,15 @@
 				<form class="form-reservas sombra-box" id="form-reservas" action="">
 					<div>
 						<label for="checkin">Data de <b>check-in</b></label>
-						<input name="checkin" id="checkin" placeholder="Sua data de check-in" type="date" required>
+						<input v-model="checkin" v-on:change="onChangeCheckin" name="checkin" id="checkin" placeholder="Sua data de check-in" type="date" required>
 					</div>
 					<div>
 						<label for="checkout">Data de <b>check-out</b></label>
-						<input name="checkout" id="checkout" placeholder="Sua data de check-out" type="date" required>
+						<input v-model="checkout" v-on:change="onChangeCheckout" name="checkout" id="checkout" placeholder="Sua data de check-out" type="date" required>
 					</div>
 					<div>
 						<label for="qntdPessoas">Quantidade de pessoas</label>
-						<input name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" value="1" min="1"
+						<input v-on:change="onChangeQntdPessoas" name="qntdPessoas" id="qntdPessoas" placeholder="Ex.: 2" type="number" min="1"
 							max="4" required>
 					</div>
 				</form>
@@ -24,7 +24,7 @@
 				<div class="reservas-wrap">
 					<div class="reservas-quartos">
 						<label class="reservas-quarto-wrap" for="quarto1" form="form-reservas">
-							<input name="quarto-radio" id="quarto1" type="radio" required form="form-reservas">
+							<input v-on:change="quartos" name="quarto-radio" id="quarto1" type="radio" required form="form-reservas">
 							<div class="reservas-quarto-wrap-div">
 								<img :src="imageQuartoSimples" alt="Quarto Simples">
 								<div class="reservas-quarto">
@@ -33,12 +33,12 @@
 										corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
 										sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
 										consequuntur quas, vero fuga?</p>
-									<span>R$<span id="quartoValor">99,99</span></span>
+									<span>R$<span id="quartoValor">100,00</span></span>
 								</div>
 							</div>
 						</label>
 						<label class="reservas-quarto-wrap" for="quarto2" form="form-reservas">
-							<input name="quarto-radio" id="quarto2" type="radio" required form="form-reservas">
+							<input v-on:change="quartos" name="quarto-radio" id="quarto2" type="radio" required form="form-reservas">
 							<div class="reservas-quarto-wrap-div">
 								<img :src="imageQuartoMedio" alt="Quarto Médio">
 								<div class="reservas-quarto">
@@ -47,12 +47,12 @@
 										corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
 										sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
 										consequuntur quas, vero fuga?</p>
-									<span>R$<span id="quartoValor">190,99</span></span>
+									<span>R$<span id="quartoValor">200,00</span></span>
 								</div>
 							</div>
 						</label>
 						<label class="reservas-quarto-wrap" for="quarto3" form="form-reservas">
-							<input name="quarto-radio" id="quarto3" type="radio" required form="form-reservas">
+							<input v-on:change="quartos" name="quarto-radio" id="quarto3" type="radio" required form="form-reservas">
 							<div class="reservas-quarto-wrap-div">
 								<img :src="imageQuarto4" alt="Quarto de Luxo">
 								<div class="reservas-quarto">
@@ -61,7 +61,7 @@
 										corrupti ipsam aliquid et quibusdam amet, est dolor labore officiis totam laudantium
 										sequi. Aliquam nam quaerat in provident nulla quia, quis enim fugit quo quidem
 										consequuntur quas, vero fuga?</p>
-									<span>R$<span id="quartoValor">249,99</span></span>
+									<span>R$<span id="quartoValor">500,00</span></span>
 								</div>
 							</div>
 						</label>
@@ -84,9 +84,24 @@
 								</div>
 								<div>
 									<p>Pessoas:</p>
-									<p id="pessoas">1</p>
+									<p id="pessoas"></p>
 								</div>
+								<div>
+									<div>
+										<p>Serviços adicionados:</p>
+										<ul>
+											<li class=" serv serviceListResumo hide"  id="adiciona0"></li>
+											<li class=" serv serviceListResumo hide"  id="adiciona1"></li>
+											<li class=" serv serviceListResumo hide"  id="adiciona2"></li>
+											<li class=" serv serviceListResumo hide"  id="adiciona3"></li>
+											<li class=" serv serviceListResumo hide"  id="adiciona4"></li>
+										</ul>
+										
+									</div>
+								</div>
+							
 							</div>
+							
 							<div>
 								<a @click="showModal">Adicionar mais serviços
 								</a>
@@ -95,7 +110,7 @@
 								@close="closeModal"
 								/>
 							</div>
-							<h3 id="totalServicos">Total: R$ 0,00</h3>
+							<h3 id="totalReserva">Total Reserva: R$ 0,00</h3>
 							<button class="button" type="submit" value="Continuar" form="form-reservas">
 								<div class="button-text">Continuar</div>
 								<p class="button-arrow">→</p>
@@ -115,7 +130,7 @@ import ModalView from "../components/ModalView.vue"
 export default {
 	name:'ReservasView',
 	components: {
-      ModalView,
+      ModalView
     },
     data() {
       return {
@@ -126,18 +141,90 @@ export default {
       };
     },
     methods: {
-      showModal() {
-        this.isModalViewVisible = true;
-		if(this.isModalViewVisible = true){
-			document.getElementById('main').style.overflowY = 'disable';
-		}
-		
-      },
-      closeModal() {
-        this.isModalViewVisible = false;
-      }
-    }
+		pegarData(data) {
+			data = data.replaceAll(/-/g, '')
+			let ano = (data.slice(0, 4))
+			let mes = (data.slice(4, 6))
+			let dia = (data.slice(6, 8))
+			return `${dia}/${mes}/${ano}`
+		},
+		onChangeCheckin(){
+			const inputCheckin = document.querySelector('#checkin')
+			localStorage.setItem('checkin', inputCheckin.value)
+			document.querySelector('#pcheckin').textContent = this.pegarData(localStorage.getItem('checkin'))
+		},
+		onChangeCheckout(){
+			const inputCheckin = document.querySelector('#checkin')
+			const inputCheckout = document.querySelector('#checkout')
 
+			if (inputCheckout.value > inputCheckin.value){
+				localStorage.setItem('checkout', inputCheckout.value)
+				document.querySelector('#pcheckout').textContent = this.pegarData(localStorage.getItem('checkout'))
+
+				let dataOne = localStorage.getItem('checkin')
+				let dataTwo = localStorage.getItem('checkout')
+				const dayIn = dataOne.split("-")
+				const dayOut = dataTwo.split("-") 
+				let dayCheckin = dayIn[2]
+				let dayCheckout = dayOut[2]
+				const diaria = dayCheckout - dayCheckin
+				localStorage.setItem('Diaria', diaria)
+
+			}else{
+				alert('Adicione uma data válida para check-out')
+				inputCheckout.value = localStorage.getItem('checkout')
+			}
+		},
+		onChangeQntdPessoas(){
+			const inputNumber = document.querySelector('#qntdPessoas') // qntd é onde peguei a informação
+			if (inputNumber.value <= 4){
+				localStorage.setItem('qtdePessoas', parseInt(inputNumber.value))
+				document.querySelector('#pessoas').textContent = localStorage.getItem('qtdePessoas')
+			}else{
+				alert('Número inválido')
+				inputNumber.value = localStorage.getItem('')
+			}
+		},
+		formatarDinheiro(num) {
+			return num.toLocaleString('pt-BR', {
+			style: 'currency', currency: 'BRL' 
+			})
+		},
+		quartos(){
+			const inputQuartos = document.querySelectorAll('input[name="quarto-radio"]')
+			const h2QuartoTitulo = document.querySelectorAll('#quartoTitulo')
+			const h2QuartoValor = document.querySelectorAll('#quartoValor')
+
+			for (let i = 0; i < inputQuartos.length; i++) {
+				if (inputQuartos[i].checked) {
+					localStorage.setItem('quarto', i + 1);
+					document.querySelector('#pquarto').textContent = h2QuartoTitulo[i].textContent;
+					localStorage.setItem(`quartoValor: `, h2QuartoValor[i].textContent)
+					document.querySelector('#totalReserva').textContent = `Total Reserva: ` + this.formatarDinheiro(parseFloat(localStorage.getItem('quartoValor: ')) * localStorage.getItem('qtdePessoas') * localStorage.getItem('Diaria'))
+					localStorage.setItem('Total', parseFloat(localStorage.getItem('quartoValor: ')) * localStorage.getItem('qtdePessoas') * localStorage.getItem('Diaria') )
+				}
+			}
+			let subtotal = parseFloat(localStorage.getItem('valorServiço: '))
+        	subtotal += parseFloat(localStorage.getItem('Total'))
+			for (let i = 0; i < inputQuartos.length; i++) {
+				if (inputQuartos[i].checked) {
+					if(localStorage.getItem('Total') && localStorage.getItem('valorServiço: ')){
+				  		document.querySelector('#totalReserva').textContent = 'Total Reserva: ' + this.formatarDinheiro(subtotal)
+			  		}
+				}
+			}
+		},
+		showModal() {
+			this.isModalViewVisible = true;
+			if(this.isModalViewVisible = true){
+				document.getElementById('main').style.overflowY = 'disable';
+			}
+			
+		},
+		closeModal() {
+			this.isModalViewVisible = false;
+		}
+    }
 }
 </script>
 <style>
@@ -312,6 +399,11 @@ export default {
 
 .hide {
 	display: none;
+}
+.serviceList{
+	display: inline;
+	height: 100%;
+
 }
 div a{
 	cursor: pointer;
