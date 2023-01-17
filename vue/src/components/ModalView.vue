@@ -79,16 +79,18 @@
                 />
                 <label for="servico05"
                   >R$ <span name="servicoValor">50,00</span> -
-                  <span name="servicoNome">Frigobar com variedades</span
+                  <span name="servicoNome">Hotelzinho pet</span
                   ></label
                 >
               </div>
               <p><b>*valores por pessoa.</b></p>
               <h3 id="totalServicos">Subtotal serviços: R$ 0,00</h3>
-              <button @click="close()">
-								<div class="button-text">Adicionar serviços</div>
-								<p class="button-arrow">→</p>
-							</button>
+              <div class="button-wrap">
+                <button class="button" @click="close()">
+                  <div class="button-text">Adicionar serviços</div>
+                  <p class="button-arrow">→</p>
+							  </button>
+              </div>
             </div>
           </slot>
         </section>
@@ -204,7 +206,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -296,5 +298,42 @@ export default {
   font-size: 14px;
   font-weight: normal;
   color: #c0c0c0;
+}
+.button-wrap {
+	margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  display: flex;
+  padding: 1.5em 2.5em;
+  align-items: center;
+  text-align: center;
+  flex: 0 0 auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  justify-content: center;
+  max-width: 25%;
+  transition: 0.5s;
+}
+.button:hover {
+	border-color: #c0c0c0;
+}
+.button-text {
+  color: #333333;
+  text-align: center;
+  display: block;
+  margin-right: 30%;
+}
+.button-arrow {
+  display: inline;
+  transition: 0.5s;
+  margin: 0.3%;
+}
+.button:hover .button-arrow {
+	transform: translate3d(1em, 0, 0);
 }
 </style>
