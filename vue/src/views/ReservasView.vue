@@ -110,9 +110,17 @@
 								@close="closeModal"
 								/>
 							</div>
+							<div>
+								<input id="inputDesconto" class="input-cupom" type="text" placeholder="Possui cupom de desconto?">
+								<button id="btnDesconto" @click="eventoBtnAplicarCupom" class="button" type="button" value="Aplicar" form="form-reservas"><div class="button-text">Aplicar Cupom</div></button>
+							</div>
 							<h3 id="totalReserva">Total Reserva: R$ 0,00</h3>
-							<button class="button" type="submit" value="Continuar" form="form-reservas">
+							<button class="button" type="button" value="Continuar" form="form-reservas" @click="showModalConfirma" >
 								<div class="button-text">Continuar</div>
+								<ModalConfirma
+								v-show="isModalConfirmaVisible"
+								@close="closeModal"
+								/>
 								<p class="button-arrow">→</p>
 							</button>
 						</div>
@@ -126,15 +134,18 @@ import imageQuartoSimples from "../assets/quartos/simples.png"
 import imageQuartoMedio from "../assets/quartos/medio.png"
 import imageQuarto4 from "../assets/quartos/luxo.png"
 import ModalView from "../components/ModalView.vue"
+import ModalConfirma from "../components/ModalConfirma.vue"
 
 export default {
 	name:'ReservasView',
 	components: {
-      ModalView
+      ModalView,
+	  ModalConfirma
     },
     data() {
       return {
         isModalViewVisible: false,
+		isModalConfirmaVisible: false,
 		imageQuartoSimples: imageQuartoSimples,
 	  	imageQuartoMedio: imageQuartoMedio,
 	  	imageQuarto4: imageQuarto4
@@ -210,10 +221,50 @@ export default {
 				if (inputQuartos[i].checked) {
 					if(localStorage.getItem('Total') && localStorage.getItem('valorServiço: ')){
 				  		document.querySelector('#totalReserva').textContent = 'Total Reserva: ' + this.formatarDinheiro(subtotal)
+						localStorage.setItem("totalReserva", subtotal);
 			  		}
 				}
 			}
 		},
+
+//------------------Início Cupom
+
+	geradorCupomDesconto() {
+		var cupomDesconto = '';
+		var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+		for (var i = 0; i < 8; i++) {
+		cupomDesconto += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+		}
+
+		localStorage.setItem("cupomValido", cupomDesconto);
+	},
+
+	calcularDesconto(){
+
+	let valorDesconto = localStorage.getItem('totalReserva') * (10/100)
+	let valorTotal = parseInt(localStorage.getItem('totalReserva')) - valorDesconto
+	document.querySelector('#totalReserva').innerHTML = ("Valor da reserva: R$ "  + parseFloat(valorTotal).toFixed(2));
+
+	return parseFloat(valorTotal).toFixed(2)	
+
+},
+
+	eventoBtnAplicarCupom() {
+		const inputCupom = document.getElementById("inputDesconto").value;
+		localStorage.setItem("cupomInputado", inputCupom);
+
+		var cupomValido = localStorage.getItem('cupomValido');
+
+		if (inputCupom == cupomValido){
+			this.calcularDesconto()
+		} else {
+			alert("Cupom inválido");
+		}
+
+	},	
+//-----------------------------------------------------------Fim cupom
+
 		showModal() {
 			this.isModalViewVisible = true;
 			if(this.isModalViewVisible = true){
@@ -223,9 +274,24 @@ export default {
 		},
 		closeModal() {
 			this.isModalViewVisible = false;
-		}
-    }
+		},
+
+		showModalConfirma() {
+			this.isModalConfirmaVisible = true;
+			if(this.isModalConfirmaVisible = true){
+				document.getElementById('main').style.overflowY = 'disable';
+			}	
+		},
+		closeModalConfirma() {
+			this.isModalConfirmaVisible = false;
+		},
+    },
+
+	beforeMount() {
+    this.geradorCupomDesconto()
+	},
 }
+
 </script>
 <style>
 /*BANNER */ 
