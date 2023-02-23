@@ -36,6 +36,11 @@ const routes = [
     path: '/cadastro',
     name: 'CadastroView',
     component: () => import( '../views/CadastroView.vue')
+  },
+  {
+    path: '/minhasreservas',
+    name: 'MinhasReservasView',
+    component: () => import( '../views/MinhasReservasView.vue')
   }
 
 ]

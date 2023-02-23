@@ -36,6 +36,8 @@
               >
               <a class="navbar-link"><router-link to="/sobre">Sobre</router-link></a
               >
+			  <a class="navbar-link" id="aMinhasReservas" style="display: none"><router-link to="/minhasreservas">Minhas Reservas</router-link></a
+              >
               <i class="navbar-dropdown-wrap">
                 <p class="navbar-dropdown-button">&#xe853;</p>
                 <div class="navbar-dropdown">
@@ -219,6 +221,10 @@ a .active {
 		margin: 0.25em 0 0.25em 0;
 		text-align: center;
 	}
+
+	.navbar-hide {
+	display: none;
+	}	
 
 	.navbar-dropdown-wrap {
 		margin: 1em 0 1em 0;

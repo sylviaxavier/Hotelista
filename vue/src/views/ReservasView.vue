@@ -115,14 +115,16 @@
 								<button id="btnDesconto" @click="eventoBtnAplicarCupom" class="button" type="button" value="Aplicar" form="form-reservas"><div class="button-text">Aplicar Cupom</div></button>
 							</div>
 							<h3 id="totalReserva">Total Reserva: R$ 0,00</h3>
-							<button class="button" type="button" value="Continuar" form="form-reservas" @click="showModalConfirma" >
+							<div>
+							<button class="button" type="button" value="Continuar" form="form-reservas" @click="closeOpenModalResumo" >
 								<div class="button-text">Continuar</div>
+								<p class="button-arrow">→</p>
+							</button>
 								<ModalConfirma
 								v-show="isModalConfirmaVisible"
 								@close="closeModal"
 								/>
-								<p class="button-arrow">→</p>
-							</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -209,6 +211,7 @@ export default {
 			for (let i = 0; i < inputQuartos.length; i++) {
 				if (inputQuartos[i].checked) {
 					localStorage.setItem('quarto', i + 1);
+					localStorage.setItem('nomeQuarto', h2QuartoTitulo[i].textContent);
 					document.querySelector('#pquarto').textContent = h2QuartoTitulo[i].textContent;
 					localStorage.setItem(`quartoValor: `, h2QuartoValor[i].textContent)
 					document.querySelector('#totalReserva').textContent = `Total Reserva: ` + this.formatarDinheiro(parseFloat(localStorage.getItem('quartoValor: ')) * localStorage.getItem('qtdePessoas') * localStorage.getItem('Diaria'))
@@ -279,12 +282,17 @@ export default {
 		showModalConfirma() {
 			this.isModalConfirmaVisible = true;
 			if(this.isModalConfirmaVisible = true){
-				document.getElementById('main').style.overflowY = 'disable';
+				document.getElementById('resumoReservaModal').style.display = 'block';
 			}	
 		},
 		closeModalConfirma() {
 			this.isModalConfirmaVisible = false;
 		},
+		closeOpenModalResumo() {
+
+		document.getElementById('resumoReservaModal').style.display =
+		document.getElementById('resumoReservaModal').style.display === 'block' ? 'none' : 'block';
+}
     },
 
 	beforeMount() {
