@@ -1,5 +1,5 @@
 <template>
-	<footer>
+	<footer v-if="!$route.meta.hideFooter">
 		<div class="footer">
 		<p>atendimento@hotelista.com.br</p>
 		<p>Rua Texperts, 01 | São Paulo | SP | 01001-001</p>

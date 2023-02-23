@@ -117,12 +117,9 @@
 							<h3 id="totalReserva">Total Reserva: R$ 0,00</h3>
 							<button class="button" type="button" value="Continuar" form="form-reservas" @click="showModalConfirma" >
 								<div class="button-text">Continuar</div>
-								<ModalConfirma
-								v-show="isModalConfirmaVisible"
-								@close="closeModal"
-								/>
 								<p class="button-arrow">→</p>
 							</button>
+							<ModalConfirma v-show="isModalConfirmaVisible" @close="closeModal"	/>
 						</div>
 					</div>
 				</div>
