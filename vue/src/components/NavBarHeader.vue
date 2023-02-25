@@ -11,7 +11,7 @@
     />
   </head>
   <header>
-    <nav>
+    <nav v-if="!$route.meta.hideNavigation">
       <div class="navbar">
         <div class="navbar-wrap">
           <a class="navbar-logo">
