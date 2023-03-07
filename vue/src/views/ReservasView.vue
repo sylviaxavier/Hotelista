@@ -125,6 +125,7 @@
 								@close="closeModal"
 								/>
 							</div>
+							<ModalConfirma v-show="isModalConfirmaVisible" @close="closeModal"	/>
 						</div>
 					</div>
 				</div>

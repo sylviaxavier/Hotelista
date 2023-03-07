@@ -26,6 +26,7 @@
         </button>
         <a href="#EsqueceuSenha">Esqueceu sua senha?</a>
         <router-link to="/cadastro">Não possui conta?</router-link>
+        <router-link to="/loginAdmin">É um funcionário?</router-link>
       </form>
     </section>
   </main>
@@ -33,8 +34,9 @@
 </template>
 
 <script>
+export default {
 
-export default {};
+};
 </script>
 
 <style>

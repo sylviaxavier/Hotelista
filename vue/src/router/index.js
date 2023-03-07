@@ -38,11 +38,45 @@ const routes = [
     component: () => import( '../views/CadastroView.vue')
   },
   {
+
     path: '/minhasreservas',
     name: 'MinhasReservasView',
     component: () => import( '../views/MinhasReservasView.vue')
+  },
+    path: '/loginAdmin',
+    name: 'LoginAdmin',
+    component: () => import('../views_Admin/LoginAdminView.vue')
+  },
+  {
+    path: '/homeAdmin',
+    name: 'HomeAdmin',
+    component: () => import('../views_Admin/HomeAdminView.vue'),
+    meta: { hideNavigation: true, hideFooter: true}
+  },
+  {
+    path: '/hospedesAdmin',
+    name: 'HospedesAdmin',
+    component: () => import('../views_Admin/HospedesAdminView.vue'),
+    meta: { hideNavigation: true, hideFooter: true}
+  },
+  {
+    path: '/reservasAdmin',
+    name: 'ReservasAdmin',
+    component: () => import('../views_Admin/ReservasAdminView.vue'),
+    meta: { hideNavigation: true, hideFooter: true}
+  },
+  {
+    path: '/staffAdmin',
+    name: 'StaffAdmin',
+    component: () => import('../views_Admin/StaffAdminView.vue'),
+    meta: { hideNavigation: true, hideFooter: true}
+  },
+  {
+    path: '/consumoAdmin',
+    name: 'ConsumoAdmin',
+    component: () => import('../views_Admin/ConsumoAdminView.vue'),
+    meta: { hideNavigation: true, hideFooter: true}
   }
-
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
