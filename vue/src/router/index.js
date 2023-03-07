@@ -38,6 +38,11 @@ const routes = [
     component: () => import( '../views/CadastroView.vue')
   },
   {
+
+    path: '/minhasreservas',
+    name: 'MinhasReservasView',
+    component: () => import( '../views/MinhasReservasView.vue')
+  },
     path: '/loginAdmin',
     name: 'LoginAdmin',
     component: () => import('../views_Admin/LoginAdminView.vue')
