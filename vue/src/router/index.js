@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'HomeView',
-    component: HomeView
+    component: () => import( '../views/HomeView.vue')
   },
   {
     path: '/sobre',
@@ -38,11 +37,11 @@ const routes = [
     component: () => import( '../views/CadastroView.vue')
   },
   {
-
     path: '/minhasreservas',
     name: 'MinhasReservasView',
     component: () => import( '../views/MinhasReservasView.vue')
   },
+  {
     path: '/loginAdmin',
     name: 'LoginAdmin',
     component: () => import('../views_Admin/LoginAdminView.vue')

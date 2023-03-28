@@ -10,7 +10,7 @@
         <header class="modal-header" id="modalTitle">
           <slot name="header">
             <h2>Serviços Adicionais:</h2>
-            <button type="button" class="btn-close" @click="close">x</button>
+            <button type="button" class="btn-close" @click="close()">x</button>
           </slot>
         </header>
 

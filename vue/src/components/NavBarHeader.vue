@@ -36,7 +36,7 @@
               >
               <a class="navbar-link"><router-link to="/sobre">Sobre</router-link></a
               >
-			  <a class="navbar-link" id="aMinhasReservas" style="display: none"><router-link to="/minhasreservas">Minhas Reservas</router-link></a
+			  <a class="navbar-link" id="MinhasReservas" style="display: none"><router-link to="/minhasreservas">Minhas Reservas</router-link></a
               >
               <i class="navbar-dropdown-wrap">
                 <p class="navbar-dropdown-button">&#xe853;</p>

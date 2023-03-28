@@ -1,127 +1,172 @@
 <template>
-	<transition name="modal-fade">
-    		<div id="resumoReservaModal" class="modal-backdrop">
-				<div class="modal"      
-					 role="dialog"
-        			 aria-labelledby="modalTitle"
-        			 aria-describedby="modalDescription">
-      			 	 <header class="modal-header" id="modalTitle">
-         				<slot name="header">
-          			 	 <h3>Resumo da Reserva:</h3>
-           			 	 <button type="button" class="btn-close" @click="closeOpenModalResumo">x</button>
-         			 	</slot>
-        			 </header>
-					<section class="modal-body" id="modalDescription">
-         				<slot name="body">
-							<div class="modal-resumo-div">
-								<p id="quartoModalResumo">:</p>
-							</div>
-							<div class="modal-resumo-div">
-								<p id="checkinModalResumo"></p>
-							</div>
-							<div class="modal-resumo-div">
-								<p id="checkoutModalResumo"></p>
-							</div>
-							<div class="modal-resumo-div">
-								<p id="pessoasModalResumo"></p>
-							</div>
-							<div class="modal-resumo-border">
-							</div>
-							<div>
-								<h4>Serviços Adicionais:</h4>
-                <ul>
-                  <li id="servico01"></li>
-                  <li id="servico02">Tea</li>
-                  <li id="servico03">Milk</li>
-                </ul>  
-							</div>
-							<div class="button-wrap">
-								<h4 id="totalModalResumo"></h4>
-								<button id="btnConfirmarReserva" class="button" @click="closeOpenModalResumoConfirmar">
-									<div class="button-text">Confirmar Reserva</div>
-									<p class="button-arrow">→</p>
-								</button>	
-							</div>
-					    </slot>
-        			</section>
-				</div>
-			</div>
-	</transition>
+  <transition name="modal-fade">
+    <div id="resumoReservaModal" class="modal-backdrop">
+      <div
+        class="modal"
+        role="dialog"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDescription"
+      >
+        <header class="modal-header" id="modalTitle">
+          <slot name="header">
+            <h2>Resumo da Reserva:</h2>
+            <button
+              type="button"
+              class="btn-close"
+              @click="closeOpenModalResumo()"
+            >
+              x
+            </button>
+          </slot>
+        </header>
+        <section class="modal-body" id="modalDescription">
+          <slot name="body">
+              <div class="res-serv">
+                <div class="modal-resumo-div">
+                  <p id="checkinModalResumo"></p>
+                </div>
+                <div class="modal-resumo-div">
+                  <p id="checkoutModalResumo"></p>
+                </div>
+                <div class="modal-resumo-div">
+                  <p id="pessoasModalResumo"></p>
+                </div>
+              </div>
+              <div class="res-serv2">
+                <div class="modal-resumo-div">
+                  <p id="nomeQuarto"></p>
+                  <p id="quartoModalResumo"></p>
+                </div>
+                <div class="modal-resumo-div">
+                  <p id="servicos"></p>
+                  <p id="servicos0"></p>
+                  <p id="servicos1"></p>
+                  <p id="servicos2"></p>
+                  <p id="servicos3"></p>
+                  <p id="servicos4"></p>
+                </div>
+              </div>
+            
+
+              <h4 id="totalModalResumo"></h4>
+            <div class="button-wrap">
+              <button
+                id="btnConfirmarReserva"
+                class="button"
+                @click="closeOpenModalResumoConfirmar"
+              >
+                <div class="button-text">Confirmar Reserva</div>
+                <p class="button-arrow">→</p>
+              </button>
+            </div>
+          </slot>
+        </section>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>
-
 export default {
   name: "ModalConfirma",
   methods: {
-    close() {
-      this.$emit("close")
+    closeOpenModalResumo() {
+
+      document.getElementById("resumoReservaModal").style.display = "none";
+      
+      let subtotal = parseFloat(localStorage.getItem('valorServiço: '))
+        subtotal += parseFloat(localStorage.getItem('Total'))
+
+      document.querySelector("#totalModalResumo").textContent =
+        "Valor Total da Reserva: " + this.formatarDinheiro(subtotal)
+
+      document.querySelector("#nomeQuarto").textContent = 
+        "Tipo de Quarto: " 
+
+      document.querySelector("#quartoModalResumo").textContent =
+        localStorage.getItem("nomeQuarto");
+
+      document.querySelector("#checkinModalResumo").textContent =
+        "Data do Check-in: " + this.pegarData(localStorage.getItem("checkin"));
+
+      document.querySelector("#checkoutModalResumo").textContent =
+        "Data do Check-out: " +
+        this.pegarData(localStorage.getItem("checkout"));
+        
+      document.querySelector("#pessoasModalResumo").textContent =
+        "Número de hóspedes: " + localStorage.getItem("qtdePessoas");
+
+        document.querySelector("#servicos").textContent = 
+        "Serviços Adicionais: "
+        document.querySelector("#servicos0").textContent = 
+         localStorage.getItem("servicoNome0")
+
+        document.querySelector("#servicos1").textContent = 
+         localStorage.getItem("servicoNome1")
+
+        document.querySelector("#servicos2").textContent = 
+         localStorage.getItem("servicoNome2")
+
+        document.querySelector("#servicos3").textContent = 
+         localStorage.getItem("servicoNome3")
+        
+        document.querySelector("#servicos4").textContent = 
+         localStorage.getItem("servicoNome4")
     },
 
-	closeOpenModalResumo() {
-		document.getElementById('resumoReservaModal').style.display = 'none';
-    this.getdata()
-},
+    closeOpenModalResumoConfirmar() {
+      document.getElementById("resumoReservaModal").style.display =
+        document.getElementById("resumoReservaModal").style.display === "block"
+          ? "none"
+          : "block";
+      document.getElementById("MinhasReservas").style.display = "block";
+    },
+    pegarData(data) {
+      data = data.replaceAll(/-/g, "");
+      let ano = data.slice(0, 4);
+      let mes = data.slice(4, 6);
+      let dia = data.slice(6, 8);
 
-closeOpenModalResumoConfirmar() {
-
-		document.getElementById('resumoReservaModal').style.display =
-		document.getElementById('resumoReservaModal').style.display === 'block' ? 'none' : 'block';
-		document.getElementById('aMinhasReservas').style.display = 'block';
-},
- pegarData(data) {
-	data = data.replaceAll(/-/g, '');
-	let ano = (data.slice(0, 4));
-	let mes = (data.slice(4, 6));
-	let dia = (data.slice(6, 8));
-
-	return `${dia}/${mes}/${ano}`;
-},
-
-	getdata() {
-		document.querySelector('#totalModalResumo').textContent = "Valor total da reserva: R$" + localStorage.getItem('totalReserva');
-		document.querySelector('#quartoModalResumo').textContent = "Quarto: " + localStorage.getItem('nomeQuarto');
-		document.querySelector('#checkinModalResumo').textContent = "Data do Check-in: " + this.pegarData(localStorage.getItem('checkin'));
-    document.querySelector('#checkoutModalResumo').textContent = "Data do Check-out: " + this.pegarData(localStorage.getItem('checkout'));
-		document.querySelector('#pessoasModalResumo').textContent = "Número de hóspedes: " + localStorage.getItem('qtdePessoas')
-    document.querySelector('#servico01').textContent = "Add1: " + localStorage.getItem('n');
-    
-	}
-},
-    mounted(){
-    this.getdata()
+      return `${dia}/${mes}/${ano}`;
+    },
+     formatarDinheiro(num) {
+	    return num.toLocaleString('pt-BR', {
+        style: 'currency', currency: 'BRL' 
+      })
+    }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .modal-backdrop {
   position: fixed;
-  top: 10%;
+  top: 0;
   bottom: 0;
-  left: 30%;
+  left: 0;
   right: 0;
-  /*background-color: rgba(0, 0, 0, 0.7);*/
-  display: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal {
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 2px 2px 20px 1px;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  margin-top: 5%;
+  margin-left: 25%;
   width: 50%;
-  height: 100%;
+  height: 80%;
   text-align: center;
   overflow-x: hidden;
 }
 
 .modal-header {
-  padding: 5px;
+  padding: 15px;
   display: flex;
 }
 
@@ -131,11 +176,26 @@ closeOpenModalResumoConfirmar() {
   color: #161414;
   justify-content: space-between;
 }
-.modal-header h3 {
+.modal-header h2 {
   text-align: center;
-  width: 100%;
+  width: 90%;
 }
 
+.res-serv {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1em;
+  justify-content: space-evenly;
+
+}
+.res-serv2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
 .modal-body {
   position: relative;
   padding: 20px 10px;
@@ -143,7 +203,7 @@ closeOpenModalResumoConfirmar() {
 }
 
 .button-wrap {
-	margin: 1em;
+  margin: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,7 +234,7 @@ closeOpenModalResumoConfirmar() {
   color: #c0c0c0;
 }
 .button:hover {
-	border-color: #c0c0c0;
+  border-color: #c0c0c0;
 }
 .button-text {
   color: #333333;
@@ -188,7 +248,7 @@ closeOpenModalResumoConfirmar() {
   margin: 0.3%;
 }
 .button:hover .button-arrow {
-	transform: translate3d(1em, 0, 0);
+  transform: translate3d(1em, 0, 0);
 }
 
 .modal-fade-enter,
