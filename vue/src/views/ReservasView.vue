@@ -411,7 +411,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 /*FORMS*/
 
 .form-reservas {

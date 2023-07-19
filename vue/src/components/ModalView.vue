@@ -26,8 +26,8 @@
                   @click="servicos()"
                 />
                 <label for="servico01"
-                  >R$ <span name="servicoValor" id="pPessoa">20,50</span> -
-                  <span name="servicoNome">Café da manhã</span>*</label
+                  >R$ <span name="servicoValor" id="pPessoa">80,00</span> -
+                  <span name="servicoNome">Pacote Streaming</span>*</label
                 >
               </div>
               <div>
@@ -39,8 +39,8 @@
                   @click="servicos()"
                 />
                 <label for="servico02"
-                  >R$ <span name="servicoValor" id="pPessoa">30,00</span> -
-                  <span name="servicoNome">Almoço</span>*</label
+                  >R$ <span name="servicoValor" id="pPessoa">40,00</span> -
+                  <span name="servicoNome">Lavanderia</span>*</label
                 >
               </div>
               <div>
@@ -52,8 +52,8 @@
                   @click="servicos()"
                 />
                 <label for="servico03"
-                  >R$ <span name="servicoValor" id="pPessoa">40,00</span> -
-                  <span name="servicoNome">Jantar</span>*</label
+                  >R$ <span name="servicoValor" id="pPessoa">20,00</span> -
+                  <span name="servicoNome">Cofre</span></label
                 >
               </div>
               <div>
@@ -206,7 +206,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 *{
   font-family: "Poppins";
